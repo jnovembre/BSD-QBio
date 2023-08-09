@@ -1,9 +1,9 @@
 Activity,Description
 checkin,Check-in with TAs at BSLC lobby
-groupcomp,Lunch and group compacts 
+groupcomp,Dinner and group compacts 
 coffee,Coffee break
 lunch,Lunch 
-talkintro,Welcome to qBio8 - Novembre Carbonetto Hall (BSLC 109)
+talkintro,Welcome to qBio9 - Novembre / Hall (BSLC 109)
 talkkovar,Welcome to UChicago Biosciences - Dean Kovar (BSLC 109)
 talkstar,"Graduate Student Research Talks (BSLC 109)"
 pdafternoon,Professional development with TAs
@@ -13,11 +13,11 @@ Computing1a,Basic/Advanced comp. I (BSLC 008/109/205)
 Computing1b,Basic/Advanced comp. I (BSLC 008/109/205)
 Computing2a,Basic/Advanced comp. II (BSLC 008/109/205)
 Computing2b,Basic/Advanced comp. II (BSLC 008/109/205)
-w1,Workshop - Immunology - Khan (BSLC 109)
+w1,Workshop - Microbe tracking - Nirody (BSLC 109)
 w2,Workshop - Population genetics - Berg (BSLC 205)
-w3,Workshop - Transcriptomics - M. Chen (BSLC 008)
-t1,Defensive programming - Hernandez (BSLC 109)
+w3,Workshop - Transcriptomics - Chen (BSLC 008)
+t1,Defensive programming - Novembre (BSLC 109)
 t2,Data visualization - Carbonetto (BSLC 205)
-t3,Statistics for a data rich world - L. Chen (BSLC 008)
+t3,Statistics for a data rich world - Liu (BSLC 008)
 team,Team-building activities 
 reception,Reception with Dean's Council Students
