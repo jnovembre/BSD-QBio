@@ -94,6 +94,7 @@ will require you to first install [Rosetta](https://support.apple.com/en-us/HT21
     *   pheatmap
 	*   plotly
 	*   htmlwidgets
+ *   reticulate
  
     You can find instructions on how to install `R` packages in RStudio [here](https://www.youtube.com/watch?v=3RWb5U3X-T8).
 
@@ -108,11 +109,12 @@ will require you to first install [Rosetta](https://support.apple.com/en-us/HT21
 
 ### Installation of `Python`
 
-While the QBio9 bootcamp will primarily be taught in 'R', one of the workshops will feature a `Python3` demo. If you wish to follow along the python demo on your own machine, **download `Anaconda`** [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html)
+While the QBio9 bootcamp will primarily be taught in 'R', one of the workshops will feature a `python3` demo. If you wish to follow along the python demo on your own machine, **download `Anaconda`** [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html)
+
 
 ### Installation of ImageJ (FIJI)
 
-Imaging workshops will require **ImageJ with built-in FIJI plugins, available [here](https://fiji.sc).**
+One workshop will involve analyzing extracting trajectories of moving objects from image data with the widely used  **ImageJ** software.  Please install the software using the instructions available [here](https://fiji.sc).  Note: the "FIJI" installation of ImageJ linked to here will include all the plug-ins needed for the workshop.**
 
 
 ## Downloading the data
