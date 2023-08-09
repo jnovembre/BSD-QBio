@@ -69,14 +69,14 @@ You will work on your laptop all day long. **If you don't have a laptop, please 
 
 ### Installation of `R` and `R` packages
 
-* **Install R**: go to [this page](https://posit.co/download/rstudio-desktop/) and follow instructions there to download and install Rfor your computing platform. (Here's a [video](https://www.youtube.com/watch?v=5ZbjUEg4a1g)
+* **Install R**: go to [this page](https://posit.co/download/rstudio-desktop/) and follow instructions there to download and install Rfor your computing platform. (Here's a [video](https://youtu.be/sD1NJ7_DLZk)
 explaining how to install R and RStudio in Windows;
-[here](https://www.youtube.com/watch?v=5rp9bkc68y0) for Mac OSX)
+[here](https://youtu.be/IBE7dPJQNaE) for Mac OSX)
 **Note:** For those with a Mac with one of the new Apple processors
 (M1 or M2), *don't* use the "arm64 build" with R. The non-arm64 build
 will require you to first install [Rosetta](https://support.apple.com/en-us/HT211861) (if you haven't done so already).
 
-*   **Install RStudio**: once you have installed R, go to [this page](https://posit.co/download/rstudio-desktop/), download the installer for your operating system (section **Installers for Supported Platforms**), and install the software.
+*   **Install RStudio**: once you have installed R, go to [this page](https://posit.co/download/rstudio-desktop/), download the installer for RStudio your operating system (section **Installers for Supported Platforms**), and install the software.
 
 *   Once you have installed R and RStudio, open RStudio and **install the following packages**:
 
