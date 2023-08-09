@@ -91,10 +91,10 @@ will require you to first install [Rosetta](https://support.apple.com/en-us/HT21
     *   BiocManager
     *   ggseqlogo
     *   trajr
+    *   reticulate
     *   pheatmap
 	*   plotly
 	*   htmlwidgets
- *   reticulate
  
     You can find instructions on how to install `R` packages in RStudio [here](https://www.youtube.com/watch?v=3RWb5U3X-T8).
 
