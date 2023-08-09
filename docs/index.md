@@ -12,7 +12,7 @@ You can see the **schedule** of the boot camp, and find the contact information 
 
 ## Contacts
 
-For any issue/question/comment, please contact the course directors via email:
+For any issue/question/comment, please contact the course content directors via email:
 
 *   [John Novembre](mailto:jnovembre@uchicago.edu?Subject=Help%20BSD%20QBio) ([webpage](http://jnpopgen.org/))
   
