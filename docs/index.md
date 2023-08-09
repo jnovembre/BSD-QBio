@@ -51,10 +51,11 @@ You can also browse the schedule [by group](https://github.com/jnovembre/BSD-QBi
 To accommodate the diverse background of our students, we have created two tracks for the computing tutorials.
 
 *   Basic Computing I and II: dedicated to new users who are not familiar with `R` or programming in general. It will guide students step-by-step, introducing the `R` syntax and showing how to write well-organized code for data analysis and scientific research.
-*   Advanced Computing I and II: dedicated to experienced `R` users, thesee will focus on manipulating large data sets, plotting, and the use of regular expressions.
+*   Advanced Computing I and II: dedicated to experienced programmers (`R` or otherwise), these sessions will focus on challenges manipulating large data sets, plotting, and the use of regular expressions.
 
 **You will need to decide which track's sessions to attend on Day 1 of the Bootcamp**.  After Day 1, you will move throught the material in teams with mixed skill levels.  **Choose which track to join for Day 1 by consulting the lecture materials and making sure that the content is at the right level for you**:
 
+Links to the draft materials:
 * Basic Computing I ([web](https://github.com/jnovembre/BSD-QBio9/blob/main/tutorials/basic_computing_1/basic_computing_1.pdf), [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio8/main/tutorials/basic_computing_1/basic_computing_1.pdf))
 * Basic Computing II ([web](https://github.com/jnovembre/BSD-QBio9/blob/main/tutorials/basic_computing_2/basic_computing_2.pdf), [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio9/main/tutorials/basic_computing_2/basic_computing_2.pdf))
 * Advanced Computing: **Special preparation for Advanced Computing:** You should work through the Advanced Computing preparatory material before the session begins. [Link to preparatory material](https://github.com/jnovembre/BSD-QBio9/blob/master/tutorials/advanced_computing/tutorial/advanced_computing.pdf)
@@ -68,16 +69,14 @@ You will work on your laptop all day long. **If you don't have a laptop, please 
 
 ### Installation of `R` and `R` packages
 
-* **Install R**: go to [this page](https://cran.rstudio.com/),
-download the file corresponding to your platform, and install
-it. (Here's a [video](https://www.youtube.com/watch?v=5ZbjUEg4a1g)
+* **Install R**: go to [this page](https://posit.co/download/rstudio-desktop/) and follow instructions there to download and install Rfor your computing platform. (Here's a [video](https://www.youtube.com/watch?v=5ZbjUEg4a1g)
 explaining how to install R and RStudio in Windows;
 [here](https://www.youtube.com/watch?v=5rp9bkc68y0) for Mac OSX)
 **Note:** For those with a Mac with one of the new Apple processors
 (M1 or M2), *don't* use the "arm64 build" with R. The non-arm64 build
 will require you to first install [Rosetta](https://support.apple.com/en-us/HT211861) (if you haven't done so already).
 
-*   **Install RStudio**: once you have installed R, go to [this page](https://www.rstudio.com/products/rstudio/download/), download the installer for your operating system (section **Installers for Supported Platforms**), and install the software.
+*   **Install RStudio**: once you have installed R, go to [this page](https://posit.co/download/rstudio-desktop/), download the installer for your operating system (section **Installers for Supported Platforms**), and install the software.
 
 *   Once you have installed R and RStudio, open RStudio and **install the following packages**:
 
