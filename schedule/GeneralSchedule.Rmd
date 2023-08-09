@@ -51,8 +51,7 @@ output:
 **10:30-12:00**       Basic/Advanced comp. II                          
 **12:00-1:30**        Lunch                                            
 **1:30-3:00**          Lunch and DuSable African American Museum Tour  
-**3:15-3:30**         Coffee break                                     
-**3:30-5:00**         Graduate Student Research Talks                  
+**3:00-4:00**         Graduate Student Research Talks                  
 ------------------    -------------------------------------------------
 
 ### Monday, September 11 

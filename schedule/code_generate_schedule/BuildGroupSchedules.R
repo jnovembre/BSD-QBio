@@ -97,8 +97,8 @@ output:
 # *Speck:* Speck Auditorium, Rowe Lab; *SWC:* Swope cafeteria.
 #   \n")
   sink()
-  #pandoc(input = paste0("../", group_name_long_nospace, ".Rmd"))
-  #pandoc(input = paste0("../", group_name_long_nospace, ".Rmd"), format = "latex")
+  pandoc(input = paste0("../", group_name_long_nospace, ".Rmd"))
+  pandoc(input = paste0("../", group_name_long_nospace, ".Rmd"), format = "latex")
 }
   }
 
