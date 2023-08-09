@@ -93,6 +93,7 @@ will require you to first install [Rosetta](https://support.apple.com/en-us/HT21
     *   pheatmap
 	*   plotly
 	*   htmlwidgets
+   *	trajr 
 
     You can find instructions on how to install `R` packages in RStudio [here](https://www.youtube.com/watch?v=3RWb5U3X-T8).
 
@@ -104,6 +105,14 @@ will require you to first install [Rosetta](https://support.apple.com/en-us/HT21
 * **Git**
     * **Join GitHub** click [here](https://education.github.com/pack) and make sure you use your uchicago email to get free access to some free benefits.
     * Unless you will use git from the command line, **Download GitKraken** click [here](https://support.gitkraken.com/how-to-install)
+
+## Installation of Python
+
+While the QBio9 bootcamp will primarily be taught in 'R', one of the workshops will feature a python demo. If you wish to follow along the python demo on your own machine, instructions to downloading and installing 'Anaconda' are available [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html)
+
+## Installation of ImageJ (FIJI)
+Imaging workshops will require ImageJ with built-in FIJI plugins, available [here](https://fiji.sc).
+
 
 ## Downloading the data
 
