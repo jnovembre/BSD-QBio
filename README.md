@@ -1,6 +1,6 @@
-# BSD-QBio8
+# BSD-QBio9
 
-Repository for the seventh edition of the University of Chicago's *BSD
+Repository for the ninth edition of the University of Chicago's *BSD
 Quantitative Biology Bootcamp.*
 
 ## Instructors
