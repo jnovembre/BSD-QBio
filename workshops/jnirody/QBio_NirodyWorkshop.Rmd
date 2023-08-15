@@ -23,7 +23,7 @@ knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.align="center",
 
 Trajectory data is ubiquitous across biology: living systems are dynamic and we can learn a lot from understaning their movement! If you're working with trajectories, you usually start with a video taken via a microscope or lab camera or drone, depending on your system of interest. 
 
-We'll spend a little time before we get to analyzing some trajectory data in R figuring out how we get from a video cells moving around (in not-always-great contrast images)
+We'll spend a little time before we get to analyzing some trajectory data in R figuring out how we get from a video of cells moving around (in not-always-great contrast images -- if you look carefully at this freeze frame image from the microscope you'll see cells)
 
 ![](figs/raw_video.png)
 
@@ -44,8 +44,7 @@ We'll first load an example trajectory, taken from one of the cells in the video
 [All the data files we’ll work with are in the data folder, so we will set our working directory accordingly.]
 
 ```{r}
-setwd("data")
-coords <- read.csv("species1_track.csv",header=TRUE)
+coords <- read.csv("data/species1_track.csv",header=TRUE)
 ```
 
 Before we do anything else, let's quickly visualize this trajectory for a sanity check and to see what we're working with. 
@@ -56,11 +55,11 @@ plot(coords$POSITION_X,coords$POSITION_Y, type='l', ylab='y', xlab='x')
 
 *Basic trajectory features -- step lengths, turn angles, speeds*
 
-A trajectory can also be thought of as a series of steps, each comprised of a length ($L_i$), a turning angle ($\Delta_i$), and a time. Between two points $(x_i,y_i)$ and $(x_{i+1},y_{i+1})$, we can calculate the step length $L_i$ from the distance formula $L_i = \sqrt\frac{(y_{i+1}-y_{i})^2}{(x_{i+1}-x_{i})^2}$.
+A trajectory can also be thought of as a series of steps, each comprised of a length ($L_i$), a turning angle ($\Delta_i$), and a time. Between two points $(x_i,y_i)$ and $(x_{i+1},y_{i+1})$, we can calculate the step length $L_i$ from the distance formula $L_i = \sqrt{(x_{i+1}-x_{i})^2+(y_{i+1}-y_{i})^2}$.
 
-***Exercise:*** Using the $(x,y,t)$ data stored in the `coords` variable, calculate out a list of step lengths for each timestep in the trajectory. Store the outputted list as a variable `step_lengths`. What length should this list be? 
+***Exercise:*** Using the $(x,y,t)$ data stored in the `coords` variable, calculate out a vector of step lengths for each timestep in the trajectory. Store the outputted list as  `step_lengths`. What length should this vector be? 
 
-***Exercise:*** Using the $(x,y,t)$ data stored in the `coords` variable, calculate out a list of step lengths for each timestep in the trajectory. How would you calculate this value from this positional data? Store the outputted list as a variable `angles`.
+***Exercise:*** Using the $(x,y,t)$ data stored in the `coords` variable, calculate out a vector of step lengths for each timestep in the trajectory. How would you calculate this value from this positional data? Store the outputted vector as `angles`.
 
 We can also do some slightly more complex computations to understand a bit more about the underlying dynamics. First, let's look at how the object's speed varies over the trajectory. We can calculate the 'instantaneous' speed at a time $t_i$ by $speed_i = |\frac{L_i}{(t_{i}-t_{i-1})}|$. Note: if our trajectory is measured at constant time intervals, then $t_i - t_{i-1}$ is the same for all $i$. 
 
@@ -89,7 +88,7 @@ trj <- TrajFromCoords(coords, spatialUnits='pixels', timeUnits = 'frames')
 plot(trj)
 ```
 
-Using some built-in functions, we can also get out information the timecourse of the trajectory, including the distribution of turning angles and step lengths like we did earlier
+Using some built-in functions, we can also get out information on the timecourse of the trajectory, including the distribution of turning angles and step lengths like we did earlier
 
 ```{r}
 trajr_angles <- TrajAngles(trj)
@@ -118,7 +117,6 @@ Let's also plot the two speed calculations side by side.
 *Working with and manipulating R objects*
 
 Note that when we loaded our data into `coords` and eventually into a `trajr Trajectory`, we were working with spatial coordinates in pixels and time measured in frames. Before we do any meaningful analysis, it's useful to convert these into more physically meaningful units (especially when comparing different datasets, which may be obtained using different cameras!). 
-
 The `TrajScale` function allows us to implement these meaningful scaling parameters to transform our trajectory object before analysis. When a trajectory is digitized from a video (like the one in our example!), we can calculate the appropriate spatial scaling factor as $width_m/width_p$, where $width_m$ is the width of an object in your chosen unit of length (e.g., meter, micron) and $width_p$ is the width of the same object in pixels, as measured from the video. Similarly, time in these trajectories can be appropriately scaled by knowing how many frames per second (fps) are in our recording.
 
 Let's re-upload our example trajectory into `TrajFromCoords`.
@@ -200,12 +198,12 @@ Most studies you'll work with will involve multiple trajectories (per individual
 
 ```{r}
 tracks <- as.data.frame(rbind(
-  c("species1_track.csv", "Allomyces macrogynus"),
-  c("species2_track.csv", "Chytriomyces confervae"),
-  c("species3_track.csv", "Allomyces_reticulatus"),
-  c("species4_track.csv", "Rhizoclosmatium globosum"),
-  c("species5_track.csv", "Synchyrtium microbalum"),
-  c("species6_track.csv", "Blastocladiella emersonii"),
+  c("data/species1_track.csv", "Allomyces macrogynus"),
+  c("data/species2_track.csv", "Chytriomyces confervae"),
+  c("data/species3_track.csv", "Allomyces_reticulatus"),
+  c("data/species4_track.csv", "Rhizoclosmatium globosum"),
+  c("data/species5_track.csv", "Synchyrtium microbalum"),
+  c("data/species6_track.csv", "Blastocladiella emersonii")
 ), stringsAsFactors = FALSE)
 colnames(tracks) <- c("filename", "species")
 ```
@@ -213,8 +211,8 @@ colnames(tracks) <- c("filename", "species")
 We can then use the function `TrajsBuild` to load these into `trajr`. `TrajsBuild` assumes that you have a set of trajectory files, each of which may have a scale and a frames-per-second value. The function reads each of the files specified in a list of file names, optionally using a custom function, then passes the result to `TrajFromCoords`. Remember that, with no input given, this function assumes that the first column is x, the second is y, and there is no time column. We can use the `csvStruct` argument identify the x, y and time columns if needed.
 
 ```{r}
-csvStruct <- list(x = "x", y = "y", time = "Time")
-trjs <- TrajsBuild(tracks$filenames, scale = .45 / 1, 
+csvStruct <- list(x = 1, y = 2, time = 3)
+trjs <- TrajsBuild(tracks$filename, scale = .45 / 1, 
                    spatialUnits = "um", timeUnits = "s", 
                    csvStruct = csvStruct)
 ```
@@ -244,7 +242,7 @@ characterizeTrajectory <- function(trj) {
   # Return a list with all of the statistics for this trajectory
   list(mean_speed = mean_speed,
        sd_speed = sd_speed,
-       sinuosity = sinuosity,
+       #sinuosity = sinuosity,
        Emax = Emax,
        min_deltaS = first_min[1],
        min_C = first_min[2]
