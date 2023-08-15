@@ -28,7 +28,9 @@ knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.align="center",
 
 Trajectory data is ubiquitous across biology: living systems are dynamic and we can learn a lot from understaning their movement! If you're working with trajectories, you usually start with a video taken via a microscope or lab camera or drone, depending on your system of interest. 
 
-We'll spend a little time before we get to analyzing some trajectory data in R figuring out how we get from a video of cells moving around (in not-always-great contrast images -- if you look carefully at this freeze frame image from the microscope you'll see cells)
+We'll spend a little time before we get to analyzing some trajectory data in R figuring out how we get from a video of cells moving around (in not-always-great contrast images!)...
+
+[If you look carefully at this freeze frame image from the microscope you'll see several flagellated cells scattered around the field of view.]
 
 ![](figs/raw_video.png)
 
@@ -249,7 +251,6 @@ characterizeTrajectory <- function(trj) {
   # Return a list with all of the statistics for this trajectory
   list(mean_speed = mean_speed,
        sd_speed = sd_speed,
-       #sinuosity = sinuosity,
        Emax = Emax,
        min_deltaS = first_min[1],
        min_C = first_min[2]
