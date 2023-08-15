@@ -121,8 +121,8 @@ pdftk tmp.pdf ../../workshops/jjberg/code/MBL_WorkshopJJB.pdf output tmp2.pdf; m
 ## insert blank page
 #pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
-## Khan
-pdftk tmp.pdf ../../workshops/akhan/lecture/qbio6_khan.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+## Nirody
+pdftk tmp.pdf ../../workshops/jnirody/QBio_NirodyWorkshop.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 
 ## Redistill to reduce size

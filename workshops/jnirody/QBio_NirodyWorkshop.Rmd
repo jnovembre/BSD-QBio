@@ -1,12 +1,14 @@
 ---
 title: "Movement analysis workshop"
-author: Jasmine Nirody and Gia Jadick, University of Chicago
-date: September 2023
 output:
   pdf_document:
     keep_tex: false
     latex_engine: pdflatex
     template: readable.tex
+author: 
+  name: Jasmine Nirody and Gia Jadick
+  affiliation: University of Chicago
+date: August 15, 2023
 geometry: margin=1in
 fontfamily: mathpazo
 fontsize: 11pt
@@ -117,6 +119,7 @@ Let's also plot the two speed calculations side by side.
 
 ***Question:*** What information might a full timecourse of speeds provide us that the overall descriptive metrics might not?
 
+
 *Working with and manipulating R objects*
 
 Note that when we loaded our data into `coords` and eventually into a `trajr Trajectory`, we were working with spatial coordinates in pixels and time measured in frames. Before we do any meaningful analysis, it's useful to convert these into more physically meaningful units (especially when comparing different datasets, which may be obtained using different cameras!). 
@@ -156,6 +159,7 @@ TrajDistance(trj)
 ***Question:*** Why would you expect the values outputted from `TrajLength` to be different from those outputted from `TrajDistance`?
 
 ***Question:*** Would you expect the sum of all the step lengths to equal the `TrajLength` to be or `TrajDistance` value? Check using the `sum()` function!
+
 
 *Some more analysis metrics*
 
