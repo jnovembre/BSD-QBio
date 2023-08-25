@@ -1,12 +1,12 @@
 # BSD-QBio9
 
-Repository for the ninth edition of the University of Chicago's *BSD
-Quantitative Biology Bootcamp.*
+Repository for the ninth edition of the University of Chicago's
+*BSD Quantitative Biology Bootcamp.*
 
 ## Instructors
 
-Please upload your tutorials/workshops in the right place. If you need
-to get access, email John your GitHub ID.
+Please upload your tutorials/workshops in the right place. If
+you need to get access, email John your GitHub ID.
 
 ## Participants
 
