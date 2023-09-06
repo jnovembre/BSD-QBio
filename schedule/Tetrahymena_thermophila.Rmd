@@ -25,7 +25,7 @@ output:
 
 ------------------    ---------------------------------------------------------
 **3:00-4:00**         Check-in with TAs at BSLC lobby                          
-**4:00-4:20**         Welcome to qBio9 - Novembre / Hall (BSLC 109)            
+**4:00-4:20**         Welcome to qBio9 - Novembre / Hall (BSLC 115)            
 **4:20-5:00**         Team-building activities                                 
 **5:00-6:00**         Dinner and group compacts                                
 ------------------    ---------------------------------------------------------
@@ -33,13 +33,13 @@ output:
 ### Thursday, September 7 
 
 ------------------    ---------------------------------------------------------
-**8:30-10:00**        Basic/Advanced comp. I (BSLC 008/109/205)                
-**8:30-10:00**        Basic/Advanced comp. I (BSLC 008/109/205)                
+**8:30-10:00**        Basic/Advanced comp. I (BSLC 008/202/205)                
+**8:30-10:00**        Basic/Advanced comp. I (BSLC 008/202/205)                
 **10:00-10:30**       Coffee break                                             
-**10:30-12:00**       Basic/Advanced comp. I (BSLC 008/109/205)                
-**10:30-12:00**       Basic/Advanced comp. I (BSLC 008/109/205)                
+**10:30-12:00**       Basic/Advanced comp. I (BSLC 008/202/205)                
+**10:30-12:00**       Basic/Advanced comp. I (BSLC 008/202/205)                
 **12:00-1:30**        Lunch                                                    
-**1:30-2:00**         Welcome to UChicago Biosciences - Dean Kovar (BSLC 109)  
+**1:30-2:00**         Welcome to UChicago Biosciences - Dean Kovar (BSLC 001)  
 **2:00-2:30**         Coffee break                                             
 **2:30-4:00**         Professional development with TAs                        
 ------------------    ---------------------------------------------------------
@@ -47,49 +47,49 @@ output:
 ### Friday, September 8 
 
 ------------------    ---------------------------------------------------------
-**8:30-10:00**        Basic/Advanced comp. II (BSLC 008/109/205)               
+**8:30-10:00**        Basic/Advanced comp. II (BSLC 008/202/205)               
 **10:00-10:30**       Coffee break                                             
-**10:30-12:00**       Basic/Advanced comp. II (BSLC 008/109/205)               
+**10:30-12:00**       Basic/Advanced comp. II (BSLC 008/202/205)               
 **12:00-1:30**        Lunch                                                    
 **1:30-3:00**          Lunch and DuSable African American Museum Tour          
-**3:00-4:00**         Graduate Student Research Talks (BSLC 109)               
+**3:00-4:00**         Graduate Student Research Talks (BSLC 001)               
 ------------------    ---------------------------------------------------------
 
 ### Monday, September 11 
 
 ------------------    ---------------------------------------------------------
-**8:30-10:00**        Data visualization - Carbonetto (BSLC 205)               
+**8:30-10:00**        Data visualization - Carbonetto (BSLC 202)               
 **10:00-10:30**       Coffee break                                             
-**10:30-12:00**       Data visualization - Carbonetto (BSLC 205)               
+**10:30-12:00**       Data visualization - Carbonetto (BSLC 202)               
 **12:00-1:30**        Lunch                                                    
-**1:30-3:00**         Defensive programming - Novembre (BSLC 109)              
+**1:30-3:00**         Defensive programming - Novembre (BSLC 008)              
 **3:00-3:30**         Coffee break                                             
-**3:30-5:00**         Defensive programming - Novembre (BSLC 109)              
+**3:30-5:00**         Defensive programming - Novembre (BSLC 008)              
 ------------------    ---------------------------------------------------------
 
 ### Tuesday, September 12 
 
 ------------------    ---------------------------------------------------------
-**8:30-10:00**        Statistics for a data rich world - Liu (BSLC 008)        
+**8:30-10:00**        Statistics for a data rich world - Liu (BSLC 205)        
 **10:00-10:30**       Coffee break                                             
-**10:30-12:00**       Statistics for a data rich world - Liu (BSLC 008)        
+**10:30-12:00**       Statistics for a data rich world - Liu (BSLC 205)        
 **12:00-1:30**        Lunch                                                    
-**1:30-3:00**         Workshop - Transcriptomics - Chen (BSLC 008)             
+**1:30-3:00**         Workshop - Transcriptomics - Chen (BSLC 205)             
 **3:00-3:30**         Coffee break                                             
-**3:30-5:00**         Workshop - Transcriptomics - Chen (BSLC 008)             
+**3:30-5:00**         Workshop - Transcriptomics - Chen (BSLC 205)             
 ------------------    ---------------------------------------------------------
 
 ### Wednesday, September 13 
 
 ------------------    ---------------------------------------------------------
-**8:30-10:00**        Workshop - Microbe tracking - Nirody (BSLC 109)          
+**8:30-10:00**        Workshop - Microbe tracking - Nirody (BSLC 202)          
 **10:00-10:30**       Coffee break                                             
-**10:30-12:00**       Workshop - Microbe tracking - Nirody (BSLC 109)          
+**10:30-12:00**       Workshop - Microbe tracking - Nirody (BSLC 202)          
 **12:00-1:30**        Lunch                                                    
-**1:30-3:00**         Workshop - Population genetics - Berg (BSLC 205)         
+**1:30-3:00**         Workshop - Population genetics - Berg (BSLC 008)         
 **3:00-3:30**         Coffee break                                             
-**3:30-5:00**         Workshop - Population genetics - Berg (BSLC 205)         
-**5:15-5:45**         Wrap-up (BSLC 109)                                       
+**3:30-5:00**         Workshop - Population genetics - Berg (BSLC 008)         
+**5:15-5:45**         Wrap-up (BSLC 001)                                       
 **5:45-7:30**         Reception with Dean's Council Students                   
 ------------------    ---------------------------------------------------------
 
