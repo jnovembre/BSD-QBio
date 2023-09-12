@@ -155,8 +155,6 @@ for instructions on creating a PAT.
 
 During the boot camp, the 12 groups of students will compete through 5 programming challenges. Here are the links to the webpages where the groups should post their solutions (one answer per group, please):
 
-*PLEASE NOTE THESE LINKS ARE NOT YET UPDATED FOR 2023.*
-
 * Submit your answer to [Programming Challenge 1 (Basic Programming I)](https://forms.gle/XbreHYCm19HFxuyu7)
 * Submit your answer to [Programming Challenge 2 (Basic Programming II)](https://forms.gle/xX7jB9HogPxsNju79)
 * Sumbit your answer to [Advanced Programming Challenge](https://forms.gle/4XCBAkDEu73PMNh17)
