@@ -22,7 +22,7 @@ output:
 # BSD qBio$^9$ 
 
 ## General Schedule
-### Wednesday, September 6 
+### Monday, September 11 
 
 ------------------    -------------------------------------------------
 **3:00-4:00**         Check-in with TAs at BSLC lobby                  
@@ -31,7 +31,7 @@ output:
 **5:00-6:00**         Dinner and group compacts                        
 ------------------    -------------------------------------------------
 
-### Thursday, September 7 
+### Tuesday, September 12 
 
 ------------------    -------------------------------------------------
 **8:30-10:00**        Basic/Advanced comp. I                           
@@ -43,7 +43,7 @@ output:
 **2:30-4:00**         Professional development with TAs                
 ------------------    -------------------------------------------------
 
-### Friday, September 8 
+### Wednesday, September 13 
 
 ------------------    -------------------------------------------------
 **8:30-10:00**        Basic/Advanced comp. II                          
@@ -54,7 +54,7 @@ output:
 **3:00-4:00**         Graduate Student Research Talks                  
 ------------------    -------------------------------------------------
 
-### Monday, September 11 
+### Saturday, September 16 
 
 ------------------    -------------------------------------------------
 **8:30-10:00**        Data visualization - Carbonetto                   (*C.jacchus D.rerio P.polytes T.thermophila*)
@@ -74,7 +74,7 @@ output:
                       Statistics for a data rich world - Liu            (*C.elegans C.jacchus P.polytes T.roseae*)
 ------------------    -------------------------------------------------
 
-### Tuesday, September 12 
+### Sunday, September 17 
 
 ------------------    -------------------------------------------------
 **8:30-10:00**        Data visualization - Carbonetto                   (*C.elegans D.melanogaster S.aegyptiacus T.roseae*)
@@ -85,33 +85,33 @@ output:
                       Defensive programming - Novembre                  (*C.jacchus M.musculus O.bimaculoides P.polytes*)
                       Statistics for a data rich world - Liu            (*A.thaliana D.rerio T.thermophila X.laevis*)
 **12:00-1:30**        Lunch                                            
-**1:30-3:00**         Workshop - Microbe tracking - Nirody              (*A.thaliana C.elegans D.rerio X.laevis*)
+**1:30-3:00**         Workshop - Dynamic transcriptomes - Weinstein     (*C.jacchus O.bimaculoides P.polytes T.thermophila*)
+                      Workshop - Immunology - Kahn                      (*A.thaliana C.elegans D.rerio X.laevis*)
                       Workshop - Population genetics - Berg             (*D.melanogaster M.musculus S.aegyptiacus T.roseae*)
-                      Workshop - Transcriptomics - Chen                 (*C.jacchus O.bimaculoides P.polytes T.thermophila*)
 **3:00-3:30**         Coffee break                                     
-**3:30-5:00**         Workshop - Microbe tracking - Nirody              (*A.thaliana C.elegans D.rerio X.laevis*)
+**3:30-5:00**         Workshop - Dynamic transcriptomes - Weinstein     (*C.jacchus O.bimaculoides P.polytes T.thermophila*)
+                      Workshop - Immunology - Kahn                      (*A.thaliana C.elegans D.rerio X.laevis*)
                       Workshop - Population genetics - Berg             (*D.melanogaster M.musculus S.aegyptiacus T.roseae*)
-                      Workshop - Transcriptomics - Chen                 (*C.jacchus O.bimaculoides P.polytes T.thermophila*)
 ------------------    -------------------------------------------------
 
-### Wednesday, September 13 
+### Monday, September 18 
 
 ------------------    -------------------------------------------------
-**8:30-10:00**        Workshop - Microbe tracking - Nirody              (*C.jacchus D.melanogaster T.roseae T.thermophila*)
+**8:30-10:00**        Workshop - Dynamic transcriptomes - Weinstein     (*D.rerio M.musculus S.aegyptiacus X.laevis*)
+                      Workshop - Immunology - Kahn                      (*C.jacchus D.melanogaster T.roseae T.thermophila*)
                       Workshop - Population genetics - Berg             (*A.thaliana C.elegans O.bimaculoides P.polytes*)
-                      Workshop - Transcriptomics - Chen                 (*D.rerio M.musculus S.aegyptiacus X.laevis*)
 **10:00-10:30**       Coffee break                                     
-**10:30-12:00**       Workshop - Microbe tracking - Nirody              (*C.jacchus D.melanogaster T.roseae T.thermophila*)
+**10:30-12:00**       Workshop - Dynamic transcriptomes - Weinstein     (*D.rerio M.musculus S.aegyptiacus X.laevis*)
+                      Workshop - Immunology - Kahn                      (*C.jacchus D.melanogaster T.roseae T.thermophila*)
                       Workshop - Population genetics - Berg             (*A.thaliana C.elegans O.bimaculoides P.polytes*)
-                      Workshop - Transcriptomics - Chen                 (*D.rerio M.musculus S.aegyptiacus X.laevis*)
 **12:00-1:30**        Lunch                                            
-**1:30-3:00**         Workshop - Microbe tracking - Nirody              (*M.musculus O.bimaculoides P.polytes S.aegyptiacus*)
+**1:30-3:00**         Workshop - Dynamic transcriptomes - Weinstein     (*A.thaliana C.elegans D.melanogaster T.roseae*)
+                      Workshop - Immunology - Kahn                      (*M.musculus O.bimaculoides P.polytes S.aegyptiacus*)
                       Workshop - Population genetics - Berg             (*C.jacchus D.rerio T.thermophila X.laevis*)
-                      Workshop - Transcriptomics - Chen                 (*A.thaliana C.elegans D.melanogaster T.roseae*)
 **3:00-3:30**         Coffee break                                     
-**3:30-5:00**         Workshop - Microbe tracking - Nirody              (*M.musculus O.bimaculoides P.polytes S.aegyptiacus*)
+**3:30-5:00**         Workshop - Dynamic transcriptomes - Weinstein     (*A.thaliana C.elegans D.melanogaster T.roseae*)
+                      Workshop - Immunology - Kahn                      (*M.musculus O.bimaculoides P.polytes S.aegyptiacus*)
                       Workshop - Population genetics - Berg             (*C.jacchus D.rerio T.thermophila X.laevis*)
-                      Workshop - Transcriptomics - Chen                 (*A.thaliana C.elegans D.melanogaster T.roseae*)
 **5:15-5:45**         Wrap-up                                          
 **5:45-7:30**         Reception with Dean's Council Students           
 ------------------    -------------------------------------------------
