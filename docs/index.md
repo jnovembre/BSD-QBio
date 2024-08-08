@@ -31,33 +31,21 @@ director via email:
 ## Instructors
 
 + Jeremy Berg ([webpage](http://www.jjbpopgen.org))
-
 + Peter Carbonetto ([webpage](https://pcarbo.github.io))
-
 + Aly Khan ([webpage](https://people.cs.uchicago.edu/~aakhan/))
-
 + Xuanyao Liu ([webpage](https://liulab.uchicago.edu))
-
 + John Novembre ([webpage](http://jnpopgen.org))
-
 + Joshua Weinstein ([webpage](https://wlab.bio))
 
 ## TAs
 
 + Cody Cole
-
 + Annisa Dea
-
 + Taylor Hains
-
 + Gia Jadick
-
 + Katja Della Libera
-
 + Olivia Lutz
-
 + Danny Rhoda
-
 + Vivaswat Shastry
 
 ## Schedule
