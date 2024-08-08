@@ -83,9 +83,9 @@ is at the right level for you**:
 
 Links to the draft materials:
 
-+ Basic Computing I ([web](https://github.com/jnovembre/BSD-QBio9/blob/main/tutorials/basic_computing_1/basic_computing_1.pdf), [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio8/main/tutorials/basic_computing_1/basic_computing_1.pdf))
-+ Basic Computing II ([web](https://github.com/jnovembre/BSD-QBio9/blob/main/tutorials/basic_computing_2/basic_computing_2.pdf), [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio9/main/tutorials/basic_computing_2/basic_computing_2.pdf))
-+ Advanced Computing: **Special preparation for Advanced Computing:** You should work through the Advanced Computing preparatory material before the session begins. [Link to preparatory material](https://github.com/jnovembre/BSD-QBio9/blob/master/tutorials/advanced_computing/tutorial/advanced_computing.pdf)
++ Basic Computing I ([web](https://github.com/jnovembre/BSD-QBio/blob/main/tutorials/basic_computing_1/basic_computing_1.pdf), [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio8/main/tutorials/basic_computing_1/basic_computing_1.pdf))
++ Basic Computing II ([web](https://github.com/jnovembre/BSD-QBio/blob/main/tutorials/basic_computing_2/basic_computing_2.pdf), [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio/main/tutorials/basic_computing_2/basic_computing_2.pdf))
++ Advanced Computing: **Special preparation for Advanced Computing:** You should work through the Advanced Computing preparatory material before the session begins. [Link to preparatory material](https://github.com/jnovembre/BSD-QBio/blob/master/tutorials/advanced_computing/tutorial/advanced_computing.pdf)
 
 ## Preparing your laptop
 
@@ -146,9 +146,12 @@ you haven't done so already).
     * **Join GitHub** click [here](https://education.github.com/pack) and make sure you use your uchicago email to get free access to some free benefits.
     * Unless you will use git from the command line, **Download GitKraken** click [here](https://support.gitkraken.com/how-to-install)
 
-### Installation of `Python`
+### Installation of Python
 
-While the QBio9 bootcamp will primarily be taught in 'R', one of the workshops will feature a `python3` demo. If you wish to follow along the python demo on your own machine, **download `Anaconda`** [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html)
+While the QBio10 bootcamp will primarily be taught in R, one of the
+workshops will feature a `python3` demo. If you wish to follow along
+the python demo on your own machine, **download `Anaconda`**
+[here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html)
 
 Once you have installed Python3, **install the following packages** through the command line:
 `pip install pandas numpy matplotlib scipy`
