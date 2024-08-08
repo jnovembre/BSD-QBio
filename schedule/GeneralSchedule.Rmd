@@ -19,14 +19,14 @@ output:
     keep_tex: true
     pandoc_args: ["numberLines"]
 ---
-# BSD qBio$^9$ 
+# BSD qBio$^{10}$ 
 
 ## General Schedule
 ### Monday, September 11 
 
 ------------------    -------------------------------------------------
 **3:00-4:00**         Check-in with TAs at BSLC lobby                  
-**4:00-4:20**         Welcome to qBio9 - Novembre / Hall               
+**4:00-4:20**         Welcome to qBio10 - Novembre / Hall              
 **4:20-5:00**         Team-building activities                         
 **5:00-6:00**         Dinner and group compacts                        
 ------------------    -------------------------------------------------

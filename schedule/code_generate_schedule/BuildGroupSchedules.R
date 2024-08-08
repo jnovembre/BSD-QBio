@@ -52,7 +52,7 @@ output:
     latex_engine: xelatex
     keep_tex: true
 ---")
-  cat("\n# BSD qBio$^9$ ")
+  cat("\n# BSD qBio$^{10}$ ")
   cat("\n\n")
   cat(paste0("## Group Schedule: *", group_name_long, "*"))
   cat("\n")
@@ -126,7 +126,7 @@ output:
     keep_tex: true
     pandoc_args: ["numberLines"]
 ---')
-cat("\n# BSD qBio$^9$ ")
+cat("\n# BSD qBio$^{10}$ ")
 cat("\n\n")
 cat(paste0("## General Schedule"))
 cat("\n")

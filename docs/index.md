@@ -55,7 +55,7 @@ going to have **tutorials** (short primers to a certain topic) and
 **workshops** (discipline-specific, hands-on activities).
 
 Here's the
-[general schedule](https://github.com/jnovembre/BSD-QBio/blob/main/schedule/GeneralSchedule.pdf).
+[general schedule](https://htmlpreview.github.io/?https://github.com/jnovembre/BSD-QBio/blob/main/schedule/GeneralSchedule.html).
 
 You can also browse the schedule
 [by group](https://github.com/jnovembre/BSD-QBio/tree/master/schedule).

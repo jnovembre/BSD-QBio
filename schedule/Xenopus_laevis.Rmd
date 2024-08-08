@@ -16,7 +16,7 @@ output:
     latex_engine: xelatex
     keep_tex: true
 ---
-# BSD qBio$^9$ 
+# BSD qBio$^{10}$ 
 
 ## Group Schedule: *Xenopus laevis*
  ![](https://github.com/StefanoAllesina/BSD-QBio5/raw/master/logo_group/Xenopus_laevis.png)     
@@ -25,7 +25,7 @@ output:
 
 ------------------    ----------------------------------------------------------
 **3:00-4:00**         Check-in with TAs at BSLC lobby                           
-**4:00-4:20**         Welcome to qBio9 - Novembre / Hall (BSLC 115)             
+**4:00-4:20**         Welcome to qBio10 - Novembre / Hall (BSLC 115)            
 **4:20-5:00**         Team-building activities                                  
 **5:00-6:00**         Dinner and group compacts                                 
 ------------------    ----------------------------------------------------------
