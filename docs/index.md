@@ -96,7 +96,15 @@ resources, in particular Google docs, will be useful at times to
 collaborate on projects and share code and data. Follow the
 instructions
 [here](https://uchicago.service-now.com/it?id=kb_article_view&sysparm_article=KB06000049)
-to make sure you now how to acess the Google Workspace.
+to set up the Google Workspace through your CNetID.
+
++ Another useful resource is UChicago Box, which is again free through
+your CNetID. It is a great tool for safely storing files and sharing
+them with your collaborators. Follow the instructions
+[here](https://uchicago.service-now.com/it?id=kb_article&sys_id=64e4e40a47aec650c91ae0f1516d4393)
+to activate your UChicago Box account.
+
++ 
 
 ## Preparing your laptop
 
