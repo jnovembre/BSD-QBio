@@ -12,8 +12,9 @@ in the
 the [University of Chicago](https://www.uchicago.edu) will
 participate.
 
-On this page, you find the instructions on how to **prepare your
-laptop** so that it's ready for the boot camp.
+On this page, you find the instructions on how to **set up access to
+UChicago computing resources** and **prepare your laptop** so that
+it's ready for the boot camp.
 
 You should also **take a look at the data and the code** we will
 explore in the workshops and tutorials.
@@ -87,6 +88,16 @@ Links to the draft materials:
 + Basic Computing II ([web](https://github.com/jnovembre/BSD-QBio/blob/main/tutorials/basic_computing_2/basic_computing_2.pdf), [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio/main/tutorials/basic_computing_2/basic_computing_2.pdf))
 + Advanced Computing: **Special preparation for Advanced Computing:** You should work through the Advanced Computing preparatory material before the session begins. [Link to preparatory material](https://github.com/jnovembre/BSD-QBio/blob/master/tutorials/advanced_computing/tutorial/advanced_computing.pdf)
 
+## Setting up access to UChicago computing resources
+
++ University of Chicago provides access to the Google Workspace (gmail,
+Google Drive, Google Calendar, etc) through your CNetID. Some of these
+resources, in particular Google docs, will be useful at times to
+collaborate on projects and share code and data. Follow the
+instructions
+[here](https://uchicago.service-now.com/it?id=kb_article_view&sysparm_article=KB06000049)
+to make sure you now how to acess the Google Workspace.
+
 ## Preparing your laptop
 
 We are going to start working right away. Therefore, it is very
@@ -150,8 +161,8 @@ install the 8 libraries that will be used for the RNAseq workshop.
 
 + **UNIX Emulator**: If you are using Windows, you need to install a
 UNIX emulator. We suggest downloading the version control software
-Git, because it ships with a small emulator (Git Bash). Simply
-go to [this page](https://git-scm.com/download/win) and follow the
+Git, because it ships with a small emulator (Git Bash). Go to
+[this page](https://git-scm.com/download/win) and follow the
 instructions.
 
 + **Git**
@@ -161,8 +172,8 @@ instructions.
 ### Installation of Python
 
 While the QBio10 bootcamp will primarily be taught in R, one of the
-workshops will feature a `python3` demo. If you wish to follow along
-the python demo on your own machine, **download `Anaconda`**
+workshops will feature a python3 demo. If you wish to follow along
+the python demo on your own machine, **download Anaconda**
 [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html)
 
 Once you have installed Python3, **install the following packages** through the command line:
