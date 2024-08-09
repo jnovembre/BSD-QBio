@@ -66,12 +66,12 @@ You can also browse the schedule
 To accommodate the diverse background of our students, we have created
 two tracks for the computing tutorials.
 
-+ Basic Computing I and II: dedicated to new users who are not
+1. Basic Computing I and II: dedicated to new users who are not
   familiar with R or programming in general. It will guide students
   step-by-step, introducing the R syntax and showing how to write
   well-organized code for data analysis and scientific research.
 
-+ Advanced Computing I and II: dedicated to experienced programmers
+2. Advanced Computing I and II: dedicated to experienced programmers
   (R or otherwise), these sessions will focus on challenges
   manipulating large data sets, plotting, and the use of regular
   expressions.
@@ -90,25 +90,25 @@ Links to the draft materials:
 
 ## Setting up access to UChicago computing resources
 
-+ University of Chicago provides access to the **Google Workspace**
-(gmail, Google Drive, etc) through your CNetID. Some of these
-resources, in particular Google docs, will be useful at times to
-collaborate on projects and share code and data with your team
-members. Follow the instructions
-[here](https://uchicago.service-now.com/it?id=kb_article_view&sysparm_article=KB06000049)
-to set up the Google Workspace through your CNetID.
+1. University of Chicago provides access to the **Google Workspace**
+  (gmail, Google Drive, etc) through your CNetID. Some of these
+  resources, in particular Google docs, will be useful at times to
+  collaborate on projects and share code and data with your team
+  members. Follow the instructions
+  [here](https://uchicago.service-now.com/it?id=kb_article_view&sysparm_article=KB06000049)
+  to set up the Google Workspace through your CNetID.
 
-+ Another great resource is UChicago Box, which is again free through
-your CNetID. It is a great tool for safely storing files and sharing
-them with your collaborators. Follow the instructions
-[here](https://uchicago.service-now.com/it?id=kb_article&sys_id=64e4e40a47aec650c91ae0f1516d4393)
-to activate your UChicago Box account.
+2. Another great resource is **UChicago Box**, which is again free through
+  your CNetID. It is a great tool for safely storing files and sharing
+  them with your collaborators. Follow the instructions
+  [here](https://uchicago.service-now.com/it?id=kb_article&sys_id=64e4e40a47aec650c91ae0f1516d4393)
+  to activate your UChicago Box account.
 
-+ Finally, now is a good time to also set up Microsoft 365 using your
-CNetID. Although you don't actually need it for the qBio Boot Camp,
-you will most likely use it at some point so you might as well take
-this opportunity to set it up. See
-[here](https://its.uchicago.edu/o365/) for instructions. 
+3. Finally, now is a good time to also set up **Microsoft 365** using your
+   CNetID. Although you don't actually need it for the qBio Boot Camp,
+   you will most likely use it at some point so you might as well take
+   this opportunity to set it up. See
+   [here](https://its.uchicago.edu/o365/) for instructions. 
 
 ## Preparing your laptop
 
