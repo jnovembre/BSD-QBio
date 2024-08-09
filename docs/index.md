@@ -170,13 +170,8 @@ install the 8 libraries that will be used for the RNAseq workshop.
 
 + **UNIX Emulator**: If you are using Windows, you need to install a
 UNIX emulator. We suggest downloading the version control software
-Git, because it ships with a small emulator (Git Bash). Go to
-[this page](https://git-scm.com/download/win) and follow the
-instructions.
-
-+ **Git**
-    - **Join GitHub** click [here](https://education.github.com/pack) and make sure you use your uchicago email to get free access to some free benefits.
-    - Unless you will use git from the command line, **Download GitKraken** click [here](https://support.gitkraken.com/how-to-install)
+Git, because it ships with a small emulator (Git Bash).
+[here](https://git-scm.com/download/win/) and follow the instructions.
 
 ## Installation of Python
 
@@ -187,6 +182,16 @@ the python demo on your own machine, **download Anaconda**
 
 Once you have installed Python3, **install the following packages** through the command line:
 `pip install pandas numpy matplotlib scipy`
+
+## Installing Git
+
+First, **join GitHub:** click
+[here](https://education.github.com/pack), and sign up with your
+uchicago email address to get a free GitHub account with additional
+features that are not free for most people.
+
+Unless you will use git from the command line, **download GitKraken**
+click [here](https://support.gitkraken.com/how-to-install).
 
 ## Installation of ImageJ (FIJI)
 
@@ -199,18 +204,18 @@ workshop.**
 
 ## Downloading the data
 
-It is very important to download the data **before the workshop**, as
-the files are quite large. (Warning! The repo is >200MB!)  All you
-need to do is to download the repository containing all the boot camp
-lectures and data.
+It is very important to download the data **before the workshop** as
+the files are quite large. (Warning! The repo is >200MB!) All the
+files are included in the GitHub repository.
 
-The simplest way to download the repository is to down the ZIP file
-(click
-[here](https://codeload.github.com/jnovembre/BSD-QBio9/zip/refs/heads/main)),
-then unzip the ZIP file. (This is a large file, so may take a few
-minutes or more to download depending on your connection speed.)
+The simplest way to download the repository is to download all the
+files in a compressed ZIP archive (click
+[here](https://codeload.github.com/jnovembre/BSD-QBio/zip/refs/heads/main)),
+then extract the files from the ZIP file. (This is a large file, so
+may take a few minutes or more to download depending on your
+connection speed.)
 
-Alternatively, you can use GitKraken (or command-line `git` if you are
+Alternatively, you can use GitKraken (or command-line git if you are
 already familiar with it):
 
 1. Open GitKraken (see download link above)
@@ -223,7 +228,7 @@ already familiar with it):
 
 5. "Where to Clone:" Browse to the folder in which you want to keep your repository (your home directory is fine)
 
-6. "URL": Paste: `https://github.com/jnovembre/BSD-QBio9.git`
+6. "URL": Paste: `https://github.com/jnovembre/BSD-QBio.git`
 
 7. "Clone the Repo!" (this step will take a few minutes)
 
