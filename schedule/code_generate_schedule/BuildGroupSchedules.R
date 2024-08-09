@@ -22,7 +22,7 @@ activities <- inner_join(activities, group_names)
 # Create a column for starting time; arrange all events by group and start time
 activities <- activities %>%
   rowwise() %>%
-  mutate(StartTime = paste0("9/", Day, "/2023 ", strsplit(Time, "-")[[1]][1], " ", AMPM)) %>%
+  mutate(StartTime = paste0("9/", Day, "/2024 ", strsplit(Time, "-")[[1]][1], " ", AMPM)) %>%
   mutate(StartTime = parse_date_time(StartTime, "%m/%d/%Y %I:%M %p", tz = "America/New_York")) %>%
   arrange(Group, StartTime)
 
@@ -176,3 +176,4 @@ for (my_day in sort(unique(activities$Day))){
 }
 sink()
 pandoc(input = paste0("../GeneralSchedule.Rmd"), format = "latex")
+pandoc("../GeneralSchedule.Rmd")
