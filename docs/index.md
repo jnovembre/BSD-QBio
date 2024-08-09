@@ -98,13 +98,17 @@ members. Follow the instructions
 [here](https://uchicago.service-now.com/it?id=kb_article_view&sysparm_article=KB06000049)
 to set up the Google Workspace through your CNetID.
 
-+ Another useful resource is UChicago Box, which is again free through
++ Another great resource is UChicago Box, which is again free through
 your CNetID. It is a great tool for safely storing files and sharing
 them with your collaborators. Follow the instructions
 [here](https://uchicago.service-now.com/it?id=kb_article&sys_id=64e4e40a47aec650c91ae0f1516d4393)
 to activate your UChicago Box account.
 
-+ 
++ Finally, now is a good time to also set up Microsoft 365 using your
+CNetID. Although you don't actually need it for the qBio Boot Camp,
+you will most likely use it at some point so you might as well take
+this opportunity to set it up. See
+[here](https://its.uchicago.edu/o365/) for instructions. 
 
 ## Preparing your laptop
 
