@@ -76,10 +76,10 @@ two tracks for the computing tutorials.
   expressions.
 
 **You will need to decide which track's sessions to attend on Day 1 of
-the Bootcamp**.  After Day 1, you will move throught the material in
+the Bootcamp**. After Day 1, you will move throught the material in
 teams with mixed skill levels. **Choose which track to join for Day 1
 by consulting the lecture materials and making sure that the content
-is at the right level for you**:
+is at the right level for you.**
 
 Links to the draft materials:
 
@@ -99,9 +99,9 @@ laptop, please contact the course directors immediately**.
 
 ### Installation of R and R packages
 
-+ **Install R**: go to
++ **Install R.** Go to
 [this page](https://posit.co/download/rstudio-desktop/) and follow
-instructions there to download and install Rfor your computing
+instructions there to download and install R for your computing
 platform. (Here's a [video](https://youtu.be/sD1NJ7_DLZk) explaining
 how to install R and RStudio in Windows;
 [here](https://youtu.be/IBE7dPJQNaE) for Mac OSX) **Note:** For those
@@ -110,10 +110,10 @@ use the "arm64 build" with R. The non-arm64 build will require you to
 first install [Rosetta](https://support.apple.com/en-us/HT211861) (if
 you haven't done so already).
 
-+ **Install RStudio**: once you have installed R, go to
-  [this page](https://posit.co/download/rstudio-desktop/), download
-  the installer for RStudio your operating system (section
-  **Installers for Supported Platforms**), and install the software.
++ **Install RStudio.** Once you have installed R, go to
+[this page](https://posit.co/download/rstudio-desktop/), download
+the installer for RStudio your operating system (section
+**Installers for Supported Platforms**), and install the software.
 
 + Once you have installed R and RStudio, open RStudio and **install
   the following packages**:
@@ -134,17 +134,29 @@ you haven't done so already).
 	- plotly
 	- htmlwidgets
  
-    You can find instructions on how to install `R` packages in
+    You can find instructions on how to install R packages in
     RStudio [here](https://www.youtube.com/watch?v=3RWb5U3X-T8).
 
-* **Other packages** After the package installs above, two more sets of the packages need to be installed using special installers within `R`. First, open Rstudio and in the Console type `library(remotes)`, hit Return (or Enter) and then `install_github("jdstorey/qvalue")`. This will install the library `qvalue` that is needed for one of the tutorials. Second, type `library(BiocManager)` hit Return (or Enter) and then,
-`BiocManager::install(c("airway","Rsamtools","Rsubread","DESeq2","vsn", "org.Hs.eg.db","GenomicFeatures", "clusterProfiler"))`.  This should install the 8 libraries that will be used for the RNAseq workshop.
+* **Other R packages** After the R package installs above, two more sets
+of the packages need to be installed using special installers within
+`R`. First, open Rstudio and in the Console type `library(remotes)`,
+hit Return (or Enter) and then
+`install_github("jdstorey/qvalue")`. This will install the library
+`qvalue` that is needed for one of the tutorials. Second, type
+`library(BiocManager)` hit Return (or Enter) and then,
+`BiocManager::install(c("airway","Rsamtools","Rsubread","DESeq2","vsn",
+"org.Hs.eg.db","GenomicFeatures", "clusterProfiler"))`.  This should
+install the 8 libraries that will be used for the RNAseq workshop.
 
-* **UNIX Emulator**: If you are using Windows, you need to install a UNIX emulator. We suggest downloading the version control software `Git`, because it ships with a small emulator (`Git Bash`). Simply go to [this page](https://git-scm.com/download/win) and follow the instructions.
++ **UNIX Emulator**: If you are using Windows, you need to install a
+UNIX emulator. We suggest downloading the version control software
+Git, because it ships with a small emulator (Git Bash). Simply
+go to [this page](https://git-scm.com/download/win) and follow the
+instructions.
 
-* **Git**
-    * **Join GitHub** click [here](https://education.github.com/pack) and make sure you use your uchicago email to get free access to some free benefits.
-    * Unless you will use git from the command line, **Download GitKraken** click [here](https://support.gitkraken.com/how-to-install)
++ **Git**
+    - **Join GitHub** click [here](https://education.github.com/pack) and make sure you use your uchicago email to get free access to some free benefits.
+    - Unless you will use git from the command line, **Download GitKraken** click [here](https://support.gitkraken.com/how-to-install)
 
 ### Installation of Python
 
