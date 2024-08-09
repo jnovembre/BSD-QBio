@@ -168,9 +168,9 @@ hit Return (or Enter) and then
 "org.Hs.eg.db","GenomicFeatures", "clusterProfiler"))`.  This should
 install the 8 libraries that will be used for the RNAseq workshop.
 
-+ **UNIX Emulator**: If you are using Windows, you need to install a
-UNIX emulator. We suggest downloading the version control software
-Git, because it ships with a small emulator (Git Bash).
++ **UNIX Emulator**: If you are using Windows, you will need a UNIX
+emulator. We suggest downloading the version control software Git
+because it ships with a small emulator (Git Bash).
 [here](https://git-scm.com/download/win/) and follow the instructions.
 
 ## Installation of Python
@@ -205,8 +205,8 @@ workshop.**
 ## Downloading the data
 
 It is very important to download the data **before the workshop** as
-the files are quite large. (Warning! The repo is >200MB!) All the
-files are included in the GitHub repository.
+the files are quite large. All the files are included in the GitHub
+repository.
 
 The simplest way to download the repository is to download all the
 files in a compressed ZIP archive (click
