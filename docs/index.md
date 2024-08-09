@@ -120,7 +120,7 @@ schedule accordingly.
 You will work on your laptop all day long. **If you don't have a
 laptop, please contact the course directors immediately**.
 
-## Installation of R and R packages
+## Installing R and the R packages
 
 + **Install R.** Go to
 [this page](https://posit.co/download/rstudio-desktop/) and follow
@@ -173,7 +173,7 @@ emulator. We suggest downloading the version control software Git
 because it ships with a small emulator (Git Bash).
 [here](https://git-scm.com/download/win/) and follow the instructions.
 
-## Installation of Python
+## Installing Python
 
 While the QBio10 bootcamp will primarily be taught in R, one of the
 workshops will feature a python3 demo. If you wish to follow along
@@ -193,7 +193,7 @@ features that are not free for most people.
 Unless you will use git from the command line, **download GitKraken**
 click [here](https://support.gitkraken.com/how-to-install).
 
-## Installation of ImageJ (FIJI)
+## Installing ImageJ (FIJI)
 
 One workshop will involve analyzing extracting trajectories of moving
 objects from image data with the widely used **ImageJ** software.
