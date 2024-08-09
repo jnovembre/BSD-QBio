@@ -90,11 +90,11 @@ Links to the draft materials:
 
 ## Setting up access to UChicago computing resources
 
-+ University of Chicago provides access to the Google Workspace (gmail,
-Google Drive, Google Calendar, etc) through your CNetID. Some of these
++ University of Chicago provides access to the **Google Workspace**
+(gmail, Google Drive, etc) through your CNetID. Some of these
 resources, in particular Google docs, will be useful at times to
-collaborate on projects and share code and data. Follow the
-instructions
+collaborate on projects and share code and data with your team
+members. Follow the instructions
 [here](https://uchicago.service-now.com/it?id=kb_article_view&sysparm_article=KB06000049)
 to set up the Google Workspace through your CNetID.
 
@@ -116,7 +116,7 @@ schedule accordingly.
 You will work on your laptop all day long. **If you don't have a
 laptop, please contact the course directors immediately**.
 
-### Installation of R and R packages
+## Installation of R and R packages
 
 + **Install R.** Go to
 [this page](https://posit.co/download/rstudio-desktop/) and follow
@@ -177,7 +177,7 @@ instructions.
     - **Join GitHub** click [here](https://education.github.com/pack) and make sure you use your uchicago email to get free access to some free benefits.
     - Unless you will use git from the command line, **Download GitKraken** click [here](https://support.gitkraken.com/how-to-install)
 
-### Installation of Python
+## Installation of Python
 
 While the QBio10 bootcamp will primarily be taught in R, one of the
 workshops will feature a python3 demo. If you wish to follow along
@@ -187,7 +187,7 @@ the python demo on your own machine, **download Anaconda**
 Once you have installed Python3, **install the following packages** through the command line:
 `pip install pandas numpy matplotlib scipy`
 
-### Installation of ImageJ (FIJI)
+## Installation of ImageJ (FIJI)
 
 One workshop will involve analyzing extracting trajectories of moving
 objects from image data with the widely used **ImageJ** software.
