@@ -128,15 +128,12 @@ instructions there to download and install R for your computing
 platform. (Here's a [video](https://youtu.be/sD1NJ7_DLZk) explaining
 how to install R and RStudio in Windows;
 [here](https://youtu.be/IBE7dPJQNaE) for Mac OSX) **Note:** For those
-with a Mac with one of the new Apple processors (M1 or M2), *don't*
-use the "arm64 build" with R. The non-arm64 build will require you to
-first install [Rosetta](https://support.apple.com/en-us/HT211861) (if
-you haven't done so already).
+with a Mac with one of the new Apple processors (M1, M2, etc), make
+sure to download the "arm64" installer.
 
-+ **Install RStudio.** Once you have installed R, go to
-[this page](https://posit.co/download/rstudio-desktop/), download
-the installer for RStudio your operating system (section
-**Installers for Supported Platforms**), and install the software.
++ **Install RStudio.** Once you have installed R, go back to
+[this page](https://posit.co/download/rstudio-desktop/), download the
+RStudio installer for your operating system, and install the software.
 
 + Once you have installed R and RStudio, open RStudio and **install
   the following packages**:
