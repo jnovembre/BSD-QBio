@@ -145,6 +145,7 @@ RStudio installer for your operating system, and install the software.
     - ggthemes
 	- ggrepel
     - cowplot
+	- maps
     - Rtsne
     - BiocManager
     - ggseqlogo
