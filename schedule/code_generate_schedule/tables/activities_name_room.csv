@@ -1,21 +1,22 @@
 Activity,Description
+officehours,(Optional) Office hours for help with software installations
 checkin,Check-in with TAs at BSLC lobby
 groupcomp,Dinner and group compacts
 coffee,Coffee break
 lunch,Lunch
-talkintro,Welcome to qBio10 - Novembre / Hall (BSLC 115)
+talkintro,Welcome to qBio - Novembre / Hall (BSLC 115)
 talkkovar,Welcome to UChicago Biosciences - Dean Kovar (BSLC 001)
-talkstar,"Graduate Student Research Talks (BSLC 001)"
+talkstar,Graduate Student Research Talks (BSLC 001)
 pdafternoon,Professional development with TAs
 wrapup,Wrap-up (BSLC 001)
-dusable, Lunch and DuSable African American Museum Tour
+dusable, Lunch and DuSable Black History Museum Tour
 Computing1a,Basic/Advanced comp. I (BSLC 008/202/205)
 Computing1b,Basic/Advanced comp. I (BSLC 008/202/205)
 Computing2a,Basic/Advanced comp. II (BSLC 008/202/205)
 Computing2b,Basic/Advanced comp. II (BSLC 008/202/205)
 w1,Workshop - Immunology - Kahn (BSLC 202)
 w2,Workshop - Population genetics - Berg (BSLC 008)
-w3,Workshop - Dynamic transcriptomes - Weinstein (BSLC 205)
+w3,Workshop - Dynamic systems: ecology and transcription  - Weinstein (BSLC 205)
 t1,Defensive programming - Novembre (BSLC 008)
 t2,Data visualization - Carbonetto (BSLC 202)
 t3,Statistics for a data rich world - Liu (BSLC 205)
