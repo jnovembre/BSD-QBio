@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.9)  16 AUG 2023 10:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.9)  16 AUG 2024 08:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -274,10 +274,10 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 5.0pt on input line 25.
 Package epstopdf Info: Source file: <group_logos.eps>
-(epstopdf)                    date: 2023-07-21 10:20:18
+(epstopdf)                    date: 2024-08-15 12:54:41
 (epstopdf)                    size: 299930 bytes
 (epstopdf)             Output file: <group_logos-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-08-15 14:08:34
+(epstopdf)                    date: 2024-08-15 17:36:13
 (epstopdf)                    size: 72157 bytes
 (epstopdf)             Command: <repstopdf --outfile=group_logos-eps-converted-
 to.pdf group_logos.eps>
@@ -309,7 +309,7 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/
 2023/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/local/texl
 ive/2023/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb>
-Output written on cover.pdf (1 page, 1124646 bytes).
+Output written on cover.pdf (1 page, 1124802 bytes).
 PDF statistics:
  26 PDF objects out of 1000 (max. 8388607)
  15 compressed objects within 1 object stream

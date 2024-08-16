@@ -15,8 +15,8 @@ fontsize: 11pt
 spacing: single
 graphics: yes
 endnote: no
-chapter: 8
-thanks: "Adapted from a workshop originally created by John Novembre. This document is included as part of the Population Genetics workshop packet for the BSD qBio Bootcamp, University of Chicago, 2022. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
+chapter: 7
+thanks: "Adapted from a workshop originally created by John Novembre. This document is included as part of the Population Genetics workshop packet for the BSD qBio Bootcamp, University of Chicago, 2024. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
 abstract: "This exercise is going to expose you to several basic ideas
   in probability and statistics as well as show you the utility of using
   R for basic statistical analyses.  We'll do so in the context of a

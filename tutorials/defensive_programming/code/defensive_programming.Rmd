@@ -17,8 +17,8 @@ fontsize: 11pt
 spacing: single
 graphics: yes
 endnote: no
-chapter: 5
-thanks: "This document is included as part of the 'Defensive Programming in R' tutorial packet for the BSD qBio Bootcamp, University of Chicago, 2021. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
+chapter: 4
+thanks: "This document is included as part of the 'Defensive Programming in R' tutorial packet for the BSD qBio Bootcamp, University of Chicago, 2024. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
 abstract: "**Goal:** Convince new and existing programmers of the
   importance of defensive programming practices, introduce general
   programming principles, and provide specific tips for programming and

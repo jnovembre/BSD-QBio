@@ -7,13 +7,13 @@ author:
     affiliation: University of Chicago
 date: "August 16, 2022"
 output:
-  html_document:
-    df_print: paged
   pdf_document:
     keep_tex: true
     latex_engine: pdflatex
     template: readable_advanced_computing.tex
-chapter: 3
+  html_document:
+    df_print: paged
+chapter: 2
 geometry: margin=1in
 fontfamily: mathpazo
 fontsize: 11pt
