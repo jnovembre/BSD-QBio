@@ -122,7 +122,7 @@
 \newcommand{\BE}{\textit{Beautiful Evidence}\xspace}
 \newcommand{\TL}{Tufte-\LaTeX\xspace}
 
-\renewcommand{\thepage}{9--\arabic{page}}
+\renewcommand{\thepage}{6--\arabic{page}}
 \fancyfoot[C]{\thepage}
 \fancyhead{}
 
@@ -141,12 +141,8 @@
 
 
 \chapter{Workshop on Computational Immunology}
-\Large Aly A. Khan\textsuperscript{1}, Matt Schechter\textsuperscript{2}
-
-\Large 
-\textsuperscript{1}Course Instructor; aakhan@uchicago.edu\\ 
-
-\textsuperscript{2}Course Assistant; mschechter@uchicago.edu\\
+\Large Aly A. Khan \\
+\noindent aakhan@uchicago.edu
 \begin{fullwidth}
 
 \itshape \normalsize \newthought{There’s a joke about immunology}, which Jessica Metcalf of Princeton recently told me. An immunologist and a cardiologist are kidnapped. The kidnappers threaten to shoot one of them, but promise to spare whoever has made the greater contribution to humanity. The cardiologist says, “Well, I’ve identified drugs that have saved the lives of millions of people.” Impressed, the kidnappers turn to the immunologist. “What have you done?” they ask. The immunologist says, “The thing is, the immune system is very complicated ... ” And the cardiologist says, “Just shoot me now.” \textnormal{\normalsize {--- Yong, Ed. “Immunology Is Where Intuition Goes to Die", The Atlantic, Aug. 2020.}}
