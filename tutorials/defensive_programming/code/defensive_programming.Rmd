@@ -6,9 +6,7 @@ output:
     latex_engine: pdflatex
     template: readable.tex
 author:
-  - name: Sarah Cobey (_original author_)
-    affiliation: University of Chicago
-  - name: Kyle Hernandez
+  - name: Sarah Cobey (adapted by Kyle Hernandez and John Novembre))
     affiliation: University of Chicago
 date: August 11, 2022
 geometry: margin=1in

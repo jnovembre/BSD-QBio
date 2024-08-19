@@ -6,7 +6,7 @@ output:
     latex_engine: pdflatex
     template: readable.tex
 author:
-  name: Stefano Allesina (adapted by Lin Chen)
+  name: Stefano Allesina (adapted by Lin Chen, Xuanyao Liu)
   affiliation: University of Chicago
   date: August 25, 2021
 chapter: 5

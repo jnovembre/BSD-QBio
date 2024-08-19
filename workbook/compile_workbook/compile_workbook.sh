@@ -132,7 +132,7 @@ pdftk tmp.pdf ../../workshops/jjberg/code/MBL_WorkshopJJB.pdf output tmp2.pdf; m
 #pdftk tmp.pdf ../../workshops/jnirody/QBio_NirodyWorkshop.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 ## Weinstein
-pdftk tmp.pdf ../../workshops/jaweinst/qbio_dynamics_notes.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+pdftk tmp.pdf ../../workshops/jaweinst/dynamic_systems.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 
 
