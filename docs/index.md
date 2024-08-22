@@ -40,14 +40,14 @@ director via email:
 
 ## TAs
 
-+ Cody Cole
++ Sabrina Arif
 + Annisa Dea
-+ Taylor Hains
-+ Gia Jadick
 + Katja Della Libera
 + Olivia Lutz
++ Tonu Pius
 + Danny Rhoda
 + Vivaswat Shastry
++ Karl Tayeb
 
 ## Schedule
 
