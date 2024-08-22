@@ -86,7 +86,6 @@ Links to the draft materials:
 + Basic Computing
   ([web](https://github.com/jnovembre/BSD-QBio/blob/main/tutorials/basic_computing/basic_computing.pdf),
   [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio/main/tutorials/basic_computing/basic_computing.pdf))
-
 + Advanced Computing: **Special preparation for Advanced Computing:**
   You should work through the Advanced Computing preparatory material
   before the session
@@ -253,12 +252,7 @@ programming challenges. Here are the links to the webpages where the
 groups should post their solutions (one answer per group, please):
 
 + Submit your answer to
-  [Programming Challenge 1
-   (Basic Programming I)](https://forms.gle/XbreHYCm19HFxuyu7)
-
-+ Submit your answer to
-  [Programming Challenge 2
-   (Basic Programming II)](https://forms.gle/xX7jB9HogPxsNju79)
+  [Basic Programming Challenge](https://forms.gle/XbreHYCm19HFxuyu7)
 
 + Sumbit your answer to
   [Advanced Programming Challenge](https://forms.gle/4XCBAkDEu73PMNh17)
