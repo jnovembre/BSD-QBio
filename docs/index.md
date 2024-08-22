@@ -66,15 +66,14 @@ You can also browse the schedule
 To accommodate the diverse background of our students, we have created
 two tracks for the computing tutorials.
 
-1. Basic Computing I and II: dedicated to new users who are not
-  familiar with R or programming in general. It will guide students
-  step-by-step, introducing the R syntax and showing how to write
-  well-organized code for data analysis and scientific research.
+1. Basic Computing: dedicated to new users who are not familiar with R
+   or programming in general. It will guide students step-by-step,
+   introducing the R syntax and showing how to write well-organized
+   code for data analysis and scientific research.
 
-2. Advanced Computing I and II: dedicated to experienced programmers
-  (R or otherwise), these sessions will focus on challenges
-  manipulating large data sets, plotting, and the use of regular
-  expressions.
+2. Advanced Computing: dedicated to experienced programmers (R or
+   otherwise), these sessions will focus on challenges manipulating
+   large data sets, plotting, and the use of regular expressions.
 
 **You will need to decide which track's sessions to attend on Day 1 of
 the Bootcamp**. After Day 1, you will move throught the material in
@@ -84,9 +83,14 @@ is at the right level for you.**
 
 Links to the draft materials:
 
-+ Basic Computing I ([web](https://github.com/jnovembre/BSD-QBio/blob/main/tutorials/basic_computing_1/basic_computing_1.pdf), [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio/main/tutorials/basic_computing_1/basic_computing_1.pdf))
-+ Basic Computing II ([web](https://github.com/jnovembre/BSD-QBio/blob/main/tutorials/basic_computing_2/basic_computing_2.pdf), [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio/main/tutorials/basic_computing_2/basic_computing_2.pdf))
-+ Advanced Computing: **Special preparation for Advanced Computing:** You should work through the Advanced Computing preparatory material before the session begins. [Link to preparatory material](https://github.com/jnovembre/BSD-QBio/blob/master/tutorials/advanced_computing/tutorial/advanced_computing.pdf)
++ Basic Computing
+  ([web](https://github.com/jnovembre/BSD-QBio/blob/main/tutorials/basic_computing/basic_computing.pdf),
+  [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio/main/tutorials/basic_computing/basic_computing.pdf))
+
++ Advanced Computing: **Special preparation for Advanced Computing:**
+  You should work through the Advanced Computing preparatory material
+  before the session
+  begins. [Link to preparatory material.](https://github.com/jnovembre/BSD-QBio/blob/master/tutorials/advanced_computing/tutorial/advanced_computing.pdf)
 
 ## Setting up access to UChicago computing resources
 
