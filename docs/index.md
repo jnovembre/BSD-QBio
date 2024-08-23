@@ -174,16 +174,6 @@ RStudio installer for your operating system, then install the software.
   because it ships with a small emulator (Git Bash).  Click
   [here](https://git-scm.com/download/win/) and follow the instructions.
 
-## Installing Python
-
-While the QBio10 bootcamp will primarily be taught in R, one of the
-workshops will feature a python3 demo. If you wish to follow along
-the python demo on your own machine, **download Anaconda**
-[here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html)
-
-Once you have installed Python3, **install the following packages** through the command line:
-`pip install pandas numpy matplotlib scipy`
-
 ## Installing Git
 
 First, **join GitHub:** click
