@@ -159,24 +159,20 @@ RStudio installer for your operating system, then install the software.
     - tidyverse
     - workflowr
  
-    You can find instructions on how to install R packages in
-    RStudio [here](https://www.youtube.com/watch?v=3RWb5U3X-T8).
+  You can find instructions on how to install R packages in
+  RStudio [here](https://www.youtube.com/watch?v=3RWb5U3X-T8).
 
-* **Other R packages** After the R package installs above, two more sets
-of the packages need to be installed using special installers within
-`R`. First, open Rstudio and in the Console type `library(remotes)`,
-hit Return (or Enter) and then
-`install_github("jdstorey/qvalue")`. This will install the library
-`qvalue` that is needed for one of the tutorials. Second, type
-`library(BiocManager)` hit Return (or Enter) and then,
-`BiocManager::install(c("airway","Rsamtools","Rsubread","DESeq2","vsn",
-"org.Hs.eg.db","GenomicFeatures", "clusterProfiler"))`.  This should
-install the 8 libraries that will be used for the RNAseq workshop.
++ **Other R packages** After the R package installs above, two more
+  sets of the packages need to be installed using special installers
+  within `R`. First, open Rstudio and in the Console type
+  `library(remotes)`, hit Return (or Enter) and then
+  `install_github("jdstorey/qvalue")`. This will install the library
+  `qvalue` that is needed for one of the tutorials.
 
 + **UNIX Emulator**: If you are using Windows, you will need a UNIX
-emulator. We suggest downloading the version control software Git
-because it ships with a small emulator (Git Bash).  Click
-[here](https://git-scm.com/download/win/) and follow the instructions.
+  emulator. We suggest downloading the version control software Git
+  because it ships with a small emulator (Git Bash).  Click
+  [here](https://git-scm.com/download/win/) and follow the instructions.
 
 ## Installing Python
 
