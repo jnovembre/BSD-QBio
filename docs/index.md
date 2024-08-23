@@ -194,15 +194,6 @@ features that are not free for most people.
 Unless you will use git from the command line, **download GitKraken**
 click [here](https://support.gitkraken.com/how-to-install).
 
-## Installing ImageJ (FIJI)
-
-One workshop will involve analyzing extracting trajectories of moving
-objects from image data with the widely used **ImageJ** software.
-Please install the software using the instructions available
-[here](https://fiji.sc).  Note: the "FIJI" installation of ImageJ
-linked to here will include all the plug-ins needed for the
-workshop.**
-
 ## Downloading the data
 
 It is very important to download the data **before the workshop** as
