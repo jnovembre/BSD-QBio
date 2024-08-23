@@ -141,22 +141,23 @@ RStudio installer for your operating system, then install the software.
 + Once you have installed R and RStudio, open RStudio and **install
   the following packages**:
 
-    - devtools
-    - tidyverse
-    - knitr
-    - workflowr
-    - ggthemes
-	- ggrepel
-    - cowplot
-	- maps
-    - Rtsne
     - BiocManager
+    - cowplot
+    - deSolve
+    - devtools
+    - ggrepel
+    - ggridges
     - ggseqlogo
-    - trajr
-    - reticulate
-    - pheatmap
-	- plotly
-	- htmlwidgets
+    - ggthemes
+    - htmlwidgets
+    - knitr
+    - maps
+    - plotly
+    - reshape2
+    - rmarkdown
+    - Rtsne
+    - tidyverse
+    - workflowr
  
     You can find instructions on how to install R packages in
     RStudio [here](https://www.youtube.com/watch?v=3RWb5U3X-T8).
@@ -174,7 +175,7 @@ install the 8 libraries that will be used for the RNAseq workshop.
 
 + **UNIX Emulator**: If you are using Windows, you will need a UNIX
 emulator. We suggest downloading the version control software Git
-because it ships with a small emulator (Git Bash).
+because it ships with a small emulator (Git Bash).  Click
 [here](https://git-scm.com/download/win/) and follow the instructions.
 
 ## Installing Python
