@@ -115,9 +115,9 @@ Links to the draft materials:
 
 ## Preparing your laptop
 
-We are going to start working right away. Therefore, it is very
-important you **prepare your laptop** for the boot camp before the
-first session on Thursday. This will take you about one hour, so
+We are going to start with the tutorials right away. Therefore, it is
+important you **prepare your laptop** for the boot camp before
+the first session on Thursday. This could take an hour or more, so
 schedule accordingly.
 
 You will work on your laptop all day long. **If you don't have a
@@ -131,12 +131,12 @@ instructions there to download and install R for your computing
 platform. (Here's a [video](https://youtu.be/sD1NJ7_DLZk) explaining
 how to install R and RStudio in Windows;
 [here](https://youtu.be/IBE7dPJQNaE) for Mac OSX) **Note:** For those
-with a Mac with one of the new Apple processors (M1, M2, etc), make
-sure to download the "arm64" installer.
+with a Mac that has one of the new(ish) Apple processors (M1, M2, etc),
+make sure to download the "arm64" installer.
 
 + **Install RStudio.** Once you have installed R, go back to
 [this page](https://posit.co/download/rstudio-desktop/), download the
-RStudio installer for your operating system, and install the software.
+RStudio installer for your operating system, then install the software.
 
 + Once you have installed R and RStudio, open RStudio and **install
   the following packages**:
