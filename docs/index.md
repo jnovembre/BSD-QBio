@@ -225,6 +225,10 @@ for instructions on creating a PAT.
 
 ## Programming Challenges
 
+**Please note:** These are the links to the *old* programming
+challenges, so please do not submit your solutions yet. These links
+will be updated soon.
+
 During the boot camp, the 12 groups of students will compete through 5
 programming challenges. Here are the links to the webpages where the
 groups should post their solutions (one answer per group, please):
