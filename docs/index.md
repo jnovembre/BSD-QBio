@@ -229,7 +229,6 @@ Here are the links to the Google forms where the
 groups should post their solutions (one answer per group, please).
 
 + [Basic Computing, Part 1](https://forms.gle/fGWdPixdEbe75rs99)
-
 + [Basic Computing, Part 2](https://forms.gle/LAD2eAb3ev5MKLgk6)
 
 **Note:** The links to the remaining programming challenges will be
