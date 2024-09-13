@@ -230,10 +230,6 @@ groups should post their solutions (one answer per group, please).
 
 + [Basic Computing, Part 1](https://forms.gle/fGWdPixdEbe75rs99)
 
-During the boot camp, the 12 groups of students will compete through 5
-programming challenges.
-
-
 **Note:** The links to the remaining programming challenges will be
 provided soon.
 
