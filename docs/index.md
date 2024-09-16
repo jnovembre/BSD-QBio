@@ -231,17 +231,16 @@ groups should post their solutions (one answer per group, please).
 + [Basic Computing, Part 1](https://forms.gle/fGWdPixdEbe75rs99)
 + [Basic Computing, Part 2](https://forms.gle/LAD2eAb3ev5MKLgk6)
 + [Advanced Programming Challenge](https://forms.gle/UYbyC1EpYSUViCik7)
++ [Data visualization]()
 
 **Note:** The links to the remaining programming challenges will be
 provided soon.
 
 <!--
-+ Sumbit your answer to
-  [Advanced Programming Challenge](https://forms.gle/4XCBAkDEu73PMNh17)
 + Submit your answer for the tutorial on
   [Defensive Programming](https://forms.gle/3oLYycp7DqhAYJS5A)
 + Submit your answer for the tutorial on
-  [Data Visualization](https://forms.gle/r7jMLbRECenTzuNWA)
+  [Data Visualization](https://forms.gle/3zFZCkUP5uSuJwQX7)
 + Submit your answer for the tutorial on
   [Stats for large data](https://forms.gle/7ZELD5sUURkezuWJ8)
 -->
