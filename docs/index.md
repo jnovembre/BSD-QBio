@@ -232,9 +232,10 @@ groups should post their solutions (one answer per group, please).
 + [Basic Computing, Part 2](https://forms.gle/LAD2eAb3ev5MKLgk6)
 + [Advanced Programming Challenge](https://forms.gle/UYbyC1EpYSUViCik7)
 + [Data visualization](https://forms.gle/3zFZCkUP5uSuJwQX7)
++ [Defensive Programming](https://forms.gle/quj1dhCbAwBFgoeW9)
++ [Statistics for a Data-Rich World](https://forms.gle/QbLNcQA7tUdSGuRK7)
 
-**Note:** The links to the remaining programming challenges will be
-provided soon.
+**Note:** All Programming Challenges are due on Wednesday, September 18th at 1.30PM.
 
 <!--
 + Submit your answer for the tutorial on
