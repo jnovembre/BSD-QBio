@@ -1,10 +1,11 @@
 Activity,Description
 officehours,(Optional) Office hours for help with software installations
+orientation,BSD-OGPA Orientation for new students
 checkin,Check-in with TAs at BSLC lobby
 groupcomp,Dinner and group compacts
 coffee,Coffee break
 lunch,Lunch
-talkintro,Welcome to qBio - Novembre / Hall (BSLC 115)
+talkintro,Welcome to qBio - Novembre / Liu / Myers (BSLC 115)
 talkkovar,Welcome to UChicago Biosciences - Dean Kovar (BSLC 001)
 lunchpickup,Break + Lunch pick-up
 talkstar,Lunch + Graduate Student Research Talks (BSLC 001)
@@ -15,9 +16,9 @@ Computing1a,Basic/Advanced comp. I (BSLC 008/202/205)
 Computing1b,Basic/Advanced comp. I (BSLC 008/202/205)
 Computing2a,Basic/Advanced comp. II (BSLC 008/202/205)
 Computing2b,Basic/Advanced comp. II (BSLC 008/202/205)
-w1,Workshop - Immunology - Khan (BSLC 202)
+w1,Workshop - Developmental Biology - Mitchell (BSLC 202)
 w2,Workshop - Population genetics - Berg (BSLC 008)
-w3,Workshop - Dynamical systems - Weinstein (BSLC 205)
+w3,Workshop - Motion tracking / image analysis - Nirody (BSLC 205)
 t1,Defensive programming - Novembre (BSLC 008)
 t2,Data visualization - Carbonetto (BSLC 202)
 t3,Statistics for a data rich world - Liu (BSLC 205)

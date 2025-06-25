@@ -19,20 +19,21 @@ output:
     keep_tex: true
     pandoc_args: ["numberLines"]
 ---
-# BSD qBio$^{10}$ 
+# BSD qBio$^{11}$ 
 
 ## General Schedule
-### Wednesday, September 11 
+### Wednesday, September 10 
 
 ------------------    --------------------------------------------------------------
-**2:00-3:30**         (Optional) Office hours for help with software installations  
+**12:30-2:00**        (Optional) Office hours for help with software installations  
+**2:00-3:30**         BSD-OGPA Orientation for new students                         
 **3:30-4:00**         Check-in with TAs at BSLC lobby                               
-**4:00-4:20**         Welcome to qBio - Novembre / Hall                             
+**4:00-4:20**         Welcome to qBio - Novembre / Liu / Myers                      
 **4:20-5:00**         Team-building activities                                      
 **5:00-6:00**         Dinner and group compacts                                     
 ------------------    --------------------------------------------------------------
 
-### Thursday, September 12 
+### Thursday, September 11 
 
 ------------------    --------------------------------------------------------------
 **8:30-10:00**        Basic/Advanced comp. I                                        
@@ -44,7 +45,7 @@ output:
 **2:30-4:00**         Professional development with TAs                             
 ------------------    --------------------------------------------------------------
 
-### Friday, September 13 
+### Friday, September 12 
 
 ------------------    --------------------------------------------------------------
 **8:30-10:00**        Basic/Advanced comp. II                                       
@@ -55,7 +56,7 @@ output:
 **2:00-4:00**          DuSable Black History Museum Tour                            
 ------------------    --------------------------------------------------------------
 
-### Monday, September 16 
+### Monday, September 15 
 
 ------------------    --------------------------------------------------------------
 **8:30-10:00**        Data visualization - Carbonetto                                (*C.jacchus D.rerio P.polytes T.thermophila*)
@@ -75,7 +76,7 @@ output:
                       Statistics for a data rich world - Liu                         (*C.elegans C.jacchus P.polytes T.roseae*)
 ------------------    --------------------------------------------------------------
 
-### Tuesday, September 17 
+### Tuesday, September 16 
 
 ------------------    --------------------------------------------------------------
 **8:30-10:00**        Data visualization - Carbonetto                                (*C.elegans D.melanogaster S.aegyptiacus T.roseae*)
@@ -86,34 +87,34 @@ output:
                       Defensive programming - Novembre                               (*C.jacchus M.musculus O.bimaculoides P.polytes*)
                       Statistics for a data rich world - Liu                         (*A.thaliana D.rerio T.thermophila X.laevis*)
 **12:00-1:30**        Lunch                                                         
-**1:30-3:00**         Workshop - Dynamical systems - Weinstein                       (*C.jacchus O.bimaculoides P.polytes T.thermophila*)
-                      Workshop - Immunology - Kahn                                   (*A.thaliana C.elegans D.rerio X.laevis*)
+**1:30-3:00**         Workshop - Developmental Biology - Mitchell                    (*A.thaliana C.elegans D.rerio X.laevis*)
+                      Workshop - Motion tracking / image analysis - Nirody           (*C.jacchus O.bimaculoides P.polytes T.thermophila*)
                       Workshop - Population genetics - Berg                          (*D.melanogaster M.musculus S.aegyptiacus T.roseae*)
 **3:00-3:30**         Coffee break                                                  
-**3:30-5:00**         Workshop - Dynamical systems - Weinstein                       (*C.jacchus O.bimaculoides P.polytes T.thermophila*)
-                      Workshop - Immunology - Kahn                                   (*A.thaliana C.elegans D.rerio X.laevis*)
+**3:30-5:00**         Workshop - Developmental Biology - Mitchell                    (*A.thaliana C.elegans D.rerio X.laevis*)
+                      Workshop - Motion tracking / image analysis - Nirody           (*C.jacchus O.bimaculoides P.polytes T.thermophila*)
                       Workshop - Population genetics - Berg                          (*D.melanogaster M.musculus S.aegyptiacus T.roseae*)
 ------------------    --------------------------------------------------------------
 
-### Wednesday, September 18 
+### Wednesday, September 17 
 
 ------------------    --------------------------------------------------------------
-**8:30-10:00**        Workshop - Dynamical systems - Weinstein                       (*D.rerio M.musculus S.aegyptiacus X.laevis*)
-                      Workshop - Immunology - Kahn                                   (*C.jacchus D.melanogaster T.roseae T.thermophila*)
+**8:30-10:00**        Workshop - Developmental Biology - Mitchell                    (*C.jacchus D.melanogaster T.roseae T.thermophila*)
+                      Workshop - Motion tracking / image analysis - Nirody           (*D.rerio M.musculus S.aegyptiacus X.laevis*)
                       Workshop - Population genetics - Berg                          (*A.thaliana C.elegans O.bimaculoides P.polytes*)
 **10:00-10:30**       Coffee break                                                  
-**10:30-12:00**       Workshop - Dynamical systems - Weinstein                       (*D.rerio M.musculus S.aegyptiacus X.laevis*)
-                      Workshop - Immunology - Kahn                                   (*C.jacchus D.melanogaster T.roseae T.thermophila*)
+**10:30-12:00**       Workshop - Developmental Biology - Mitchell                    (*C.jacchus D.melanogaster T.roseae T.thermophila*)
+                      Workshop - Motion tracking / image analysis - Nirody           (*D.rerio M.musculus S.aegyptiacus X.laevis*)
                       Workshop - Population genetics - Berg                          (*A.thaliana C.elegans O.bimaculoides P.polytes*)
 **12:00-1:30**        Lunch                                                         
-**1:30-3:00**         Workshop - Dynamical systems - Weinstein                       (*A.thaliana C.elegans D.melanogaster T.roseae*)
-                      Workshop - Immunology - Kahn                                   (*M.musculus O.bimaculoides P.polytes S.aegyptiacus*)
+**1:30-3:00**         Workshop - Developmental Biology - Mitchell                    (*M.musculus O.bimaculoides P.polytes S.aegyptiacus*)
+                      Workshop - Motion tracking / image analysis - Nirody           (*A.thaliana C.elegans D.melanogaster T.roseae*)
                       Workshop - Population genetics - Berg                          (*C.jacchus D.rerio T.thermophila X.laevis*)
 **3:00-3:30**         Coffee break                                                  
-**3:30-5:00**         Workshop - Dynamical systems - Weinstein                       (*A.thaliana C.elegans D.melanogaster T.roseae*)
-                      Workshop - Immunology - Kahn                                   (*M.musculus O.bimaculoides P.polytes S.aegyptiacus*)
+**3:30-5:00**         Workshop - Developmental Biology - Mitchell                    (*M.musculus O.bimaculoides P.polytes S.aegyptiacus*)
+                      Workshop - Motion tracking / image analysis - Nirody           (*A.thaliana C.elegans D.melanogaster T.roseae*)
                       Workshop - Population genetics - Berg                          (*C.jacchus D.rerio T.thermophila X.laevis*)
-**5:15-5:45**         Wrap-up                                                       
-**5:45-7:30**         Reception with Dean's Council Students                        
+**5:10-5:30**         Wrap-up                                                       
+**5:30-7:00**         Reception with Dean's Council Students                        
 ------------------    --------------------------------------------------------------
 
