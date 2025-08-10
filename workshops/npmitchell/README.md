@@ -92,6 +92,9 @@ Here in this tutorial, we'll look at the chiral shape dynamics of the
 *Drosophila* midgut as a model system. 
 We will ask: to what extent are the guts of wild-type and embryos with myosin 1C overexpression mirror images of one another?
 
+![midgut](figures/00_gut.jpg)
+*Figure 3: Multiview lightsheet imaging and computer vision tools enable analysis of chiral shape changes in gut morphogenesis.*
+
 The data you are working with was taken from live, multiview lightsheet microscopy imaging of 
 the midgut across ~2.5 hrs of development.
 We used computer vision tools (Mitchell & Cislo, *Nature Methods* 2023) to extract the tissue surface over time.
@@ -103,8 +106,7 @@ see Márquez-Neila et al, *IEEE Trans Pattern Anal Mach Intell
 Marching Cubes identified the segmentation's surface as a triangulation, which we then smoothed with a Poisson disk reconstruction and Laplacian filters.
 Here you are presented with the resulting mesh triangulations. 
 
-![midgut](figures/00_gut.jpg)
-*Figure 3: Multiview lightsheet imaging and computer vision tools enable analysis of chiral shape changes in gut morphogenesis.*
+---
 
 ## 1. Setup and Imports
 
@@ -752,7 +754,7 @@ batch_color_by_distance(dirA, dirB, filesA, filesB, AtoB,
 ![overlay](figures/06_overlay_024.png)
 *Figure 17: Spatial alignment of two WT midguts at an example timepoint.*
 
-
+---
 
 ## 12. Advanced: PCA-based smoothing as an alternative to dynamic time warping
 Dynamic time warping (DTW) gives a monotone, potentially jagged A↔B mapping (AtoB, BtoA), but sometimes lies "outside" of either set (AtoB or BtoA).
