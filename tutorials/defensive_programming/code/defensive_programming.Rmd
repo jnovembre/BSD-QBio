@@ -53,7 +53,7 @@ In the first part of this tutorial, we will review key principles of defensive p
 
 # Part 1: Principles
 
-Part 1 focuses on defense. You saw a few of these principles in [Basic Computing 2](https://github.com/jnovembre/BSD-QBio8/blob/main/tutorials/basic_computing_2/basic_computing_2.pdf), but they are important enough to be repeated here.
+Part 1 focuses on defense. You saw a few of these principles in Basic Computing, but they are important enough to be repeated here.
 
 1. [Before writing code, draft your program as a series of modular functions with high-level documentation, and develop tests for it.](#principle-1)
 2. [Write clearly and cautiously.](#principle-2)
