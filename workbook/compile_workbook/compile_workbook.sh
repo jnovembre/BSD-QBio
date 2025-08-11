@@ -1,3 +1,8 @@
+# Note: On Mac, I was able to install pdftk in Homebrew:
+#
+#   brew install pdftk-java
+#
+
 ## Cover sheet # Revised
 cd ../other_docs
 pdflatex cover.tex
@@ -80,8 +85,6 @@ pdftk tmp.pdf ../../tutorials/data_visualization/data_visualization.pdf output t
 ## Defensive programming 
 pdftk tmp.pdf ../../tutorials/defensive_programming/code/defensive_programming.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
-
-
 ## insert blank page
 #pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
@@ -105,7 +108,6 @@ pdftk tmp.pdf ../other_docs/cover_workshops.pdf output tmp2.pdf; mv tmp2.pdf tmp
 
 ## meren 
 #pdftk tmp.pdf ../../workshops/meren/code/MBL_QBio_Meren.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
-
 
 ## Chen
 #pdftk tmp.pdf ../../workshops/mchen/code/Workshop_RNAseq_analysis.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
