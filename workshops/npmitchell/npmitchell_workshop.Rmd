@@ -138,7 +138,7 @@ channel and the muscle layer as another, then identified a 3D
 segmentation of the gut.  The segmentation minimized an energy
 functional with surface tension, pressure, and attachment terms (see
 Active Contours Without Edges, see Márquez-Neila et al, *IEEE Trans
-Pattern Anal Mach Intell .* 2014 and Chan & Vese, *IEEE Transactions
+Pattern Anal Mach Intell* 2014 and Chan & Vese, *IEEE Transactions
 on Image Processing* 2001).  Marching Cubes identified the
 segmentation's surface as a triangulation, which we then smoothed with
 a Poisson disk reconstruction and Laplacian filters.  Here you are
@@ -482,7 +482,8 @@ I packaged this optimization in a function in `organ_geometry.py`.
 from organ_geometry import align_mesh_icp, color_mesh_by_distance
 
 ssfactor = 10 # subsampling factor (take 1/N points for the ICP registration).
-              # Larger values will run faster but be less precise. This is for speedup
+              # Larger values will run faster but be less precise. This is for
+			  # speedup
 
 print('Reading in meshes...')
 fA = "wildtype/20240527/mesh_000040_APDV_um.ply"
@@ -543,7 +544,8 @@ fB = "bynGAL4_UASMyo1C/20240528/mesh_000052_APDV_um.ply"
 meshB = pv.read(fB)
 
 # Align one mesh to the other
-meshA_t, T = align_mesh_icp(meshA, meshB, ssfactor=ssfactor, Alabel="WT", Blabel='byn>Myo1C')
+meshA_t, T = align_mesh_icp(meshA, meshB, ssfactor=ssfactor, Alabel="WT",
+                            Blabel='byn>Myo1C')
 
 # Color the mesh by distance between the two
 dists, plotter = color_mesh_by_distance(meshA_t, meshB, transform=None)
@@ -560,7 +562,8 @@ meshB = pv.read(fB)
 meshB.points[:, 1] *= -1
 
 # Align one mesh to the other
-meshA_t, T = align_mesh_icp(meshA, meshB, ssfactor=ssfactor, Alabel="WT", Blabel='byn>Myo1C, mirrored')
+meshA_t, T = align_mesh_icp(meshA, meshB, ssfactor=ssfactor, Alabel="WT",
+                            Blabel='byn>Myo1C, mirrored')
 
 # Color the mesh by distance between the two
 dists, plotter = color_mesh_by_distance(meshA_t, meshB, transform=None)
@@ -597,7 +600,8 @@ ssfactor = 10      # spatial subsampling factor for ICP
                    # (higher is faster but potentially less accurate)
 wt_oe = 'wt'       # comparison will initially be between two WT datasets
 outdir = 'results' # where to store output on disk
-dt = 2             # timestep in minutes between adjacent timepoints (this should not be changed, taken from experiments)
+dt = 2             # timestep in minutes between adjacent timepoints
+                   # (this should not be changed, taken from experiments)
 
 if not os.path.exists(outdir):
     os.mkdir(outdir)
@@ -638,7 +642,8 @@ tpsA = np.array([extract_tp(f) for f in filesA])
 tpsB = np.array([extract_tp(f) for f in filesB])
 
 # Compute ICP RMSE
-icp_raw = build_icp_cost_matrix(dirA, dirB, ssfactor=ssfactor, step=step, flipy=flipy)
+icp_raw = build_icp_cost_matrix(dirA, dirB, ssfactor=ssfactor, step=step,
+                                flipy=flipy)
 icp_smooth = smooth_icp_matrix(icp_raw)
 ```
 
@@ -703,9 +708,12 @@ plt.show()
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4), sharey=True)
 
 # === Subplot 1: A→B ===
-ax1.plot(tpsA, icp_raw[np.arange(len(tpsA)), AtoB], 'o--', label='A→B raw', color='tab:blue')
-ax1.plot(tpsA, icp_smooth[np.arange(len(tpsA)), AtoB], 'o-', label='A→B smoothed', color='tab:blue')
-# ax1.plot(path_tps[:, 0], icp_smooth[path[:, 0], path[:, 1]], '*-', label='DTW smoothed (A→B)', color='tab:blue')
+ax1.plot(tpsA, icp_raw[np.arange(len(tpsA)), AtoB], 'o--', label='A→B raw',
+         color='tab:blue')
+ax1.plot(tpsA, icp_smooth[np.arange(len(tpsA)), AtoB], 'o-', label='A→B smoothed',
+         color='tab:blue')
+# ax1.plot(path_tps[:, 0], icp_smooth[path[:, 0], path[:, 1]], '*-',
+#          label='DTW smoothed (A→B)', color='tab:blue')
 ax1.set_xlabel("Timepoint A")
 ax1.set_ylabel("ICP Error")
 ax1.set_title("A→B Matching")
@@ -713,14 +721,18 @@ ax1.grid(True)
 ax1.legend()
 
 # === Subplot 2: B→A ===
-ax2.plot(tpsB, icp_raw[BtoA, np.arange(len(tpsB))], 'o--', label='B→A raw', color='tab:orange')
-ax2.plot(tpsB, icp_smooth[BtoA, np.arange(len(tpsB))], 'o-', label='B→A smoothed', color='tab:orange')
-# ax2.plot(path_tps[:, 1], icp_smooth[path[:, 0], path[:, 1]], '*-', label='DTW smoothed (B→A)', color='tab:orange')
+ax2.plot(tpsB, icp_raw[BtoA, np.arange(len(tpsB))], 'o--', label='B→A raw',
+         color='tab:orange')
+ax2.plot(tpsB, icp_smooth[BtoA, np.arange(len(tpsB))], 'o-', label='B→A smoothed',
+         color='tab:orange')
+# ax2.plot(path_tps[:, 1], icp_smooth[path[:, 0], path[:, 1]], '*-',
+#          label='DTW smoothed (B→A)', color='tab:orange')
 ax2.set_xlabel("Timepoint B")
 ax2.set_title("B→A Matching")
 ax2.grid(True)
 ax2.legend()
-plt.savefig(os.path.join(outdir, f'TPMatching_AtoB_BtoA_{wt_oe}_step{step}_ss{ssfactor}.png'))
+plt.savefig(os.path.join(outdir,
+  f'TPMatching_AtoB_BtoA_{wt_oe}_step{step}_ss{ssfactor}.png'))
 plt.show()
 ```
 ![The average root-mean-squared mismatch at each timepoint along the AtoB and BtoA paths show that cross-shape variation rises slightly over time.](figures/07_icpRMSE_curves.png)
@@ -757,10 +769,13 @@ Now let's plot what this looks like.
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4), sharey=True)
 
 # === Subplot 1: A→B ===
-ax1.plot(tpsA, icp_raw[np.arange(len(tpsA)), AtoB], 'o--', label='A→B raw', color='tab:blue')
-ax1.plot(tpsA, icp_smooth[np.arange(len(tpsA)), AtoB], 'o-', label='A→B smoothed', color='tab:blue')
+ax1.plot(tpsA, icp_raw[np.arange(len(tpsA)), AtoB], 'o--', label='A→B raw',
+         color='tab:blue')
+ax1.plot(tpsA, icp_smooth[np.arange(len(tpsA)), AtoB], 'o-', label='A→B smoothed',
+         color='tab:blue')
 ax1.plot(tpsA, expected_rmse_A, '.--', label='B→A baseline', color='tab:blue')
-# ax1.plot(path_tps[:, 0], icp_smooth[path[:, 0], path[:, 1]], '*-', label='DTW smoothed (A→B)', color='tab:blue')
+# ax1.plot(path_tps[:, 0], icp_smooth[path[:, 0], path[:, 1]], '*-',
+#          label='DTW smoothed (A→B)', color='tab:blue')
 ax1.set_xlabel("Timepoint A")
 ax1.set_ylabel("ICP Error")
 ax1.set_title("A→B Matching")
@@ -768,15 +783,19 @@ ax1.grid(True)
 ax1.legend()
 
 # === Subplot 2: B→A ===
-ax2.plot(tpsB, icp_raw[BtoA, np.arange(len(tpsB))], 'o--', label='B→A raw', color='tab:orange')
-ax2.plot(tpsB, icp_smooth[BtoA, np.arange(len(tpsB))], 'o-', label='B→A smoothed', color='tab:orange')
+ax2.plot(tpsB, icp_raw[BtoA, np.arange(len(tpsB))], 'o--', label='B→A raw',
+         color='tab:orange')
+ax2.plot(tpsB, icp_smooth[BtoA, np.arange(len(tpsB))], 'o-', label='B→A smoothed',
+         color='tab:orange')
 ax2.plot(tpsB, expected_rmse_B, '.--', label='A→B baseline', color='tab:orange')
-# ax2.plot(path_tps[:, 1], icp_smooth[path[:, 0], path[:, 1]], '*-', label='DTW smoothed (B→A)', color='tab:orange')
+# ax2.plot(path_tps[:, 1], icp_smooth[path[:, 0], path[:, 1]], '*-',
+           label='DTW smoothed (B→A)', color='tab:orange')
 ax2.set_xlabel("Timepoint B")
 ax2.set_title("B→A Matching")
 ax2.grid(True)
 ax2.legend()
-plt.savefig(os.path.join(outdir, f'TPMatching_AtoB_BtoA_expectedRMSE_{wt_oe}_step{step}_ss{ssfactor}.png'))
+plt.savefig(os.path.join(outdir,
+  f'TPMatching_AtoB_BtoA_expectedRMSE_{wt_oe}_step{step}_ss{ssfactor}.png'))
 plt.show()
 ```
 
@@ -795,7 +814,8 @@ optimization.
 # --------------------------------------
 xyzlim = compute_global_bounds(dirA, dirB, filesA, filesB)
 batch_icp_overlay(dirA, dirB, filesA, filesB, AtoB,
-                  outdir=os.path.join(outdir, f"icp_overlay_{wt_oe}_step{step}_ss{ssfactor}"),
+                  outdir=os.path.join(outdir,
+				    f"icp_overlay_{wt_oe}_step{step}_ss{ssfactor}"),
                   ssfactor=ssfactor, xyzlim=xyzlim, flipy=flipy,
                   Alabel=dirA, Blabel=dirB)
 ```
@@ -812,7 +832,8 @@ locally.  The output is saved to the `results` directory.
 # --------------------------------------
 clims = (0, 20)
 batch_color_by_distance(dirA, dirB, filesA, filesB, AtoB,
-                        outdir=os.path.join(outdir, f"colored_distance__{wt_oe}_step{step}_ss{ssfactor}"),
+                        outdir=os.path.join(outdir,
+						  f"colored_distance__{wt_oe}_step{step}_ss{ssfactor}"),
                         ssfactor=ssfactor, xyzlim=xyzlim,
                         clim=clims, flipy=flipy)
 ```
@@ -853,7 +874,8 @@ plt.ylabel("Time A")
 plt.colorbar(label="ICP Error")
 plt.axis('equal')
 plt.tight_layout()
-plt.savefig(os.path.join(outdir, f'TPMatching_PCASm_{wt_oe}_step{step}_ss{ssfactor}.png'))
+plt.savefig(os.path.join(outdir,
+  f'TPMatching_PCASm_{wt_oe}_step{step}_ss{ssfactor}.png'))
 plt.show()
 ```
 
@@ -893,11 +915,13 @@ analysis. These files store ICP matrices, expected noise floors, and
 timepoint mappings.
 
 ```python
-np.save(os.path.join(outdir, f"icp_raw_{wt_oe}_step{step}_ss{ssfactor}.npy"), icp_raw)
-np.save(os.path.join(outdir, f"icp_smooth_{wt_oe}_step{step}_ss{ssfactor}.npy"), icp_smooth)
-np.save(os.path.join(outdir, f"expected_rmse_A_{wt_oe}_step{step}_ss{ssfactor}.npy"), expected_rmse_A)
-np.save(os.path.join(outdir, f"expected_rmse_B_{wt_oe}_step{step}_ss{ssfactor}.npy"), expected_rmse_B)
-np.save(os.path.join(outdir, f"path_{wt_oe}_step{step}_ss{ssfactor}.npy"), [path, path_tps])
+np.save(os.path.join(outdir,f"icp_raw_{wt_oe}_step{step}_ss{ssfactor}.npy"),icp_raw)
+np.save(os.path.join(outdir,f"icp_smooth_{wt_oe}_step{step}_ss{ssfactor}.npy"),icp_smooth)
+np.save(os.path.join(outdir,f"expected_rmse_A_{wt_oe}_step{step}_ss{ssfactor}.npy"),
+                     expected_rmse_A)
+np.save(os.path.join(outdir,f"expected_rmse_B_{wt_oe}_step{step}_ss{ssfactor}.npy"),
+                     expected_rmse_B)
+np.save(os.path.join(outdir,f"path_{wt_oe}_step{step}_ss{ssfactor}.npy"),[path, path_tps])
 ```
 
 ## 14. Cross-Condition Comparison
@@ -962,9 +986,12 @@ for cond in conds:
     }
 
 # Align on common timepoints
-common_tps = np.intersect1d(np.intersect1d(np.intersect1d(icp_dict['wt']['tps'], icp_dict['oe']['tps']),
-                                           np.intersect1d(icp_dict['x1']['tps'], icp_dict['x2']['tps'])),
-                            np.intersect1d(icp_dict['x3']['tps'], icp_dict['x4']['tps']))
+common_tps = np.intersect1d(np.intersect1d(np.intersect1d(icp_dict['wt']['tps'],
+                                                          icp_dict['oe']['tps']),
+                                           np.intersect1d(icp_dict['x1']['tps'],
+										                  icp_dict['x2']['tps'])),
+                            np.intersect1d(icp_dict['x3']['tps'],
+							               icp_dict['x4']['tps']))
 for key in icp_dict:
     mask = np.isin(icp_dict[key]["tps"], common_tps)
     icp_dict[key]["tps"] = icp_dict[key]["tps"][mask]
@@ -989,7 +1016,8 @@ plt.figure(figsize=(10, 5))
 plt.plot(tps*dt, wt_err, 'b.-', label="WT-WT")
 plt.plot(tps*dt, oe_err, 'r.-', label="OE-OE")
 plt.plot(tps*dt, x_mean, 'k-', label="WT-to-OE (mean x1–x4)")
-plt.fill_between(tps*dt, x_mean - x_std, x_mean + x_std, color='gray', alpha=0.3, label="WT-OE ± std")
+plt.fill_between(tps*dt, x_mean - x_std, x_mean + x_std, color='gray', alpha=0.3,
+                 label="WT-OE ± std")
 plt.xlabel("reference time [min]")
 plt.ylabel("ICP RMSE (smoothed)")
 plt.title("Within- vs cross-ensemble ICP RMSE")
