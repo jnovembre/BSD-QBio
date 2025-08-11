@@ -1,62 +1,92 @@
-# Mesh Triangulations for Biological Shape Analysis
-
-# Part 1: Intro to python and mesh triangulations
-
-This tutorial introduces some core concepts in scientific 
+---
+title: "Mesh triangulations for biological shape analysis"
+output:
+  pdf_document:
+    keep_tex: true
+    latex_engine: pdflatex
+    template: readable.tex
+author:
+  name: Noah Mitchell
+  affiliation: University of Chicago
+date: August 11, 2025
+chapter: 6
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 11pt
+spacing: single
+graphics: yes
+endnote: no
+thanks: "This document is included as part of the Developmental Biology / Shape Analysis workshop packet for the BSD qBio Bootcamp, University of Chicago, 2025. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
+abstract: "This tutorial introduces some core concepts in scientific 
 programming and shape analysis using Python. We'll explore 
 how to analyze and compare embryonic organ shapes 
 using triangulated meshes. You will learn how to build meshes from scratch, 
 analyze them for correctness, and register two shapes using 
-Iterative Closest Point (ICP) alignment. 
-The notebook is intended for early-stage graduate students with no serious coding experience. 
+Iterative Closest Point (ICP) alignment. The notebook is intended for
+early-stage graduate students with no serious coding experience."
+---
 
-___
+# Part 1: Intro to python and mesh triangulations
+
 ## 0. Getting Started 
 
 ### 0a. Pycharm
-To begin working with Python code, we recommend using PyCharm, a free, user-friendly code editor. 
-First, download PyCharm Community Edition and install it on your computer following the instructions here:
-`https://www.jetbrains.com/help/pycharm/installation-guide.html`. 
-Also download the data folders from Box (`wildtype` and `bynGAL4_UASMyo1C`) and place them in the same place where you have the tutorial code cloned (see Figure 1A). 
-When you open PyCharm for the first time, create a new project: choose the folder where this tutorial's code resides -- same place as where the 
-`wildtype` and `bynGAL4_UASMyo1C` data live (see Figure 1B). 
 
-Then configure a Python interpreter. Select or create an interpreter that uses Python 3.10 — 
-this version is required for this tutorial. If no interpreter is available, click 
-“Add Interpreter” and choose a Virtualenv, then select Python 3.10 
-as the base interpreter during setup (you may need to install it, see Figure 1C).
+To begin working with Python code, we recommend using PyCharm, a free,
+user-friendly code editor.  First, download PyCharm Community Edition
+and install it on your computer following the instructions here:
+`https://www.jetbrains.com/help/pycharm/installation-guide.html`.
+Also download the data folders from Box (`wildtype` and
+`bynGAL4_UASMyo1C`) and place them in the same place where you have
+the tutorial code cloned (see Figure 1A).  When you open PyCharm for
+the first time, create a new project: choose the folder where this
+tutorial's code resides -- same place as where the `wildtype` and
+`bynGAL4_UASMyo1C` data live (see Figure 1B).
 
+Then configure a Python interpreter. Select or create an interpreter
+that uses Python 3.10 — this version is required for this tutorial. If
+no interpreter is available, click "Add Interpreter" and choose a
+Virtualenv, then select Python 3.10 as the base interpreter during
+setup (you may need to install it, see Figure 1C).
 
-*Default method:* Once your project is open, open `organ_geometry.py`. At the top, some of the modules will be underlined in red since they are not installed.
-Hover over one and click `Install all missing packages` (see Figure 1D). Then close `organ_geometry.py` and open the
-Python Console using the top icon in the bottom left (see arrowhead in Figure 2).
-Now you can copy-paste snippets of code into the Python Console to run them (note the copy icon circled in Figure 2).
-If you see an error like `ModuleNotFoundError` for any reason while playing with the code, click the red light 
-bulb or go to Settings > Python Interpreter to install the missing package. 
-That’s it — you’re ready to start coding in Python!
+*Default method:* Once your project is open, open
+`organ_geometry.py`. At the top, some of the modules will be
+underlined in red since they are not installed.  Hover over one and
+click `Install all missing packages` (see Figure 1D). Then close
+`organ_geometry.py` and open the Python Console using the top icon in
+the bottom left (see arrowhead in Figure 2).  Now you can copy-paste
+snippets of code into the Python Console to run them (note the copy
+icon circled in Figure 2).  If you see an error like
+`ModuleNotFoundError` for any reason while playing with the code,
+click the red light bulb or go to Settings > Python Interpreter to
+install the missing package.  That’s it — you’re ready to start coding
+in Python!
 
+*Conda method for experienced students only:* If you are experienced
+with python, feel free to use a Conda Environment and create a base
+interpreter from python 3.10. For Conda users, there is a .yml file
+included that will load up your virtual environment with what you need
+with:
 
-*Conda method for experienced students only:* If you are experienced with python, feel free to use a Conda Environment and create a base interpreter 
-from python 3.10. For Conda users, there is a .yml file included that will load up your virtual environment 
-with what you need with:
 ```
 $ conda env create -f environment.yml
 ```
 
+![Setting up in PyCharm.](figures/00_setup1.jpg)
 
-![midgut](figures/00_setup1.jpg)
-*Figure 1: Setting up in PyCharm.*
-
-![midgut](figures/00_setup2.jpg)
-*Figure 2: Running this module in PyCharm.*
+![Running this module in PyCharm.](figures/00_setup2.jpg)
 
 ### 0a. Python
-Python provides several core data structures that are widely used in both everyday scripting and advanced scientific workflows. Understanding their characteristics will help you choose the right tool for the job and write clearer, more efficient code.
+
+Python provides several core data structures that are widely used in
+both everyday scripting and advanced scientific
+workflows. Understanding their characteristics will help you choose
+the right tool for the job and write clearer, more efficient code.
 
 We will work with the following fundamental data structures:
 
 - **Lists**  
-  Lists are ordered, mutable collections of elements. They can hold elements of different types, and are typically used for sequential data or collections you plan to modify.  
+ Lists are ordered, mutable collections of elements. They can hold elements of different types, and are typically used for sequential data or collections you plan to modify.  
   _Example_: `mylist = [3.2, "gut", 5]`
 
 - **Tuples**  
@@ -71,57 +101,74 @@ We will work with the following fundamental data structures:
   NumPy arrays are powerful containers for numerical data. Unlike lists, they support efficient mathematical operations and are used heavily in scientific computing, especially for vectors, matrices, and multidimensional datasets.  
   _Example_: `arr = np.array([[1, 2], [3, 4]])`
 
-Throughout this module, we’ll use these data structures to work with 2D and 3D triangulated meshes, align shapes across space and time, and track shape variations of a model organ.
+Throughout this module, we’ll use these data structures to work with
+2D and 3D triangulated meshes, align shapes across space and time, and
+track shape variations of a model organ.
 
 ## 0c. The embryonic fly midgut
 
-During development, tissues integrate mechanical and biochemical signals to drive 
-organ-scale geometric transformations. 
-Left-right symmetry breaking is a fundamental feature of organ morphogenesis 
-that is crucial for organ function. 
-While left-right asymmetric genetic patterning of the early embryonic body plan 
-can trickle down to influence organ scale asymmetries, there is also a role for 
-cell-intrinsic processes: cells themselves break left-right symmetry through cytoskeletal chirality. 
-Remarkably, tuning the concentration of certain molecular motors such as members
-of the unconventional myosin 1 protein family can invert organ chirality across 
-vertebrates and invertebrates alike, but we currently lack a physical 
-understanding of the tissue-scale forces that drive organ-scale chirality. 
-One direction in the Mitchell Lab aims to uncover the mechanical forces that
-drive organ asymmetry and relate them to cell-intrinsic activity of Myo1C.
-Here in this tutorial, we'll look at the chiral shape dynamics of the
-*Drosophila* midgut as a model system. 
-We will ask: to what extent are the guts of wild-type and embryos with myosin 1C overexpression mirror images of one another?
+During development, tissues integrate mechanical and biochemical
+signals to drive organ-scale geometric transformations.  Left-right
+symmetry breaking is a fundamental feature of organ morphogenesis that
+is crucial for organ function.  While left-right asymmetric genetic
+patterning of the early embryonic body plan can trickle down to
+influence organ scale asymmetries, there is also a role for
+cell-intrinsic processes: cells themselves break left-right symmetry
+through cytoskeletal chirality.  Remarkably, tuning the concentration
+of certain molecular motors such as members of the unconventional
+myosin 1 protein family can invert organ chirality across vertebrates
+and invertebrates alike, but we currently lack a physical
+understanding of the tissue-scale forces that drive organ-scale
+chirality.  One direction in the Mitchell Lab aims to uncover the
+mechanical forces that drive organ asymmetry and relate them to
+cell-intrinsic activity of Myo1C.  Here in this tutorial, we'll look
+at the chiral shape dynamics of the *Drosophila* midgut as a model
+system.  We will ask: to what extent are the guts of wild-type and
+embryos with myosin 1C overexpression mirror images of one another?
 
-![midgut](figures/00_gut.jpg)
-*Figure 3: Multiview lightsheet imaging and computer vision tools enable analysis of chiral shape changes in gut morphogenesis.*
+![Multiview lightsheet imaging and computer vision tools enable analysis of chiral shape changes in gut morphogenesis.](figures/00_gut.jpg)
 
-The data you are working with was taken from live, multiview lightsheet microscopy imaging of 
-the midgut across ~2.5 hrs of development.
-We used computer vision tools (Mitchell & Cislo, *Nature Methods* 2023) to extract the tissue surface over time.
-Briefly, we trained a two-stage 3D pixel classifier (iLastik autocontext workflow) to label the pixels of the endoderm and yolk as one probability channel and the muscle layer as another, 
-then identified a 3D segmentation of the gut. 
-The segmentation minimized an energy functional with surface tension, pressure, and attachment terms (see Active Contours Without Edges, 
-see Márquez-Neila et al, *IEEE Trans Pattern Anal Mach Intell
-.* 2014 and Chan & Vese, *IEEE Transactions on Image Processing* 2001). 
-Marching Cubes identified the segmentation's surface as a triangulation, which we then smoothed with a Poisson disk reconstruction and Laplacian filters.
-Here you are presented with the resulting mesh triangulations. 
-
----
+The data you are working with was taken from live, multiview
+lightsheet microscopy imaging of the midgut across ~2.5 hrs of
+development.  We used computer vision tools (Mitchell & Cislo, *Nature
+Methods* 2023) to extract the tissue surface over time.  Briefly, we
+trained a two-stage 3D pixel classifier (iLastik autocontext workflow)
+to label the pixels of the endoderm and yolk as one probability
+channel and the muscle layer as another, then identified a 3D
+segmentation of the gut.  The segmentation minimized an energy
+functional with surface tension, pressure, and attachment terms (see
+Active Contours Without Edges, see Márquez-Neila et al, *IEEE Trans
+Pattern Anal Mach Intell .* 2014 and Chan & Vese, *IEEE Transactions
+on Image Processing* 2001).  Marching Cubes identified the
+segmentation's surface as a triangulation, which we then smoothed with
+a Poisson disk reconstruction and Laplacian filters.  Here you are
+presented with the resulting mesh triangulations.
 
 ## 1. Setup and Imports
 
-Before we begin, we import the necessary Python libraries for 3D geometry processing, visualization, and numerical operations.
-Each of these libraries is a module.
-Note that you can write your own modules and import them, as long as they are placed somewhere that python can find them (ex in the current working directory or installed globally).
-As an example, we import the Mesh class from mesh.py, which is included in this tutorial.
+Before we begin, we import the necessary Python libraries for 3D
+geometry processing, visualization, and numerical operations.  Each of
+these libraries is a module.  Note that you can write your own modules
+and import them, as long as they are placed somewhere that python can
+find them (ex in the current working directory or installed globally).
+As an example, we import the Mesh class from mesh.py, which is
+included in this tutorial.
 
-If any of these other statements return an error, simply install the required module into your virtual environment in PyCharm (or on terminal if you have a Conda environment).
+If any of these other statements return an error, simply install the
+required module into your virtual environment in PyCharm (or on
+terminal if you have a Conda environment).
 
-If we `import moduleName`, then we can access functions or classes defined in `moduleName` by calling `moduleName.functionName(args)` or `moduleName.className()`. 
+If we `import moduleName`, then we can access functions or classes
+defined in `moduleName` by calling `moduleName.functionName(args)` or
+`moduleName.className()`.
 
-If we `import moduleName as localName`, then we can access functions or classes defined in `moduleName` by calling `localName.functionName(args)` or `localName.className()`. 
+If we `import moduleName as localName`, then we can access functions
+or classes defined in `moduleName` by calling
+`localName.functionName(args)` or `localName.className()`.
 
-If we say `from moduleName import functionName/className`, then we can access the desired function or class by calling `functionName(args)` or `className()`. 
+If we say `from moduleName import functionName/className`, then we can
+access the desired function or class by calling `functionName(args)`
+or `className()`.
 
 ```python
 import numpy as np              # powerful N-dimensional array operations
@@ -134,36 +181,43 @@ from scipy.spatial import cKDTree  # nearest neighbor search
 import copy                     # for duplicating objects safely
 ```
 
-___
-
 ## 2. Understanding Triangulations
 
-A **triangulation** is a way of approximating a surface using flat triangles. In biological imaging, shapes like organs or tissues are often reconstructed into triangle meshes. Here, we begin with simple examples to understand the data structures used to describe them.
+A **triangulation** is a way of approximating a surface using flat
+triangles. In biological imaging, shapes like organs or tissues are
+often reconstructed into triangle meshes. Here, we begin with simple
+examples to understand the data structures used to describe them.
 
 A mesh consists of:
+
 - a **list of vertices** (points in 2D or 3D space, stored as a NumPy array)
+
 - a **list of faces** (which connect 3 or more vertex indices to form polygons)
 
 ### 2a. An example triangulation: the Stanford Bunny
 
-Let's first learn by example. We read in a PLY file of the Stanford Bunny, provided by the Stanford Computer Graphics Laboratory.
+Let's first learn by example. We read in a PLY file of the Stanford
+Bunny, provided by the Stanford Computer Graphics Laboratory.
+
 ```python
 m = pv.read('bunny.ply')
 print(m)
 m.plot(show_edges=True)
 ```
 
-![Stanford Bunny](figures/00_bunny.png)
-*Figure 4: The Stanford bunny as a mesh triangulation, composed of vertices and faces.*
+![The Stanford bunny as a mesh triangulation, composed of vertices and faces.](figures/00_bunny.png)
  
-How is this defined? It has vertices and faces. A face connects three vertices. 
-Because the faces are triangles, this is a *triangulation*.
+How is this defined? It has vertices and faces. A face connects three
+vertices.  Because the faces are triangles, this is a *triangulation*.
 
-Open up `bunny.ply` in a text editor. See how it has vertices and faces defined (Figure 4). 
+Open up `bunny.ply` in a text editor. See how it has vertices and
+faces defined (Figure 4).
 
 ### 2b. A Single Triangle
-This is the simplest mesh, made of 3 points and 1 triangle.
-Here `x` and `y` are NumPy arrays and `faces` is a Python list of vertex index triplets.
+
+This is the simplest mesh, made of 3 points and 1 triangle.  Here `x`
+and `y` are NumPy arrays and `faces` is a Python list of vertex index
+triplets.
 
 ```python
 x = np.array([0, 1, 0])         # x-coordinates of the vertices
@@ -180,6 +234,7 @@ plt.axis('equal')
 plt.show()
 ```
 Coding concept check: why is there a missing edge in the plot?
+
 ```python
 # Go all the way around!
 face = faces[0]
@@ -190,10 +245,11 @@ plt.axis('equal')
 plt.show()
 ```
 
-Coding concept check: do you understand what appending the 0th element does above?
-
+Coding concept check: do you understand what appending the 0th element
+does above?
 
 We can also do this with triplot():
+
 ```python
 plt.figure()
 plt.triplot(x, y, faces, color='black')
@@ -203,8 +259,7 @@ plt.axis('equal')
 plt.show()
 ```
 
-![Single Triangle](figures/01_triangle.png)
-*Figure 5: A single triangle plotted using `triplot`.*
+![A single triangle plotted using `triplot`.](figures/01_triangle.png)
 
 ### 2c. A Triangulated Square
 We build a square from two triangles.
@@ -221,8 +276,7 @@ plt.axis('equal')
 plt.show()
 ```
 
-![Triangulated Square](figures/02_square.png)
-*Figure 6: A square composed of two triangles.*
+![A square composed of two triangles.](figures/02_square.png)
 
 ### 2d. A Triangulated Cube in 3D
 Now we move to 3D, building a cube from 8 corner points and 12 triangles.
@@ -270,12 +324,7 @@ plt.show()
 
 Try moving it around.
 
-![3D Cube](figures/03_cube.png)
-*Figure 7: Triangulated cube from 8 vertices and 12 triangles.*
-
-
-
-___
+![Triangulated cube from 8 vertices and 12 triangles.](figures/03_cube.png)
 
 ## 3. Mesh Validation
 
@@ -284,8 +333,9 @@ Before doing analysis or alignment, we often must ensure that the mesh is well-f
 - **Consistent Orientation**: all face normals point outward.
 
 ### 3a. Watertightness Check
-Let's count how many times each edge appears. If watertight, it should appear twice. 
-This demo highlights the use of dictionaries.
+
+Let's count how many times each edge appears. If watertight, it should
+appear twice.  This demo highlights the use of dictionaries.
 
 ```python
 
@@ -322,17 +372,22 @@ else:
     for edge, count in open_edges:
         print(f"  Edge {edge} appears {count} times")
 ```
-Concept check: why did we use min() and max() in the definition of edges?
 
+Concept check: why did we use min() and max() in the definition of
+edges?
 
 ### 3b. Face Orientation (somewhat advanced)
-Recall that the order of a triangle matters: the order of vertex indices listed for a triangle determines which way is "in" or "out" in 3D.
-Here we do a simple check for whether the faces of the cube are pointing the right way. 
-Let's use dot products to check if face normals point away from the mesh center. 
-A dot product measures the amount of alignment between two vectors. 
-If the face's "normal" direction (ie its "outward" direction) is pointing in a similar direction as the vector pointing from the origin to the face, then the dot product will be positive. 
-If the face is oriented the wrong way, then the dot product is negative. 
 
+Recall that the order of a triangle matters: the order of vertex
+indices listed for a triangle determines which way is "in" or "out" in
+3D.  Here we do a simple check for whether the faces of the cube are
+pointing the right way.  Let's use dot products to check if face
+normals point away from the mesh center.  A dot product measures the
+amount of alignment between two vectors.  If the face's "normal"
+direction (ie its "outward" direction) is pointing in a similar
+direction as the vector pointing from the origin to the face, then the
+dot product will be positive.  If the face is oriented the wrong way,
+then the dot product is negative.
 
 ```python
 
@@ -366,50 +421,54 @@ Concept check: This works for a cube. Would it work for a more complex shape (ex
 
 
 ## 3c. Advanced checks
-Challenge: how does this check work? At the least, make sure you can follow 
-the structure: we use the `Mesh` class imported from mesh.py. The class has a *method* called `is_closed`. 
-A method is like a function that belongs to a class. The class instance `mm` executes the method `is_closed()` when we say `mm.is_closed()`, effectively asking itself, 'Am I closed?'
-```python
-mm = Mesh(vertices, faces)
-mm.is_closed()
+
+Challenge: how does this check work? At the least, make sure you can
+follow the structure: we use the `Mesh` class imported from
+mesh.py. The class has a *method* called `is_closed`.  A method is
+like a function that belongs to a class. The class instance `mm`
+executes the method `is_closed()` when we say `mm.is_closed()`,
+effectively asking itself, 'Am I closed?'  ```python mm =
+Mesh(vertices, faces) mm.is_closed()
 
 # To fix face orientations using Mesh() class, do the following:
 mm.make_normals()
 mm.force_z_normal(direction=1)
 ```
 
-___
-
 ## 4. Loading meshes from microscopy data
 
-We can now load some experimentally-derived 3D triangle meshes — for example, segmentations from a microscopy dataset of the *Drosophila* gut.
-We've saved the mesh as a `.ply` file. Take a look at the PLY file in a text editor. 
-Note that all the information about the contents are in the header. First the vertices are listed, then the faces. The header declares what information is in the file, how many vertices, how many faces, etc.
+We can now load some experimentally-derived 3D triangle meshes — for
+example, segmentations from a microscopy dataset of the *Drosophila*
+gut.  We've saved the mesh as a `.ply` file. Take a look at the PLY
+file in a text editor.  Note that all the information about the
+contents are in the header. First the vertices are listed, then the
+faces. The header declares what information is in the file, how many
+vertices, how many faces, etc.
 
-
-Below we use the `pyvista.PolyData` class to provide convenient 3D plotting for meshes. You can use the more standard `matplotlib.pyplot` functions too, but they are going to be laggy for meshes of this size (or if you don't have enough RAM, they will make your python console freeze up).
-
+Below we use the `pyvista.PolyData` class to provide convenient 3D
+plotting for meshes. You can use the more standard `matplotlib.pyplot`
+functions too, but they are going to be laggy for meshes of this size
+(or if you don't have enough RAM, they will make your python console
+freeze up).
 
 ```python
 m = pv.read('./wt/20240527/mesh_000000_APDV_um.ply')  # returns a PyVista mesh object
 m.plot(show_edges=True)
 ```
 
-![Microscopy Mesh](figures/04_gut.png)
-*Figure 8: Example mesh from level sets and Poisson disk surface reconstruction.*
-
-___
+![Example mesh from level sets and Poisson disk surface reconstruction.](figures/04_gut.png)
 
 ## 5. Shape Matching Using ICP
 
 The **Iterative Closest Point (ICP)** algorithm finds the rigid transform (rotation + translation) that best aligns two point clouds or meshes.
 
-
 ### 5a. Generate and Offset Meshes
 
-Let's load a couple of meshes -- two guts from different embryos at a similar developmental stages. 
-We load these as `TriangleMesh` class instances from Open3D, but don't let that scare you: they are just containers for vertices and faces.
-We then compute the optimal translation and rotation that best matches one mesh to the other one. 
+Let's load a couple of meshes -- two guts from different embryos at a
+similar developmental stages.  We load these as `TriangleMesh` class
+instances from Open3D, but don't let that scare you: they are just
+containers for vertices and faces.  We then compute the optimal
+translation and rotation that best matches one mesh to the other one.
 I packaged this optimization in a function in `organ_geometry.py`.
 
 ```python
@@ -429,31 +488,40 @@ meshB = pv.read(fB)
 meshA_t, T = align_mesh_icp(meshA, meshB, ssfactor=ssfactor)
 
 ```
-![Aligned Guts](figures/05_gutAlign.png)
-*Figure 9: Two different embryos' midguts, captured at a similar stage of development, aligned in space.*
+![Two different embryos' midguts, captured at a similar stage of development, aligned in space.](figures/05_gutAlign.png)
 
-Here `T` is a 4×4 NumPy array representing the optimal rigid transform.
-Advanced concept check: how are data stored inside `T`? Hint: There is a matrix encoding rotations and scaling, but also a translation (dx, dy, dz). Which columns/rows are which? 
+Here `T` is a 4×4 NumPy array representing the optimal rigid
+transform.  Advanced concept check: how are data stored inside `T`?
+Hint: There is a matrix encoding rotations and scaling, but also a
+translation (dx, dy, dz). Which columns/rows are which?
 
 ### 5c. Compute and Color Distance
-We measure how close the aligned mesh is to the target and color it by the distance from the nearest matching point.
+
+We measure how close the aligned mesh is to the target and color it by
+the distance from the nearest matching point.
+
 ```python
 # Color the mesh by distance between the two
 color_mesh_by_distance(meshA_t, meshB, transform=None)
 ```
 
-![Distance between guts](figures/05_dist2gutmesh.png)
-*Figure 10: The Euclidean distance between two gut meshes.*
+![The Euclidean distance between two gut meshes.](figures/05_dist2gutmesh.png)
 
-Under the hood, in another function I put in `organ_geometry.py`, we computed the distance to the nearest meshB vertex for each vertex in meshA.
-Then we converted those distances to a color array, a NumPy array with shape `(N, 3)` for RGB values.
-How does your alignment look?
-
+Under the hood, in another function I put in `organ_geometry.py`, we
+computed the distance to the nearest meshB vertex for each vertex in
+meshA.  Then we converted those distances to a color array, a NumPy
+array with shape `(N, 3)` for RGB values.  How does your alignment
+look?
 
 ### 5d. Generate and Offset Meshes
-The guts we've been looking at are from a wildtype embryo with three different fluorescent markers (full genotype is *w, HandGFP / w; UAS-mCh:CAAX / +;bynGAL4, klar / H2A-iRFP*. 
-Let's compare to the gut of an embryo that overexpresses Myosin1C (full genotype is *w, HandGFP / w; UAS-Myo1C:RFP / +;bynGAL4, klar / H2A-iRFP*).
-In this case, the unconventional myosin motor acts in a portion of the digestive tract (the *byn* domain) to invert the chiral shape dynamics.
+
+The guts we've been looking at are from a wildtype embryo with three
+different fluorescent markers (full genotype is *w, HandGFP / w;
+UAS-mCh:CAAX / +;bynGAL4, klar / H2A-iRFP*.  Let's compare to the gut
+of an embryo that overexpresses Myosin1C (full genotype is *w, HandGFP
+/ w; UAS-Myo1C:RFP / +;bynGAL4, klar / H2A-iRFP*).  In this case, the
+unconventional myosin motor acts in a portion of the digestive tract
+(the *byn* domain) to invert the chiral shape dynamics.
 
 How similar are these two organ morphologies?
 
@@ -474,9 +542,7 @@ meshA_t, T = align_mesh_icp(meshA, meshB, ssfactor=ssfactor, Alabel="WT", Blabel
 dists, plotter = color_mesh_by_distance(meshA_t, meshB, transform=None)
 plotter.show()
 ```
-![Distance between guts](figures/05b_wtoe.png)
-*Figure 11: Overexpression of Myo1C dramatically changes the gut shape.*
-
+![Overexpression of Myo1C dramatically changes the gut shape.](figures/05b_wtoe.png)
 
 Now let's flip one across the left-right axis and compare them again. 
 
@@ -494,11 +560,8 @@ dists, plotter = color_mesh_by_distance(meshA_t, meshB, transform=None)
 plotter.show()
 ```
 
-![Distance between guts](figures/05b_wtoe_mirrored.png)
-*Figure 12: Overexpression of Myo1C nearly mirrors (inverts along the left-right axis) the gut shape.
-Pronounced residual mismatch is visible in the anterior chamber (arrowhead).*
-
-
+![Overexpression of Myo1C nearly mirrors (inverts along the left-right axis) the gut shape.
+Pronounced residual mismatch is visible in the anterior chamber (arrowhead).](figures/05b_wtoe_mirrored.png)
 
 # Part 2: Timepoint Alignment and Spatiotemporal Comparison
 
@@ -585,8 +648,7 @@ fig.colorbar(im2, ax=ax2, label="Smoothed ICP Error")
 plt.show()
 ```
 
-![ICP_heatmaps](figures/06_icpRMSE.png)
-*Figure 13: Raw and smoothed root-mean-squared error measurements after ICP alignment for two different WT datasets.*
+![Raw and smoothed root-mean-squared error measurements after ICP alignment for two different WT datasets.](figures/06_icpRMSE.png)
 
 Match timepoints in this matrix by finding row and column minima.
 
@@ -620,9 +682,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-
-![ICP_RMSE_Paths](figures/06_icpRMSE_paths.png)
-*Figure 14: The paths represent AtoB alignment (blue), BtoA alignment (orange), and the result of a simple dynamic time warping implementation (purple).*
+![The paths represent AtoB alignment (blue), BtoA alignment (orange), and the result of a simple dynamic time warping implementation (purple).](figures/06_icpRMSE_paths.png)
 
 ```python
 # Plot the result
@@ -649,11 +709,7 @@ ax2.legend()
 plt.savefig(os.path.join(outdir, f'TPMatching_AtoB_BtoA_{wt_oe}_step{step}_ss{ssfactor}.png'))
 plt.show()
 ```
-![ICP_RMSE_curves](figures/07_icpRMSE_curves.png)
-*Figure 15: The average root-mean-squared mismatch at each timepoint along the AtoB and BtoA paths show that cross-shape variation rises slightly over time.*
-
-
-___
+![The average root-mean-squared mismatch at each timepoint along the AtoB and BtoA paths show that cross-shape variation rises slightly over time.](figures/07_icpRMSE_curves.png)
 
 ## 9. Expected ICP Error from Subsampling
 
@@ -710,13 +766,7 @@ plt.savefig(os.path.join(outdir, f'TPMatching_AtoB_BtoA_expectedRMSE_{wt_oe}_ste
 plt.show()
 ```
 
-
-![baseline](figures/08_icpRMSE_baseline.png)
-*Figure 16: The expected baseline ICP error from finite sampling of the meshes lies far below the measured values.*
-
-
-
-___
+![The expected baseline ICP error from finite sampling of the meshes lies far below the measured values.](figures/08_icpRMSE_baseline.png)
 
 ## 10. Visualize Aligned Meshes
 
@@ -733,12 +783,11 @@ batch_icp_overlay(dirA, dirB, filesA, filesB, AtoB,
                   Alabel=dirA, Blabel=dirB)
 ```
 
-___
-
 ## 11. Measuring the spatial pattern of misalignment between samples
 
-We loop over all timepoints and visualize distance between each aligned mesh pair. The color intensity shows how well two shapes match locally.
-The output is saved to the `results` directory.
+We loop over all timepoints and visualize distance between each
+aligned mesh pair. The color intensity shows how well two shapes match
+locally.  The output is saved to the `results` directory.
 
 ```python
 # --------------------------------------
@@ -751,10 +800,7 @@ batch_color_by_distance(dirA, dirB, filesA, filesB, AtoB,
                         clim=clims, flipy=flipy)
 ```
 
-![overlay](figures/06_overlay_024.png)
-*Figure 17: Spatial alignment of two WT midguts at an example timepoint.*
-
----
+![Spatial alignment of two WT midguts at an example timepoint.](figures/06_overlay_024.png)
 
 ## 12. Advanced: PCA-based smoothing as an alternative to dynamic time warping
 Dynamic time warping (DTW) gives a monotone, potentially jagged A-to-B mapping (AtoB, BtoA), but sometimes lies "outside" of either set (AtoB or BtoA).
@@ -790,10 +836,7 @@ plt.savefig(os.path.join(outdir, f'TPMatching_PCASm_{wt_oe}_step{step}_ss{ssfact
 plt.show()
 ```
 
-![ICP_paths](figures/09_icpPCA_path.png)
-*Figure 18: PCA-based smoothing (red curve) offers an alternative for reconciling the AtoB and BtoA timeline matching differences.*
-
-___
+![PCA-based smoothing (red curve) offers an alternative for reconciling the AtoB and BtoA timeline matching differences.](figures/09_icpPCA_path.png)
 
 ## 13. Final Export
 
@@ -834,17 +877,20 @@ np.save(os.path.join(outdir, f"expected_rmse_B_{wt_oe}_step{step}_ss{ssfactor}.n
 np.save(os.path.join(outdir, f"path_{wt_oe}_step{step}_ss{ssfactor}.npy"), [path, path_tps])
 ```
 
-___
-
 ## 14. Cross-Condition Comparison
 
-Run the above for different conditions `'wt', 'oe', 'x1', 'x2', 'x3', 'x4'`. 
-We compare how ICP errors change across conditions. This can reveal if shape dynamics differ significantly between WT and perturbed embryos.
+Run the above for different conditions `'wt', 'oe', 'x1', 'x2', 'x3',
+'x4'`.  We compare how ICP errors change across conditions. This can
+reveal if shape dynamics differ significantly between WT and perturbed
+embryos.
 
-Note that whitespace matters in python. Just as delimiters like spaces or punctuation in English can completely change the meaning of a sentence — for example, “Let’s eat, Grandma” vs. “Let’s eat Grandma” — Python relies on whitespace, punctuation, and syntax to interpret code correctly.
+Note that whitespace matters in python. Just as delimiters like spaces
+or punctuation in English can completely change the meaning of a
+sentence — for example, "Let’s eat, Grandma" vs. "Let’s eat Grandma" —
+Python relies on whitespace, punctuation, and syntax to interpret code
+correctly.
 
 ```python
-
 for i, wt_oe in enumerate(conditions):
     if wt_oe == 'wt':
         # dirA = "HandGFPbynGAL4klar_UASmChCAAXHiFP/20240527/"
@@ -875,7 +921,6 @@ for i, wt_oe in enumerate(conditions):
     ...
     # All the batch analysis you ran above here
     ...
-
 
 # ------------------------------------------------------------
 # Compare difference between WT and OE against
@@ -939,14 +984,16 @@ print(f"OE internal std: {np.std(oe_err):.3f}")
 ![xcomparison](figures/10_xcomparison.png)
 *Figure 19: Comparing the distance between mesh pairs within and across groups (with the Myo1C OE case inverted L<->R).*
 
-This figure provides a quantitative summary of dynamic shape variability under genetic or experimental perturbation. How do you interpret these results?
-
-
-___
+This figure provides a quantitative summary of dynamic shape
+variability under genetic or experimental perturbation. How do you
+interpret these results?
 
 ## Next Steps
 
 - Try aligning real meshes from your experiments
+
 - Explore ICP variants (e.g., point-to-plane)
+
 - Add mesh preprocessing: smoothing, simplification, hole filling
+
 - Analyze biological trends in alignment error
