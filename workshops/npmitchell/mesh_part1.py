@@ -1,0 +1,278 @@
+# Introductory Python Module: Mesh Triangulations and ICP Matching for Biology
+
+# This notebook introduces core concepts in scientific programming using Python,
+# with applications to comparing 3D biological shapes across time.
+# We will start from the basics and build up to aligning mesh surfaces using ICP.
+# After completing this tutorial, advance to Steps in main.py
+
+# ----------------------
+# STEP 1: Imports and Setup
+# ----------------------
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+import pyvista as pv
+from mesh import Mesh
+import copy
+
+# ----------------------
+# STEP 2a: Understanding Triangulations
+# ----------------------
+# We read in the Stanford Bunny, provided by the Stanford Computer Graphics Laboratory.
+m = pv.read('bunny.ply')
+print(m)
+m.plot(show_edges=True)
+
+# ----------------------
+# 2b: single triangle
+# ----------------------
+# Let's visualize a single triangle
+x = np.array([0, 1, 0])
+y = np.array([0, 0, 1])
+faces = [[0, 1, 2]]
+
+# Plotting in python: use matplotlib.pyplot
+# Let's make lines that connect the vertices.
+# Concept check: Why do we have to index into faces?
+plt.figure()
+plt.plot(x[faces[0]], y[faces[0]], '-')
+plt.title('single triangle...almost')
+plt.axis('equal')
+plt.show()
+
+# Coding concept check: why is there a missing triangle?
+
+# Go all the way around!
+face = faces[0]
+plt.figure()
+plt.plot(np.append(x[face], x[face[0]]), np.append(y[face], y[face[0]]), '-o')
+plt.title('single triangle')
+plt.axis('equal')
+plt.show()
+
+
+# We can also do this with triplot()
+plt.triplot(x, y, faces, color='black')
+plt.plot(x, y, 'o', color='blue')
+plt.title('A Single Triangle plotted with triplot')
+plt.axis('equal')
+plt.show()
+
+# ----------------------
+# 2c: A triangulated square (ie two triangles, or a 'kite')
+# ----------------------
+# Let's visualize a simple triangulation of a square (2D)
+x = np.array([0, 1, 0, 1])
+y = np.array([0, 0, 1, 1])
+faces = [[0, 1, 2], [1, 2, 3]]
+
+plt.figure()
+plt.triplot(x, y, faces, color='black')
+plt.plot(x, y, 'o', color='blue')
+plt.title('2D Triangulation of a Square')
+plt.axis('equal')
+plt.show()
+
+
+# ----------------------
+# 2d: cube
+# ----------------------
+# Make a triangulation of a cube
+
+# Define the vertices of the cube
+vertices = np.array([
+    [0, 0, 0],  # 0
+    [1, 0, 0],  # 1
+    [1, 1, 0],  # 2
+    [0, 1, 0],  # 3
+    [0, 0, 1],  # 4
+    [1, 0, 1],  # 5
+    [1, 1, 1],  # 6
+    [0, 1, 1]   # 7
+])
+
+# Define faces (two per face, 12 faces total)
+faces = [
+    [0, 2, 1], [0, 3, 2],  # bottom face
+    [4, 5, 6], [4, 6, 7],  # top face
+    [0, 1, 5], [0, 5, 4],  # front face
+    [2, 3, 7], [2, 7, 6],  # back face
+    [0, 7, 3], [0, 4, 7],  # left face
+    [1, 2, 6], [1, 6, 5]   # right face
+]
+
+# Set up the figure
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Create a collection of faces for plotting
+tri_faces = [[vertices[vertex] for vertex in tri] for tri in faces]
+
+# Plot the triangulated cube
+ax.add_collection3d(Poly3DCollection(tri_faces,
+                                     facecolors='cyan',
+                                     linewidths=1,
+                                     edgecolors='black',
+                                     alpha=0.8))
+
+# Plot vertices as points
+ax.scatter(vertices[:,0], vertices[:,1], vertices[:,2], color='blue')
+
+# Set plot limits
+ax.set_xlim([0, 1])
+ax.set_ylim([0, 1])
+ax.set_zlim([0, 1])
+
+# Set labels
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+
+# Set equal aspect ratio
+ax.set_box_aspect([1, 1, 1])
+plt.title('3D Triangulation of a Cube')
+plt.show()
+
+# ----------------------
+# ADVANCED: Check if mesh is watertight
+# This demonstrates the python object called a dictionary.
+# ----------------------
+# Initialize an empty dictionary to count edges
+# A dict is a natural data structure (for many languages) that is versatile and mutable.
+edge_count = {}
+
+# Loop over all faces
+for tri in faces:
+    # Extract edges from the triangle
+    edges = [
+        (min(tri[0], tri[1]), max(tri[0], tri[1])),
+        (min(tri[1], tri[2]), max(tri[1], tri[2])),
+        (min(tri[2], tri[0]), max(tri[2], tri[0]))
+    ]
+
+    # Count how many times each edge appears
+    for edge in edges:
+        if edge in edge_count:
+            edge_count[edge] += 1
+        else:
+            edge_count[edge] = 1
+
+# Concept check: why did we use min() and max() in the definition of edges?
+
+# Collect edges that appear ≠ 2 times (open or non-manifold edges)
+open_edges = []
+for edge in edge_count:
+    if edge_count[edge] != 2:
+        open_edges.append((edge, edge_count[edge]))
+
+# Report
+if len(open_edges) == 0:
+    print("✅ The mesh is closed (watertight).")
+else:
+    print("❌ The mesh is NOT closed. Problematic edges:")
+    for edge, count in open_edges:
+        print(f"  Edge {edge} appears {count} times")
+
+
+# ----------------------
+# ADVANCED: Check if faces are oriented correctly
+# ----------------------
+# Compute cube center
+center = np.mean(vertices, axis=0)
+
+def is_outward_facing(tri):
+    v0, v1, v2 = vertices[tri[0]], vertices[tri[1]], vertices[tri[2]]
+    # Compute normal vector
+    normal = np.cross(v1 - v0, v2 - v0)
+    # Vector from the center of the triangle to center of the cube
+    tri_center = (v0 + v1 + v2) / 3
+    from_center = tri_center - center
+    # Dot product tells us if the normal is pointing toward or away from the center
+    return np.dot(normal, from_center) > 0  # Should be negative if pointing outward
+
+# Check all faces
+inward_facing = []
+for i, tri in enumerate(faces):
+    if not is_outward_facing(tri):
+        inward_facing.append(i)
+
+# Report
+if len(inward_facing) == 0:
+    print("✅ All faces are consistently outward-facing.")
+else:
+    print("❌ Found inward-facing faces at indices:")
+    print(inward_facing)
+
+# --------------
+# Alternative -- Challenge: how does this check work?
+# --------------
+mm = Mesh(vertices, faces)
+mm.is_closed()
+
+# To fix face orientations using Mesh() class, do the following:
+mm.make_normals()
+mm.force_z_normal(direction=1)
+
+
+# ----------------------
+# STEP 3: Working with 3D Meshes derived from from microscopy data
+# ----------------------
+m = pv.read('./wildtype/20240527/mesh_000000_APDV_um.ply')
+print(m)
+m.plot(show_edges=True)
+
+
+# ----------------------
+# STEP 3b: Aligning 3D Meshes
+# ----------------------
+from organ_geometry import align_mesh_icp, color_mesh_by_distance
+
+ssfactor = 10 # subsampling factor (take 1/N points for the ICP registration).
+              # Larger values will run faster but be less precise. This is for speedup
+
+print('Reading in meshes...')
+fA = "wildtype/20240527/mesh_000040_APDV_um.ply"
+meshA = pv.read(fA)
+
+fB = "wildtype/20240531/mesh_000050_APDV_um.ply"
+meshB = pv.read(fB)
+
+# Align one mesh to the other
+meshA_t, T = align_mesh_icp(meshA, meshB, ssfactor=ssfactor)
+
+# Color the mesh by distance between the two
+color_mesh_by_distance(meshA_t, meshB, transform=None)
+
+
+# ------------------------------
+# Aligning Myo1C OE to WT guts
+# ------------------------------
+print('Reading in meshes...')
+fA = "wildtype/20240527/mesh_000050_APDV_um.ply"
+meshA = pv.read(fA)
+
+fB = "bynGAL4_UASMyo1C/20240528/mesh_000052_APDV_um.ply"
+meshB = pv.read(fB)
+
+# Align one mesh to the other
+meshA_t, T = align_mesh_icp(meshA, meshB, ssfactor=ssfactor, Alabel="WT", Blabel='byn>Myo1C')
+
+# Color the mesh by distance between the two
+dists, plotter = color_mesh_by_distance(meshA_t, meshB, transform=None)
+plotter.show()
+
+
+# ------------------------------
+# Invert Myo1C OE gut and compare again to WT
+# ------------------------------
+# Now flip y -> -y in the Myo1C OE case
+meshA = pv.read(fA)
+meshB = pv.read(fB)
+meshB.points[:, 1] *= -1
+
+# Align one mesh to the other
+meshA_t, T = align_mesh_icp(meshA, meshB, ssfactor=ssfactor, Alabel="WT", Blabel='byn>Myo1C, mirrored')
+
+# Color the mesh by distance between the two
+dists, plotter = color_mesh_by_distance(meshA_t, meshB, transform=None)
+plotter.show()
