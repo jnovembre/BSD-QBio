@@ -36,7 +36,6 @@ pdftk tmp.pdf ../../schedule/GeneralSchedule.pdf output tmp2.pdf; mv tmp2.pdf tm
 ## insert blank page # Revised
 #pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
-
 ## Materials cover  # Revised
 pdftk tmp.pdf ../other_docs/cover_tutorials.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
@@ -82,6 +81,9 @@ pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## Data visualization 
 pdftk tmp.pdf ../../tutorials/data_visualization/data_visualization.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
+## insert blank page
+pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+
 ## Defensive programming 
 pdftk tmp.pdf ../../tutorials/defensive_programming/code/defensive_programming.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
@@ -115,8 +117,8 @@ pdftk tmp.pdf ../other_docs/cover_workshops.pdf output tmp2.pdf; mv tmp2.pdf tmp
 ## insert blank page
 pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
-## Khan
-pdftk tmp.pdf ../../workshops/akhan/code/Immuno.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+## Noah Mitchell
+pdftk tmp.pdf ../../workshops/npmitchell/npmitchell_workshop.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 ## insert blank page
 pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
@@ -127,16 +129,11 @@ pdftk tmp.pdf ../../workshops/jjberg/code/MBL_WorkshopJJB.pdf output tmp2.pdf; m
 ## insert blank page
 #pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
-
-
-
 ## Nirody
 #pdftk tmp.pdf ../../workshops/jnirody/QBio_NirodyWorkshop.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
-## Weinstein
-pdftk tmp.pdf ../../workshops/jaweinst/dynamic_systems.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
-
-
+## Jasmine Nirody
+pdftk tmp.pdf ../../workshops/jnirody/QBio_NirodyWorkshop.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 ## Redistill to reduce size
 gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -sOutputFile=../workbook.pdf tmp.pdf

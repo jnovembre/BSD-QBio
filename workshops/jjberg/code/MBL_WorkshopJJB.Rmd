@@ -8,7 +8,7 @@ output:
 author:
   name: Jeremy Berg
   affiliation: University of Chicago
-date: August 25, 2021
+date: August 11, 2025
 geometry: margin=1in
 fontfamily: mathpazo
 fontsize: 11pt
@@ -16,7 +16,7 @@ spacing: single
 graphics: yes
 endnote: no
 chapter: 7
-thanks: "Adapted from a workshop originally created by John Novembre. This document is included as part of the Population Genetics workshop packet for the BSD qBio Bootcamp, University of Chicago, 2024. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
+thanks: "Adapted from a workshop originally created by John Novembre. This document is included as part of the Population Genetics workshop packet for the BSD qBio Bootcamp, University of Chicago, 2025. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
 abstract: "This exercise is going to expose you to several basic ideas
   in probability and statistics as well as show you the utility of using
   R for basic statistical analyses.  We'll do so in the context of a
@@ -329,7 +329,6 @@ The region you've found is one of the most differentiated between human populati
 
 Modern population genetics has a lot of additional tools on its workbench, but here using relatively simple and classical ideas combined with genomic-scale data, we have been able to observe and interpret some major features of human genetic diversity.  We have also revisited some basic concepts of probability and statistics such as independence vs correlation, the $\chi^2$ test, and the problems of multiple testing. One remarkable thing we saw is that a very simple mathematical model based on assuming independence of alleles and genotypes can predict genotype proportions within ~10% of the true values.  This gives us a hint of how simple mathematical models may be useful even in the face of biological complexity. Finally, we have gained more familiarity with R. We didn't discuss how genotyping errors might create Hardy-Weinberg departures, but if we were doing additional analyses, we could use Hardy-Weinberg departures to filter them from our data. It's common practice to do so, but with a Bonferonni correction and using data from within populations to do the filtering. 
 
-
 ### Follow-up activities
 
 In the `data` folder, we are including data files that you can explore to gain more experience.  These include global data for other chromosomes (`H938_chr*.geno`) and the same data but limited to different continental samples (`H938_*_chr*.geno`).  Here are a few suggested follow-up activities.  It may be wise to split the activities across class members and reconvene after carrying them out.
@@ -337,10 +336,6 @@ In the `data` folder, we are including data files that you can explore to gain m
 **Follow-up activity**: Look at chromosome 15 from your groups dataset - is the deficiency in heterozygosity as strong as it was on the global scale?  Before you begin, what would you expect to see?  
 
 **Follow-up activity** Using your dataset, do you find any regions of the genome that are outliers for $F$ on your chromosome?  Using genome browsers and/or literature searches, can you find what is the likely locus under selection for that region? Be ready to share what you learned with the class. 
-
-$$
-\octopus
-$$
 
 ### References
 

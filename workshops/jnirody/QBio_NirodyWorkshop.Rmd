@@ -15,7 +15,7 @@ fontsize: 11pt
 spacing: single
 graphics: yes
 endnote: no
-chapter: 9
+chapter: 8
 abstract: "In this workshop, we'll work with movement trajectories in the form of a time course of (x,y) coordinates. We'll provide an overview of some basic image analysis and concepts in biophysics and will get some experience working in ImageJ, R, and Python."
 ---
 

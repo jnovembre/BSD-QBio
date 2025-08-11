@@ -5,7 +5,7 @@ author:
     affiliation: University of Chicago
   - name: John Novembre
     affiliation: University of Chicago
-date: "August 16, 2022"
+date: "August 11, 2025"
 output:
   pdf_document:
     keep_tex: true
@@ -20,7 +20,7 @@ fontsize: 11pt
 spacing: single
 graphics: yes
 endnote: no
-thanks: "This document is included as part of the workshop packet for the BSD qBio Bootcamp, University of Chicago, 2022. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
+thanks: "This document is included as part of the workshop packet for the BSD qBio Bootcamp, University of Chicago, 2025. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
 ---
 
 ```{r setup, echo=FALSE, eval=TRUE}

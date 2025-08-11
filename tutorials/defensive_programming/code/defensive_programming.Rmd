@@ -6,9 +6,9 @@ output:
     latex_engine: pdflatex
     template: readable.tex
 author:
-  - name: Sarah Cobey (adapted by Kyle Hernandez and John Novembre))
+  - name: Sarah Cobey (adapted by Kyle Hernandez and John Novembre)
     affiliation: University of Chicago
-date: August 11, 2022
+date: August 11, 2025
 geometry: margin=1in
 fontfamily: mathpazo
 fontsize: 11pt
@@ -16,7 +16,7 @@ spacing: single
 graphics: yes
 endnote: no
 chapter: 4
-thanks: "This document is included as part of the 'Defensive Programming in R' tutorial packet for the BSD qBio Bootcamp, University of Chicago, 2024. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
+thanks: "This document is included as part of the 'Defensive Programming in R' tutorial packet for the BSD qBio Bootcamp, University of Chicago, 2025. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
 abstract: "**Goal:** Convince new and existing programmers of the
   importance of defensive programming practices, introduce general
   programming principles, and provide specific tips for programming and
