@@ -757,7 +757,7 @@ batch_color_by_distance(dirA, dirB, filesA, filesB, AtoB,
 ---
 
 ## 12. Advanced: PCA-based smoothing as an alternative to dynamic time warping
-Dynamic time warping (DTW) gives a monotone, potentially jagged A↔B mapping (AtoB, BtoA), but sometimes lies "outside" of either set (AtoB or BtoA).
+Dynamic time warping (DTW) gives a monotone, potentially jagged A-to-B mapping (AtoB, BtoA), but sometimes lies "outside" of either set (AtoB or BtoA).
 Here we instead takes the matched timepoints between two series and smooths their relationship
 by projecting them into PCA space, smoothing along the orthogonal component, and map back to reconstruct 
 a smoothed trajectory incorporating contributions from both AtoB and BtoA.
@@ -918,10 +918,10 @@ x_std = np.std(x_errors, axis=0)
 
 # Plot
 plt.figure(figsize=(10, 5))
-plt.plot(tps*dt, wt_err, 'b.-', label="WT↔WT")
-plt.plot(tps*dt, oe_err, 'r.-', label="OE↔OE")
-plt.plot(tps*dt, x_mean, 'k-', label="WT↔OE (mean x1–x4)")
-plt.fill_between(tps*dt, x_mean - x_std, x_mean + x_std, color='gray', alpha=0.3, label="WT↔OE ± std")
+plt.plot(tps*dt, wt_err, 'b.-', label="WT-WT")
+plt.plot(tps*dt, oe_err, 'r.-', label="OE-OE")
+plt.plot(tps*dt, x_mean, 'k-', label="WT-to-OE (mean x1–x4)")
+plt.fill_between(tps*dt, x_mean - x_std, x_mean + x_std, color='gray', alpha=0.3, label="WT-OE ± std")
 plt.xlabel("reference time [min]")
 plt.ylabel("ICP RMSE (smoothed)")
 plt.title("Within- vs cross-ensemble ICP RMSE")
@@ -931,7 +931,7 @@ plt.tight_layout()
 plt.savefig(os.path.join(outdir, 'cross_ensemble_RMSE.png'))
 plt.show()
 
-print(f"Mean WT↔OE diff: {mean_diff:.3f}")
+print(f"Mean WT-OE diff: {mean_diff:.3f}")
 print(f"WT internal std: {np.std(wt_err):.3f}")
 print(f"OE internal std: {np.std(oe_err):.3f}")
 ```
