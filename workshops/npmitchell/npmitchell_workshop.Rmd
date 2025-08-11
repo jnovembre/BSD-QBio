@@ -304,11 +304,11 @@ faces = [
     ?????? <Fill in here>   # right face
 ]
 
-
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 tri_faces = [[vertices[i] for i in tri] for tri in faces]  # list of 3D triangles
-ax.add_collection3d(Poly3DCollection(tri_faces, facecolors='cyan', edgecolors='black', alpha=0.8))
+ax.add_collection3d(Poly3DCollection(tri_faces, facecolors='cyan',
+                                     edgecolors='black', alpha=0.8))
 ax.scatter(vertices[:,0], vertices[:,1], vertices[:,2], color='blue')
 
 # Set labels
@@ -328,8 +328,11 @@ Try moving it around.
 
 ## 3. Mesh Validation
 
-Before doing analysis or alignment, we often must ensure that the mesh is well-formed:
+Before doing analysis or alignment, we often must ensure that the mesh
+is well-formed:
+
 - **Watertightness**: no missing connections or open edges.
+
 - **Consistent Orientation**: all face normals point outward.
 
 ### 3a. Watertightness Check
@@ -417,8 +420,10 @@ else:
     print("Found inward-facing faces at indices:")
     print(inward_facing)
 ```
-Concept check: This works for a cube. Would it work for a more complex shape (ex the Stanford bunny)? Provide a simple example that fails, and verify this with code.
 
+Concept check: This works for a cube. Would it work for a more complex
+shape (ex the Stanford bunny)? Provide a simple example that fails,
+and verify this with code.
 
 ## 3c. Advanced checks
 
@@ -427,8 +432,10 @@ follow the structure: we use the `Mesh` class imported from
 mesh.py. The class has a *method* called `is_closed`.  A method is
 like a function that belongs to a class. The class instance `mm`
 executes the method `is_closed()` when we say `mm.is_closed()`,
-effectively asking itself, 'Am I closed?'  ```python mm =
-Mesh(vertices, faces) mm.is_closed()
+effectively asking itself, 'Am I closed?'
+
+```python
+mm = Mesh(vertices, faces) mm.is_closed()
 
 # To fix face orientations using Mesh() class, do the following:
 mm.make_normals()
@@ -565,14 +572,19 @@ Pronounced residual mismatch is visible in the anterior chamber (arrowhead).](fi
 
 # Part 2: Timepoint Alignment and Spatiotemporal Comparison
 
-This second part builds on our introductory ICP module to analyze time-series data from a developing embryonic gut in WT conditions and with Myo1C overexpression. We align shapes over time, compare shape dynamics between experimental conditions, and visualize mismatch using point cloud alignment. This module assumes that triangulated mesh files (`.ply`) are already segmented from microscopy and stored in directories corresponding to timepoints.
-
-
-___
+This second part builds on our introductory ICP module to analyze
+time-series data from a developing embryonic gut in WT conditions and
+with Myo1C overexpression. We align shapes over time, compare shape
+dynamics between experimental conditions, and visualize mismatch using
+point cloud alignment. This module assumes that triangulated mesh
+files (`.ply`) are already segmented from microscopy and stored in
+directories corresponding to timepoints.
 
 ## 6. Setup and Parameters
 
-We begin by importing libraries and setting parameters. These include which experimental conditions we want to compare (`wt`, `oe`, etc.) and how much to subsample meshes for faster computation.
+We begin by importing libraries and setting parameters. These include
+which experimental conditions we want to compare (`wt`, `oe`, etc.)
+and how much to subsample meshes for faster computation.
 
 ```python
 from organ_geometry import *
@@ -595,11 +607,12 @@ dirB = "wildtype/20240531/"
 flipy = False
 ```
 
-___
-
 ## 7. Timepoint Matching with ICP
 
-This section performs pairwise shape comparison using ICP to align all meshes from `dirA` to those in `dirB`. ICP produces a matrix of matching errors, which we smooth and use to infer a time-mapping between the two datasets.
+This section performs pairwise shape comparison using ICP to align all
+meshes from `dirA` to those in `dirB`. ICP produces a matrix of
+matching errors, which we smooth and use to infer a time-mapping
+between the two datasets.
 
 ```python
 
@@ -661,11 +674,12 @@ AtoB, BtoA = match_timepoints(icp_smooth)
 path = np.array(path)
 path_tps = np.array([tpsA[path[:, 0]], tpsB[path[:, 1]]]).T
 ```
-___
 
 ## 8. Visualizing Timepoint Matching
 
-Plot the smoothed ICP error matrix, with the dynamic time warping path overlayed in red. This helps visualize which timepoints from A match which timepoints from B.
+Plot the smoothed ICP error matrix, with the dynamic time warping path
+overlayed in red. This helps visualize which timepoints from A match
+which timepoints from B.
 
 ```python
 plt.figure()
@@ -770,7 +784,10 @@ plt.show()
 
 ## 10. Visualize Aligned Meshes
 
-This section loads each matching pair of meshes, re-runs ICP alignment, and overlays them to assess alignment quality. We apply a pre-alignment translation to center the shapes, which improves optimization.
+This section loads each matching pair of meshes, re-runs ICP
+alignment, and overlays them to assess alignment quality. We apply a
+pre-alignment translation to center the shapes, which improves
+optimization.
 
 ```python
 # --------------------------------------
@@ -803,10 +820,14 @@ batch_color_by_distance(dirA, dirB, filesA, filesB, AtoB,
 ![Spatial alignment of two WT midguts at an example timepoint.](figures/06_overlay_024.png)
 
 ## 12. Advanced: PCA-based smoothing as an alternative to dynamic time warping
-Dynamic time warping (DTW) gives a monotone, potentially jagged A-to-B mapping (AtoB, BtoA), but sometimes lies "outside" of either set (AtoB or BtoA).
-Here we instead takes the matched timepoints between two series and smooths their relationship
-by projecting them into PCA space, smoothing along the orthogonal component, and map back to reconstruct 
-a smoothed trajectory incorporating contributions from both AtoB and BtoA.
+
+Dynamic time warping (DTW) gives a monotone, potentially jagged A-to-B
+mapping (AtoB, BtoA), but sometimes lies "outside" of either set (AtoB
+or BtoA).  Here we instead takes the matched timepoints between two
+series and smooths their relationship by projecting them into PCA
+space, smoothing along the orthogonal component, and map back to
+reconstruct a smoothed trajectory incorporating contributions from
+both AtoB and BtoA.
 
 ```python
 # --------------------------------------
@@ -867,7 +888,9 @@ df_icp.to_csv(f"icp_error_AtoB_{wt_oe}_step{step}_ss{ssfactor}.csv", index=False
 df_icp_B.to_csv(f"icp_error_BtoA_{wt_oe}_step{step}_ss{ssfactor}.csv", index=False)
 ```
 
-You can save numeric results as `.npy` arrays for further analysis. These files store ICP matrices, expected noise floors, and timepoint mappings.
+You can save numeric results as `.npy` arrays for further
+analysis. These files store ICP matrices, expected noise floors, and
+timepoint mappings.
 
 ```python
 np.save(os.path.join(outdir, f"icp_raw_{wt_oe}_step{step}_ss{ssfactor}.npy"), icp_raw)
@@ -981,8 +1004,7 @@ print(f"WT internal std: {np.std(wt_err):.3f}")
 print(f"OE internal std: {np.std(oe_err):.3f}")
 ```
 
-![xcomparison](figures/10_xcomparison.png)
-*Figure 19: Comparing the distance between mesh pairs within and across groups (with the Myo1C OE case inverted L<->R).*
+![Comparing the distance between mesh pairs within and across groups (with the Myo1C OE case inverted L<->R).](figures/10_xcomparison.png)
 
 This figure provides a quantitative summary of dynamic shape
 variability under genetic or experimental perturbation. How do you
