@@ -33,20 +33,20 @@ director via email:
 
 + Jeremy Berg ([webpage](http://www.jjbpopgen.org))
 + Peter Carbonetto ([webpage](https://pcarbo.github.io))
-+ Aly Khan ([webpage](https://people.cs.uchicago.edu/~aakhan/))
 + Xuanyao Liu ([webpage](https://liulab.uchicago.edu))
++ Noah Mitchell ([webpage](https://mitchelllab.uchicago.edu))
++ Jasmine Nirody ([webpage](https://nirodylab.uchicago.edu))
 + John Novembre ([webpage](http://jnpopgen.org))
-+ Joshua Weinstein ([webpage](https://wlab.bio))
 
 ## TAs
 
-+ Sabrina Arif
-+ Annisa Dea
-+ Katja Della Libera
-+ Olivia Lutz
++ Anna Cormack
++ Rowan Hart
++ Kiley Kellum
 + Tonu Pius
 + Danny Rhoda
-+ Vivaswat Shastry
++ Heather Rizzo
++ Saxton (Sarah) Strassberg
 + Karl Tayeb
 
 ## Schedule
