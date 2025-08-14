@@ -86,6 +86,7 @@ Links to the draft materials:
 + Basic Computing
   ([web](https://github.com/jnovembre/BSD-QBio/blob/main/tutorials/basic_computing/basic_computing.pdf),
   [pdf](https://raw.githubusercontent.com/jnovembre/BSD-QBio/main/tutorials/basic_computing/basic_computing.pdf))
+  
 + Advanced Computing: **Special preparation for Advanced Computing:**
   You should work through the Advanced Computing preparatory material
   before the session
@@ -122,6 +123,9 @@ schedule accordingly.
 
 You will work on your laptop all day long. **If you don't have a
 laptop, please contact the course directors immediately**.
+
+**PLEASE NOTE THAT THE INSTALLATION INSTRUCTIONS BELOW ARE BEING UPDATED.
+PLEASE CHECK BACK AT A LATER DATE FOR THE UP-TO-DATE INSTRUCTIONS.**
 
 ## Installing R and the R packages
 
@@ -225,7 +229,10 @@ for instructions on creating a PAT.
 
 ## Programming Challenges
 
-Here are the links to the Google forms where the
+**Note:** The links to the programming challenges will be
+provided at a later date.
+
+<!-- Here are the links to the Google forms where the
 groups should post their solutions (one answer per group, please).
 
 + [Basic Computing, Part 1](https://forms.gle/fGWdPixdEbe75rs99)
@@ -235,7 +242,8 @@ groups should post their solutions (one answer per group, please).
 + [Defensive Programming](https://forms.gle/quj1dhCbAwBFgoeW9)
 + [Statistics for a Data-Rich World](https://forms.gle/QbLNcQA7tUdSGuRK7)
 
-**Note:** All Programming Challenges are due on Wednesday, September 18th at 1.30PM.
+**Note:** All Programming Challenges are due on Wednesday, September 18th
+at 1.30PM. -->
 
 <!--
 + Submit your answer for the tutorial on
