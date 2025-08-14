@@ -229,8 +229,8 @@ for instructions on creating a PAT.
 
 ## Programming Challenges
 
-**Note:** The links to the programming challenges will be
-provided at a later date.
+*The links to the programming challenges will be provided at a later
+date.*
 
 <!-- Here are the links to the Google forms where the
 groups should post their solutions (one answer per group, please).
