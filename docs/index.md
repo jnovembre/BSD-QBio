@@ -124,8 +124,10 @@ schedule accordingly.
 You will work on your laptop all day long. **If you don't have a
 laptop, please contact the course directors immediately**.
 
+<span style="color:#c51b8a">
 **PLEASE NOTE THAT THE INSTALLATION INSTRUCTIONS BELOW ARE BEING UPDATED.
 PLEASE CHECK BACK AT A LATER DATE FOR THE UP-TO-DATE INSTRUCTIONS.**
+</span>
 
 ## Installing R and the R packages
 
