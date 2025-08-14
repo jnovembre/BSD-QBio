@@ -1,10 +1,10 @@
 ## Welcome
 
 This page contains important information about the
-[Tenth BSD-qBio Boot
+[Eleventh BSD-qBio Boot
 Camp](https://biosciences.uchicago.edu/content/mbl-bootcamp),
-which will be held on campus from Wednesday, September 11 to
-Wednesday, September 18, 2024.
+which will be held on campus from Wednesday, September 10 to
+Wednesday, September 17, 2025.
 
 More than 100 incoming graduate students from the different programs
 in the
