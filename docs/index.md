@@ -188,29 +188,29 @@ TO DO.
 
 First, **join GitHub:** click
 [here](https://education.github.com/pack), and sign up with your
-uchicago email address to get a free GitHub account with additional
+uchicago.edu email address to get a free GitHub account with additional
 features that are not free for most people.
 
-Unless you will use git from the command line, **download GitKraken**
-click [here](https://support.gitkraken.com/how-to-install).
+Unless you will use git from the command-line shell, **download
+GitKraken** click [here](https://www.gitkraken.com).
 
 ## Downloading the data
 
-It is very important to download the data **before the workshop** as
-the files are quite large. All the files are included in the GitHub
-repository.
+It is important to download the data **before the workshop** as the
+files are quite large. Most of the files you will need are included in
+the GitHub repository.
 
 The simplest way to download the repository is to download all the
-files in a compressed ZIP archive (click
-[here](https://codeload.github.com/jnovembre/BSD-QBio/zip/refs/heads/main)),
+files as a
+[ZIP file](https://codeload.github.com/jnovembre/BSD-QBio/zip/refs/heads/main),
 then extract the files from the ZIP file. (This is a large file, so
 may take a few minutes or more to download depending on your
 connection speed.)
 
-Alternatively, you can use GitKraken (or command-line git if you are
-already familiar with it):
+Alternatively, you can use the command-line git or GitKraken. These
+are the GitKraken instructions:
 
-1. Open GitKraken (see download link above)
+1. Open GitKraken.
 
 2. Login with your GitHub account (see instructions and link above)
 
@@ -218,7 +218,8 @@ already familiar with it):
 
 4. "Clone with URL"
 
-5. "Where to Clone:" Browse to the folder in which you want to keep your repository (your home directory is fine)
+5. "Where to Clone:" Browse to the folder in which you want to keep
+   your repository (your home directory is fine)
 
 6. "URL": Paste: `https://github.com/jnovembre/BSD-QBio.git`
 
@@ -227,11 +228,11 @@ already familiar with it):
 Now if you go to the folder you chose in step 5, you'll see the
 repository!
 
-**Note:** To clone the repository on your computer, you may first need
+<!-- **Note:** To clone the repository on your computer, you may first need
 to create a "personal access token" (PAT). See
 [here](https://support.gitkraken.com/developers/pats) or
 [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-for instructions on creating a PAT.
+for instructions on creating a PAT. -->
 
 ## Programming Challenges
 
