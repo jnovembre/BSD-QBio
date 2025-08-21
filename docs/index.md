@@ -150,24 +150,21 @@ software.
 
     - BiocManager
     - cowplot
-    - deSolve
-    - devtools
+	- data.table
+	- dplyr
+	- ggplot2
     - ggrepel
     - ggridges
-    - ggseqlogo
     - ggthemes
-    - htmlwidgets
-    - knitr
-    - maps
-    - plotly
     - reshape2
-    - rmarkdown
-    - Rtsne
+	- rsvd
     - tidyverse
-    - workflowr
+	- trajr
+	- uwot
  
   You can find instructions on how to install R packages in
-  RStudio [here](https://www.youtube.com/watch?v=3RWb5U3X-T8).
+  R [here](https://www.neonscience.org/resources/learning-hub/tutorials/packages-r). Alternatively, see [here](https://www.youtube.com/watch?v=3RWb5U3X-T8)
+  for RStudio-specific instructions.
 
 + **Other R packages** After the R package installs above, two more
   sets of the packages need to be installed using special installers
@@ -178,8 +175,12 @@ software.
 
 + **UNIX Emulator**: If you are using Windows, you will need a UNIX
   emulator. We suggest downloading the version control software Git
-  because it ships with a small emulator (Git Bash).  Click
-  [here](https://git-scm.com/download/win/) and follow the instructions.
+  because it ships with a small emulator (Git Bash). Go
+  [here](https://git-scm.com/downloads/win) and follow the instructions.
+
+## Installing Python
+
+TO DO.
 
 ## Installing Git
 
