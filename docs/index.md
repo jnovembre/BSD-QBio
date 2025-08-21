@@ -176,7 +176,8 @@ software.
 + **UNIX emulator (Windows only).**
   If you are using Windows, you will need a UNIX
   emulator. We suggest downloading the version control software Git
-  because it ships with a small emulator (Git Bash). Go
+  because it ships with a small emulator,
+  [Git BASH](https://gitforwindows.org/). Go
   [here](https://git-scm.com/downloads/win) and follow the instructions.
 
 ## Installing Python
