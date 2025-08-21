@@ -166,14 +166,15 @@ software.
   R [here](https://www.neonscience.org/resources/learning-hub/tutorials/packages-r). Alternatively, see [here](https://www.youtube.com/watch?v=3RWb5U3X-T8)
   for RStudio-specific instructions.
 
-+ **Other R packages** After the R package installs above, two more
-  sets of the packages need to be installed using special installers
-  within `R`. First, open Rstudio and in the Console type
-  `library(remotes)`, hit Return (or Enter) and then
-  `install_github("jdstorey/qvalue")`. This will install the library
-  `qvalue` that is needed for one of the tutorials.
++ **Other R packages.** After the R packages listed above are
+  installed, there is one final R package that needs to be installed,
+  [qvalue](https://github.com/StoreyLab/qvalue/). The qvalue package
+  is available from Bioconductor, and can be installed by following the
+  installation instructions
+  [here](https://www.bioconductor.org/packages/release/bioc/html/qvalue.html).
 
-+ **UNIX Emulator**: If you are using Windows, you will need a UNIX
++ **UNIX emulator (Windows only).**
+  If you are using Windows, you will need a UNIX
   emulator. We suggest downloading the version control software Git
   because it ships with a small emulator (Git Bash). Go
   [here](https://git-scm.com/downloads/win) and follow the instructions.
