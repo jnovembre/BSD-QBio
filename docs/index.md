@@ -131,6 +131,9 @@ PLEASE CHECK BACK AT A LATER DATE FOR THE UP-TO-DATE INSTRUCTIONS.**
 
 ## Installing R and the R packages
 
+We will use [R](https://www.r-project.org) in most of the workshops
+and tutorials.
+
 + **Install R.** Go to
 [this page](https://posit.co/download/rstudio-desktop/) and follow
 instructions there to download and install R for your computing
@@ -182,7 +185,20 @@ software.
 
 ## Installing Python
 
-TO DO.
+We will use [Python](https://www.python.org/) in the biological shape
+analysis workshop. There are many ways to install Python with
+different advantages and disadvantages; we will program in Python in
+[PyCharm](https://www.jetbrains.com/pycharm/).
+
+Download and install the (free) *Community Edition* of PyCharm
+[here](https://www.jetbrains.com/pycharm/download/other.html). For
+those of you with a Mac, note that PyCharm has two installations for
+Mac, one for (older) Intel chips and one for (newer) Apple Silicon
+(M1, M2, etc) chips. For those of you with a Linux or Windows laptop,
+note that there are two installers for Windows and Linux; it is
+unlikely that you have an ARM64 processor, so use the other
+installer. (If you do have an ARM64 processor, then you probably know
+it.)
 
 ## Installing Git
 
