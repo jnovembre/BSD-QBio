@@ -124,11 +124,6 @@ schedule accordingly.
 You will work on your laptop all day long. **If you don't have a
 laptop, please contact the course directors immediately**.
 
-<span style="color:#c51b8a">
-**PLEASE NOTE THAT THE INSTALLATION INSTRUCTIONS BELOW ARE BEING UPDATED.
-PLEASE CHECK BACK AT A LATER DATE FOR THE UP-TO-DATE INSTRUCTIONS.**
-</span>
-
 ## Installing R and the R packages
 
 We will use [R](https://www.r-project.org) in most of the workshops
@@ -199,6 +194,12 @@ note that there are two installers for Windows and Linux; it is
 unlikely that you have an ARM64 processor, so use the other
 installer. (If you do have an ARM64 processor, then you probably know
 it.)
+
+<span style="color:#c51b8a">
+*Please note that we will add more instructions siib on how to install
+the Python packages needed for the workshop. Please check check back
+at a later date for these instructions.*
+</span>
 
 ## Installing Git
 
