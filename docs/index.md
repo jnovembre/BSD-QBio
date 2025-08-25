@@ -215,7 +215,9 @@ GitKraken** click [here](https://www.gitkraken.com).
 
 It is important to download the data **before the workshop** as the
 files are quite large. Most of the files you will need are included in
-the GitHub repository.
+the GitHub repository. There is an additional set of files for the
+Biological Shape Analysis workshop that are quite large, and are
+downloaded separately from Box (see below).
 
 The simplest way to download the repository is to download all the
 files as a
@@ -250,6 +252,15 @@ to create a "personal access token" (PAT). See
 [here](https://support.gitkraken.com/developers/pats) or
 [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 for instructions on creating a PAT. -->
+
+Finally, go
+[here](https://uchicago.box.com/s/rz09rv7lm3pck2q284eew7z21n7qh5o3) to
+download the files for the Biological Shape Analysis workshop. This
+shared Box folder contains two folders, "wildtype" and
+"bynGAL4_UASMyo1C". You should download both folders. Note that the
+total size of these data files is large (over 300 MB), and, even with
+a good Internet connection, may take several minutes to download onto
+your computer.
 
 ## Programming Challenges
 
