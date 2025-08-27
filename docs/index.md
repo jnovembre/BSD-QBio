@@ -256,11 +256,9 @@ unlikely that you have an ARM64 processor, so use the other
 installer. (If you do have an ARM64 processor, then you probably know
 it.)
 
-<span style="color:#c51b8a">
-*Please note that we will add more instructions soon on how to install
-the Python packages needed for the workshop. Please check check back
-at a later date for these instructions.*
-</span>
+Once you have have installed PyCharm, launch PyCharm, then follow the
+steps in [this PDF](additional_python_instructions.pdf) to set up
+PyCharm for the workshop.
 
 ## Programming Challenges
 
