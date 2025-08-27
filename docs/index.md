@@ -178,29 +178,6 @@ software.
   [Git BASH](https://gitforwindows.org/). Go
   [here](https://git-scm.com/downloads/win) and follow the instructions.
 
-## Installing Python
-
-We will use [Python](https://www.python.org/) in the biological shape
-analysis workshop. There are many ways to install Python with
-different advantages and disadvantages; we will program in Python in
-[PyCharm](https://www.jetbrains.com/pycharm/).
-
-Download and install the (free) *Community Edition* of PyCharm
-[here](https://www.jetbrains.com/pycharm/download/other.html). For
-those of you with a Mac, note that PyCharm has two installations for
-Mac, one for (older) Intel chips and one for (newer) Apple Silicon
-(M1, M2, etc) chips. For those of you with a Linux or Windows laptop,
-note that there are two installers for Windows and Linux; it is
-unlikely that you have an ARM64 processor, so use the other
-installer. (If you do have an ARM64 processor, then you probably know
-it.)
-
-<span style="color:#c51b8a">
-*Please note that we will add more instructions siib on how to install
-the Python packages needed for the workshop. Please check check back
-at a later date for these instructions.*
-</span>
-
 ## Installing Git
 
 First, **join GitHub:** click
@@ -253,14 +230,37 @@ to create a "personal access token" (PAT). See
 [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 for instructions on creating a PAT. -->
 
-Finally, go
+Next, go
 [here](https://uchicago.box.com/s/rz09rv7lm3pck2q284eew7z21n7qh5o3) to
 download the files for the Biological Shape Analysis workshop. This
 shared Box folder contains two folders, "wildtype" and
 "bynGAL4_UASMyo1C". You should download both folders. Note that the
 total size of these data files is large (over 300 MB), and, even with
 a good Internet connection, may take several minutes to download onto
-your computer.
+your computer. 
+
+## Installing Python
+
+Finally, we will use [Python](https://www.python.org/) in the
+Biological Shape Analysis workshop. There are many ways to install
+Python with different advantages and disadvantages; we will program in
+Python in [PyCharm](https://www.jetbrains.com/pycharm/).
+
+Download and install the (free) *Community Edition* of PyCharm
+[here](https://www.jetbrains.com/pycharm/download/other.html). For
+those of you with a Mac, note that PyCharm has two installations for
+Mac, one for (older) Intel chips and one for (newer) Apple Silicon
+(M1, M2, etc) chips. For those of you with a Linux or Windows laptop,
+note that there are two installers for Windows and Linux; it is
+unlikely that you have an ARM64 processor, so use the other
+installer. (If you do have an ARM64 processor, then you probably know
+it.)
+
+<span style="color:#c51b8a">
+*Please note that we will add more instructions soon on how to install
+the Python packages needed for the workshop. Please check check back
+at a later date for these instructions.*
+</span>
 
 ## Programming Challenges
 
