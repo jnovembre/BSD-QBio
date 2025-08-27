@@ -257,7 +257,7 @@ installer. (If you do have an ARM64 processor, then you probably know
 it.)
 
 Once you have have installed PyCharm, launch PyCharm, then follow the
-steps in [this PDF](additional_python_instructions.pdf) to set up
+steps in [this PDF](https://github.com/jnovembre/BSD-QBio/blob/main/workshops/npmitchell/additional_python_instructions.pdf) to set up
 PyCharm for the workshop.
 
 ## Programming Challenges
