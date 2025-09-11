@@ -266,7 +266,7 @@ Here are the links to the Google forms where the groups should post
 their solutions to the Programming Challenges (one answer per group,
 please).
 
-+ [Basic computing](https://forms.gle/fGWdPixdEbe75rs99)
++ [Basic computing](https://forms.gle/ZsGumfXDEL5S3yym7)
 
 + Advanced crogramming: *link coming soon*
 
