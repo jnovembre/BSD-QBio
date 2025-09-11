@@ -262,9 +262,6 @@ PyCharm for the workshop.
 
 ## Programming Challenges
 
-*The links to the programming challenges will be provided at a later
-date.*
-
 Here are the links to the Google forms where the groups should post
 their solutions to the Programming Challenges (one answer per group,
 please).
