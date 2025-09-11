@@ -269,10 +269,14 @@ Here are the links to the Google forms where the groups should post
 their solutions to the Programming Challenges (one answer per group,
 please).
 
-+ [Basic Computing](https://forms.gle/fGWdPixdEbe75rs99)
-+ Advanced Programming: *link coming soon*
++ [Basic computing](https://forms.gle/fGWdPixdEbe75rs99)
+
++ Advanced crogramming: *link coming soon*
+
 + Data visualization: *link coming soon*
+
 + Defensive programming: *link coming soon*
+
 + Statistics for a data-rich world: *link coming soon*
 
 <!-- 
