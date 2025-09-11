@@ -265,25 +265,25 @@ PyCharm for the workshop.
 *The links to the programming challenges will be provided at a later
 date.*
 
-<!-- Here are the links to the Google forms where the
-groups should post their solutions (one answer per group, please).
+Here are the links to the Google forms where the groups should post
+their solutions to the Programming Challenges (one answer per group,
+please).
 
-+ [Basic Computing, Part 1](https://forms.gle/fGWdPixdEbe75rs99)
-+ [Basic Computing, Part 2](https://forms.gle/LAD2eAb3ev5MKLgk6)
-+ [Advanced Programming Challenge](https://forms.gle/UYbyC1EpYSUViCik7)
-+ [Data visualization](https://forms.gle/3zFZCkUP5uSuJwQX7)
-+ [Defensive Programming](https://forms.gle/quj1dhCbAwBFgoeW9)
-+ [Statistics for a Data-Rich World](https://forms.gle/QbLNcQA7tUdSGuRK7)
++ [Basic Computing](https://forms.gle/fGWdPixdEbe75rs99)
++ Advanced Programming: *link coming soon*
++ Data visualization: *link coming soon*
++ Defensive programming: *link coming soon*
++ Statistics for a data-rich world: *link coming soon*
 
-**Note:** All Programming Challenges are due on Wednesday, September 18th
-at 1.30PM. -->
-
-<!--
-+ Submit your answer for the tutorial on
-  [Defensive Programming](https://forms.gle/3oLYycp7DqhAYJS5A)
-+ Submit your answer for the tutorial on
-  [Stats for large data](https://forms.gle/7ZELD5sUURkezuWJ8)
+<!-- 
+[Advanced Programming Challenge](https://forms.gle/UYbyC1EpYSUViCik7)
+[Data visualization](https://forms.gle/3zFZCkUP5uSuJwQX7)
+[Defensive Programming](https://forms.gle/quj1dhCbAwBFgoeW9)
+[Statistics for a Data-Rich World](https://forms.gle/QbLNcQA7tUdSGuRK7)
 -->
+
+<!-- **Note:** All Programming Challenges are due on Wednesday, September 18th
+at 1.30PM. -->
 
 ## Notes
 
