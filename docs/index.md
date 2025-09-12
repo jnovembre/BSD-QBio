@@ -267,7 +267,7 @@ their solutions to the Programming Challenges (one answer per group,
 please).
 
 + [Basic computing](https://forms.gle/ZsGumfXDEL5S3yym7)
-+ Advanced programming: *link coming soon*
++ [Advanced programming](https://forms.gle/hozH4hZxGFx3tRaq8)
 + Data visualization: *link coming soon*
 + Defensive programming: *link coming soon*
 + Statistics for a data-rich world: *link coming soon*
