@@ -279,7 +279,7 @@ please).
 [Statistics for a Data-Rich World](https://forms.gle/QbLNcQA7tUdSGuRK7)
 -->
 
-**Note:** All Programming Challenges are due on Wednesday, September 16th
+**Note:** All Programming Challenges are due on Wednesday, September 17th
 at 1.30PM.
 
 ## Notes
