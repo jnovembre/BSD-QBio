@@ -269,7 +269,7 @@ please).
 + [Basic computing](https://forms.gle/ZsGumfXDEL5S3yym7)
 + [Advanced programming](https://forms.gle/hozH4hZxGFx3tRaq8)
 + [Data visualization](https://forms.gle/c3fsRg9yjhqJKDbY7)
-+ Defensive programming: (https://forms.gle/fa7Et2uVYcokEu2c7)
++ [Defensive programming](https://forms.gle/fa7Et2uVYcokEu2c7)
 + Statistics for a data-rich world: *link coming soon*
 
 <!-- 
