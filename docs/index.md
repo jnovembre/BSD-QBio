@@ -271,7 +271,7 @@ please).
 + [Data visualization](https://forms.gle/c3fsRg9yjhqJKDbY7)
 + [Defensive programming](https://forms.gle/fa7Et2uVYcokEu2c7)
 + [Statistics for a data-rich world](https://forms.gle/UJ3uubCoChAFh3aC6)
-+ 
+  
 <!-- 
 [Advanced Programming Challenge](https://forms.gle/UYbyC1EpYSUViCik7)
 [Data visualization](https://forms.gle/3zFZCkUP5uSuJwQX7)
