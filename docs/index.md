@@ -268,7 +268,7 @@ please).
 
 + [Basic computing](https://forms.gle/ZsGumfXDEL5S3yym7)
 + [Advanced programming](https://forms.gle/hozH4hZxGFx3tRaq8)
-+ Data visualization: *link coming soon*
++ [Data visualization](https://forms.gle/c3fsRg9yjhqJKDbY7)
 + Defensive programming: *link coming soon*
 + Statistics for a data-rich world: *link coming soon*
 
