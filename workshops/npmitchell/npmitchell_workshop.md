@@ -459,7 +459,7 @@ functions too, but they are going to be laggy for meshes of this size
 freeze up).
 
 ```python
-m = pv.read('./wt/20240527/mesh_000000_APDV_um.ply')  # returns a PyVista mesh object
+m = pv.read('./wildtype/20240527/mesh_000000_APDV_um.ply')  # returns a PyVista mesh object
 m.plot(show_edges=True)
 ```
 
@@ -650,7 +650,7 @@ icp_smooth = smooth_icp_matrix(icp_raw)
 Now plot the result.
 
 ```python
-ig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4), sharey=True)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4), sharey=True)
 im1 = ax1.imshow(icp_raw, cmap='inferno')
 ax1.set_title("Timeline comparison via ICP")
 ax1.set_xlabel("Time B")
@@ -942,27 +942,27 @@ for i, wt_oe in enumerate(conditions):
     if wt_oe == 'wt':
         # dirA = "HandGFPbynGAL4klar_UASmChCAAXHiFP/20240527/"
         # dirB = "HandGFPbynGAL4klar_UASmChCAAXHiFP/20240531/"
-        dirA = "wt/20240527/"
-        dirB = "wt/20240531/"
+        dirA = "wildtype/20240527/"
+        dirB = "wildtype/20240531/"
         flipy = False
     elif wt_oe == 'oe':
         dirA = "oe/20240528/"
         dirB = "oe/20240626/"
         flipy = False
     elif wt_oe == 'x1':
-        dirA = "wt/20240527/"
+        dirA = "wildtype/20240527/"
         dirB = "oe/20240528/"
         flipy = True
     elif wt_oe == 'x2':
-        dirA = "wt/20240527/"
+        dirA = "wildtype/20240527/"
         dirB = "oe/20240626/"
         flipy = True
     elif wt_oe == 'x3':
-        dirA = "wt/20240531/"
+        dirA = "wildtype/20240531/"
         dirB = "oe/20240528/"
         flipy = True
     elif wt_oe == 'x4':
-        dirA = "wt/20240531/"
+        dirA = "wildtype/20240531/"
         dirB = "oe/20240626/"
         flipy = True
     ...
