@@ -269,9 +269,9 @@ please).
 + [Basic computing](https://forms.gle/ZsGumfXDEL5S3yym7)
 + [Advanced programming](https://forms.gle/hozH4hZxGFx3tRaq8)
 + [Data visualization](https://forms.gle/c3fsRg9yjhqJKDbY7)
-+ Defensive programming: *link coming soon*
-+ Statistics for a data-rich world: *link coming soon*
-
++ [Defensive programming](https://forms.gle/fa7Et2uVYcokEu2c7)
++ [Statistics for a data-rich world](https://forms.gle/UJ3uubCoChAFh3aC6)
+  
 <!-- 
 [Advanced Programming Challenge](https://forms.gle/UYbyC1EpYSUViCik7)
 [Data visualization](https://forms.gle/3zFZCkUP5uSuJwQX7)
@@ -279,8 +279,8 @@ please).
 [Statistics for a Data-Rich World](https://forms.gle/QbLNcQA7tUdSGuRK7)
 -->
 
-<!-- **Note:** All Programming Challenges are due on Wednesday, September 18th
-at 1.30PM. -->
+**Note:** All Programming Challenges are due on Wednesday, September 17th
+at 1.30PM.
 
 ## Notes
 
