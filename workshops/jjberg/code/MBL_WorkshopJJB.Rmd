@@ -6,7 +6,7 @@ output:
     latex_engine: pdflatex
     template: readable.tex
 author:
-  name: Jeremy Berg
+  name: John Novembre and Jeremy Berg
   affiliation: University of Chicago
 date: August 11, 2025
 geometry: margin=1in
