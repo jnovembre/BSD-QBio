@@ -22,13 +22,6 @@ explore in the workshops and tutorials.
 You can see the **schedule** of the boot camp, and find the contact
 information for the directors.
 
-## Contacts
-
-For any issue/question/comment, please contact the course content
-director via email:
-
-+ [John Novembre](mailto:jnovembre@uchicago.edu?Subject=Help%20BSD%20QBio) ([webpage](http://jnpopgen.org/))
-  
 ## Instructors
 
 + Jeremy Berg ([webpage](http://www.jjbpopgen.org))
@@ -51,6 +44,14 @@ director via email:
 + Hoang-Anh (Allamanda) Vu Tran
 + Rita Wang
 
+## Contacts
+
+For any issue/question/comment, please contact the one of the course content directors via email:
+
++ [Peter Carbonetto](mailto:pcarbo@uchicago.edu?Subject=Help%20BSD%20QBio)
++ [John Novembre](mailto:jnovembre@uchicago.edu?Subject=Help%20BSD%20QBio)
++ [Xianyao Liu](mailto:xuanyao@uchicago.edu?Subject=Help%20BSD%20QBio) 
+  
 ## Schedule
 
 The qBio boot camp will be, as the name implies, quite intense. We are
