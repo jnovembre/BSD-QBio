@@ -1,12 +1,12 @@
 ## Welcome
 
 This page contains important information about the
-[Eleventh BSD-qBio Boot
+[Twelth BSD-qBio Boot
 Camp](https://biosciences.uchicago.edu/content/mbl-bootcamp),
-which will be held on campus from Wednesday, September 10 to
-Wednesday, September 17, 2025.
+which will be held on campus from Wednesday, September 9 to
+Wednesday, September 16, 2026.
 
-More than 100 incoming graduate students from the different programs
+More than 85 incoming graduate students from the different programs
 in the
 [Division of Biological Sciences](https://biosciences.uchicago.edu) at
 the [University of Chicago](https://www.uchicago.edu) will
@@ -33,21 +33,23 @@ director via email:
 
 + Jeremy Berg ([webpage](http://www.jjbpopgen.org))
 + Peter Carbonetto ([webpage](https://pcarbo.github.io))
++ Aly Khan ([webpage](https://people.cs.uchicago.edu/~aakhan/))
 + Xuanyao Liu ([webpage](https://liulab.uchicago.edu))
-+ Noah Mitchell ([webpage](https://mitchelllab.uchicago.edu))
 + Jasmine Nirody ([webpage](https://nirodylab.uchicago.edu))
 + John Novembre ([webpage](http://jnpopgen.org))
 
 ## TAs
 
-+ Anna Cormack
-+ Rowan Hart
-+ Kiley Kellum
-+ Tonu Pius
-+ Danny Rhoda
-+ Heather Rizzo
-+ Saxton (Sarah) Strassberg
-+ Karl Tayeb
++ Heather Rizzo (head TA) 
++ Anna Cormack 
++ Rowan Hart 
++ Kiley Kellum 
++ Lu Li
++ Isiah McKinney
++ Connor Phillips
++ Sarida Pratuangtham
++ Hoang-Anh (Allamanda) Vu Tran
++ Rita Wang
 
 ## Schedule
 
@@ -68,18 +70,19 @@ two tracks for the computing tutorials.
 
 1. Basic Computing: dedicated to new users who are not familiar with R
    or programming in general. It will guide students step-by-step,
-   introducing the R syntax and showing how to write well-organized
-   code for data analysis and scientific research.
+   introducing R and fundamentals of algorithmic thinking.
 
-2. Advanced Computing: dedicated to experienced programmers (R or
+2. Intermediate Computing: dedicated to users with ~6 months or more exposure to R or programming in general but who are not less than experts.  It will remind and reinforce fundamentals of key aspects of R and showing how to write well-organized code for data analysis and scientific research.
+
+4. Advanced Computing: dedicated to experienced programmers (R or
    otherwise), these sessions will focus on challenges manipulating
-   large data sets, plotting, and the use of regular expressions.
+   large data sets and seeing advanced features of R.
 
-**You will need to decide which track's sessions to attend on Day 1 of
-the Bootcamp**. After Day 1, you will move throught the material in
-teams with mixed skill levels. **Choose which track to join for Day 1
-by consulting the lecture materials and making sure that the content
-is at the right level for you.**
+**You will need to decide which track's sessions to attend on Day 1-2 of
+the Bootcamp**. After Day 1-2, you will move through the material in
+teams with mixed skill levels. **Based on your response to the pre-bootcamp survey we 
+will recommend a level for you but also please consult with your team's TA on the first evening if you have 
+questions.**
 
 Links to the draft materials:
 
@@ -266,25 +269,24 @@ Here are the links to the Google forms where the groups should post
 their solutions to the Programming Challenges (one answer per group,
 please).
 
-+ [Basic computing](https://forms.gle/ZsGumfXDEL5S3yym7)
+<!-- + [Basic computing](https://forms.gle/ZsGumfXDEL5S3yym7)
 + [Advanced programming](https://forms.gle/hozH4hZxGFx3tRaq8)
 + [Data visualization](https://forms.gle/c3fsRg9yjhqJKDbY7)
 + [Defensive programming](https://forms.gle/fa7Et2uVYcokEu2c7)
 + [Statistics for a data-rich world](https://forms.gle/UJ3uubCoChAFh3aC6)
   
-<!-- 
 [Advanced Programming Challenge](https://forms.gle/UYbyC1EpYSUViCik7)
 [Data visualization](https://forms.gle/3zFZCkUP5uSuJwQX7)
 [Defensive Programming](https://forms.gle/quj1dhCbAwBFgoeW9)
 [Statistics for a Data-Rich World](https://forms.gle/QbLNcQA7tUdSGuRK7)
 -->
 
-**Note:** All Programming Challenges are due on Wednesday, September 17th
+**Note:** All Programming Challenges are due on Wednesday, September 16th
 at 1.30PM.
 
 ## Notes
 
-This material is based upon work supported by the National Science
+This material is based upon work originally supported by the National Science
 Foundation under Grant Number 1734818.
 
 Any opinions, findings, and conclusions or recommendations expressed
