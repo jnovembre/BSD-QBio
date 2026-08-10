@@ -49,8 +49,8 @@ information for the directors.
 For any issue/question/comment, please contact the one of the course content directors via email:
 
 + [Peter Carbonetto](mailto:pcarbo@uchicago.edu?Subject=Help%20BSD%20QBio)
-+ [John Novembre](mailto:jnovembre@uchicago.edu?Subject=Help%20BSD%20QBio)
 + [Xianyao Liu](mailto:xuanyao@uchicago.edu?Subject=Help%20BSD%20QBio) 
++ [John Novembre](mailto:jnovembre@uchicago.edu?Subject=Help%20BSD%20QBio)
   
 ## Schedule
 
