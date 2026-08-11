@@ -202,9 +202,11 @@ GitKraken** click [here](https://www.gitkraken.com).
 
 It is important to download the data **before the workshop** as the
 files are quite large. Most of the files you will need are included in
-the GitHub repository. There is an additional set of files for the
+the GitHub repository.
+
+<!-- There is an additional set of files for the
 Biological Shape Analysis workshop that are quite large, and are
-downloaded separately from Box (see below).
+downloaded separately from Box (see below). -->
 
 The simplest way to download the repository is to download all the
 files as a
@@ -231,7 +233,7 @@ are the GitKraken instructions:
 
 7. "Clone the Repo!" (this step will take a few minutes)
 
-Now if you go to the folder you chose in step 5, you'll see the
+Now if you go to the folder you chose in Step 5, you'll see the
 repository!
 
 <!-- **Note:** To clone the repository on your computer, you may first need
@@ -240,14 +242,14 @@ to create a "personal access token" (PAT). See
 [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 for instructions on creating a PAT. -->
 
-Next, go
+<!-- Next, go
 [here](https://uchicago.box.com/s/rz09rv7lm3pck2q284eew7z21n7qh5o3) to
 download the files for the Biological Shape Analysis workshop. This
 shared Box folder contains two folders, "wildtype" and
 "bynGAL4_UASMyo1C". You should download both folders. Note that the
 total size of these data files is large (over 300 MB), and, even with
 a good Internet connection, may take several minutes to download onto
-your computer. 
+your computer. -->
 
 <!-- ## Installing Python
 
@@ -288,13 +290,13 @@ please).
 [Statistics for a Data-Rich World](https://forms.gle/QbLNcQA7tUdSGuRK7)
 -->
 
-**Note:** All Programming Challenges are due on Wednesday, September 16th
-at 1.30PM.
+**Note:** All Programming Challenges will be due on Wednesday,
+September 16th at 1:30 PM.
 
 ## Notes
 
-This material is based upon work originally supported by the National Science
-Foundation under Grant Number 1734818.
+This material is based upon work originally supported by the National
+Science Foundation under Grant Number 1734818.
 
 Any opinions, findings, and conclusions or recommendations expressed
 in this material are those of the author(s) and do not necessarily
