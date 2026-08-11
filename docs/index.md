@@ -6,7 +6,7 @@ Camp](https://biosciences.uchicago.edu/content/mbl-bootcamp),
 which will be held on campus from Wednesday, September 9 to
 Wednesday, September 16, 2026.
 
-More than 85 incoming graduate students from the different programs
+More than 80 incoming graduate students from the different programs
 in the
 [Division of Biological Sciences](https://biosciences.uchicago.edu) at
 the [University of Chicago](https://www.uchicago.edu) will
@@ -46,7 +46,8 @@ information for the directors.
 
 ## Contacts
 
-For any issue/question/comment, please contact the one of the course content directors via email:
+For any issue/question/comment, please contact the one of the course
+content directors via email:
 
 + [Peter Carbonetto](mailto:pcarbo@uchicago.edu?Subject=Help%20BSD%20QBio)
 + [Xianyao Liu](mailto:xuanyao@uchicago.edu?Subject=Help%20BSD%20QBio) 
@@ -66,26 +67,31 @@ You can also browse the schedule
 
 ## Computing tutorials
 
-To accommodate the diverse background of our students, we have created
-two tracks for the computing tutorials.
+To accommodate the diverse backgrounds of our students, we have created
+three tracks for the computing tutorials.
 
 1. Basic Computing: dedicated to new users who are not familiar with R
    or programming in general. It will guide students step-by-step,
    introducing R and fundamentals of algorithmic thinking.
 
-2. Intermediate Computing: dedicated to users with ~6 months or more exposure to R or programming in general but who are not less than experts.  It will remind and reinforce fundamentals of key aspects of R and showing how to write well-organized code for data analysis and scientific research.
+2. Intermediate Computing: dedicated to users with ~6 months or more
+   exposure to R or programming in general but who are not less than
+   experts. It will remind and reinforce fundamentals of key aspects
+   of R and showing how to write well-organized code for data analysis
+   and scientific research.
 
-4. Advanced Computing: dedicated to experienced programmers (R or
+3. Advanced Computing: dedicated to experienced programmers (R or
    otherwise), these sessions will focus on challenges manipulating
    large data sets and seeing advanced features of R.
 
-**You will need to decide which track's sessions to attend on Day 1-2 of
-the Bootcamp**. After Day 1-2, you will move through the material in
-teams with mixed skill levels. **Based on your response to the pre-bootcamp survey we 
-will recommend a level for you but also please consult with your team's TA on the first evening if you have 
+**You will need to decide which track's sessions to attend on Day 1-2
+of the Bootcamp**. After Days 1 and 2, you will move through the
+material in teams with mixed skill levels. **Based on your response to
+the pre-bootcamp survey, we will recommend a level for you. But also
+please consult with your team's TA on the first evening if you have
 questions.**
 
-Links to the draft materials:
+<!-- Links to the draft materials:
 
 + Basic Computing
   ([web](https://github.com/jnovembre/BSD-QBio/blob/main/tutorials/basic_computing/basic_computing.pdf),
@@ -94,7 +100,7 @@ Links to the draft materials:
 + Advanced Computing: **Special preparation for Advanced Computing:**
   You should work through the Advanced Computing preparatory material
   before the session
-  begins. [Link to preparatory material.](https://github.com/jnovembre/BSD-QBio/blob/master/tutorials/advanced_computing/tutorial/advanced_computing.pdf)
+  begins. [Link to preparatory material.](https://github.com/jnovembre/BSD-QBio/blob/master/tutorials/advanced_computing/tutorial/advanced_computing.pdf) -->
 
 ## Setting up access to UChicago computing resources
 
@@ -243,7 +249,7 @@ total size of these data files is large (over 300 MB), and, even with
 a good Internet connection, may take several minutes to download onto
 your computer. 
 
-## Installing Python
+<!-- ## Installing Python
 
 Finally, we will use [Python](https://www.python.org/) in the
 Biological Shape Analysis workshop. There are many ways to install
@@ -262,7 +268,7 @@ it.)
 
 Once you have have installed PyCharm, launch PyCharm, then follow the
 steps in [this PDF](https://github.com/jnovembre/BSD-QBio/blob/main/workshops/npmitchell/additional_python_instructions.pdf) to set up
-PyCharm for the workshop.
+PyCharm for the workshop. -->
 
 ## Programming Challenges
 
