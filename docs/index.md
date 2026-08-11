@@ -105,25 +105,25 @@ questions.**
 ## Setting up access to UChicago computing resources
 
 1. University of Chicago provides access to the **Google Workspace**
-  (gmail, Google Drive, *etc*) through your CNetID. Some of these
-  resources, in particular Google docs, may be useful at times to
-  collaborate on projects and share code and data with your team
-  members. Follow the instructions
-  [here](https://uchicago.service-now.com/it?id=kb_article_view&sysparm_article=KB06000049)
+  (gmail, Google Docs, Google Drive, *etc*) through your CNetID. Some
+  of these resources, in particular Google docs, may be useful at
+  times to collaborate on projects and share code and data with your
+  team members. Follow the instructions
+    [here](https://uchicago.service-now.com/services?id=kb_article&sys_id=b1442cfa478d0b107b8f6621e36d43de)
   to set up the Google Workspace through your CNetID.
 
 2. Another resource is **UChicago Box**, which is again free through
   your CNetID. It is useful for storing files and sharing
   them with your collaborators. Follow the instructions
-  [here](https://uchicago.service-now.com/it?id=kb_article&sys_id=64e4e40a47aec650c91ae0f1516d4393)
+  [here](https://uchicago.service-now.com/services?id=its_sc_cat_item&sys_id=3874c888139cb60027255eff3244b0d6)
   to activate your UChicago Box account.
 
 3. Finally, now is a good time to also set up **Microsoft 365** using your
    CNetID. Although you may not need it for the qBio Boot Camp,
    you will most likely use it at some point, so you might as well take
    this opportunity to set it up. See
-   [here](https://uchicago.service-now.com/it?id=its_sc_cat_item&sys_id=dc6d99b0138d720027255eff3244b0b4) for instructions. 
-
+   [here](https://uchicago.service-now.com/services?id=its_sc_cat_item&sys_id=dc6d99b0138d720027255eff3244b0b4) for instructions.
+   
 ## Preparing your laptop
 
 We are going to start with the tutorials right away. Therefore, it is
