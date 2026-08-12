@@ -1,0 +1,2 @@
+setwd("~/git/BSD-QBio/schedule/code_generate_schedule/")
+source("BuildGroupSchedules.R")

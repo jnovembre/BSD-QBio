@@ -11,12 +11,13 @@ lunchpickup,Break + Lunch pick-up
 talkstar,Lunch + Graduate Student Research Talks
 pdafternoon,Professional development with TAs
 wrapup,Wrap-up
-dusable, Activity - wait for an announcement about this
-Computing1a,Basic/Advanced comp. I
-Computing1b,Basic/Advanced comp. I
-Computing2a,Basic/Advanced comp. II
-Computing2b,Basic/Advanced comp. II
-w1,Workshop - Dev. bio. / shape analysis - Mitchell
+museums, Group Museum tours
+challenges, Free time to work on team challenges
+Computing1a,Basic/Intermediate/Advanced comp. I
+Computing1b,Basic/Intermediate/Advanced comp. I
+Computing2a,Basic/Intermediate/Advanced comp. II
+Computing2b,Basic/Intermediate/Advanced comp. II
+w1,Workshop - Immunology - Khan
 w2,Workshop - Population genetics - Berg
 w3,Workshop - Motion tracking / image analysis - Nirody
 t1,Defensive programming - Novembre
