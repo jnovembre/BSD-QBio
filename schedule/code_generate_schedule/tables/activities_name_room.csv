@@ -2,16 +2,16 @@ Activity,Description
 officehours,(Optional) Office hours for help with software installations
 orientation,BSD-OGPA orientation for new students
 checkin,Check-in with TAs in BSLC lobby
-groupcomp,Dinner and group compacts
+groupcomp,Dinner - provided - and group compacts
 coffee,Coffee break
-lunch,Lunch
+lunch,Lunch - on your own
 talkintro,Welcome to qBio - Novembre / Liu / Myers
 talkkovar,Welcome to UChicago Biosciences - Dean Kovar
-lunchpickup,Break + Lunch pick-up
-talkstar,Lunch + Graduate Student Research Talks
+lunchpickup,Lunch - provided
+talkstar,Graduate Student Research Talks with lunch provided
 pdafternoon,Professional development with TAs
 wrapup,Wrap-up
-museums, Group Museum tours
+museums, Group Museum tours - DuSable / Smart / ISAC
 challenges, Free time to work on team challenges
 Computing1a,Basic/Intermediate/Advanced comp. I
 Computing1b,Basic/Intermediate/Advanced comp. I
@@ -23,5 +23,5 @@ w3,Workshop - Motion tracking / image analysis - Nirody
 t1,Defensive programming - Novembre
 t2,Data visualization - Carbonetto
 t3,Statistics for a data rich world - Liu
-team,Team-building activities
+team,Group-forming activities - dinner provided
 reception,Reception with Dean's Council Students
