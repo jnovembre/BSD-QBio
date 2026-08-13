@@ -62,8 +62,8 @@ pdftk tmp.pdf ../other_docs/cover_workshops.pdf output tmp2.pdf; mv tmp2.pdf tmp
 ## insert blank page
 pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
-## Noah Mitchell
-pdftk tmp.pdf ../../workshops/npmitchell/npmitchell_workshop.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+## Aly Khan
+pdftk tmp.pdf ../../workshops/akhan/lecture/immuno_khan.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 ## Berg
 pdftk tmp.pdf ../../workshops/jjberg/code/MBL_WorkshopJJB.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf

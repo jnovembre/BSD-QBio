@@ -8,7 +8,7 @@ output:
 author:
   - name: Sarah Cobey (adapted by Kyle Hernandez and John Novembre)
     affiliation: University of Chicago
-date: August 11, 2025
+date: August 13, 2026
 geometry: margin=1in
 fontfamily: mathpazo
 fontsize: 11pt
@@ -16,7 +16,7 @@ spacing: single
 graphics: yes
 endnote: no
 chapter: 4
-thanks: "This document is included as part of the 'Defensive Programming in R' tutorial packet for the BSD qBio Bootcamp, University of Chicago, 2025. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
+thanks: "This document is included as part of the 'Defensive Programming in R' tutorial packet for the BSD qBio Bootcamp, University of Chicago, 2026. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
 abstract: "**Goal:** Convince new and existing programmers of the
   importance of defensive programming practices, introduce general
   programming principles, and provide specific tips for programming and
@@ -489,7 +489,9 @@ My 2 cents of advice from my self-taught programming experience: don't reinvent 
 
 Avian influenza cases in humans usually arise from two viral subtypes, H5N1 and H7N9. An interesting observation is that the age distributions for H5N1 and H7N9 cases differ: older people are more likely to get very sick and die from H7N9, and younger people from H5N1. There's no evidence for age-related differences in exposure. A [recent paper](http://science.sciencemag.org/content/354/6313/722/tab-figures-data) showed that the risk of severe infection or death with avian influenza from 1997-2015 could be well explained by a simple model that correlated infection risk with the subtype of seasonal (non-avian) influenza a person was first exposed to in childhood. Different subtypes (H1N1, H2N2, and H3N2) have circulated in different years. Perhaps because H3N2 is more closely related to H7N9 than to H5N1, people with primary H3N2 infections seem protected from severe infections with H7N9. The complement is true for people first infected with H1N1 or H2N2 and later exposed to H5N1.
 
-![*Endemic influenza subtypes since 1918* [*(Gostic et al. 2016).*](http://science.sciencemag.org/content/354/6313/722/tab-figures-data)](images/subtypes.png)
+$$
+\includegraphics[width=0.7\textwidth]{images/subtypes.png}
+$$
 
 Of course, we do not know the full infection history of any person who was hospitalized with avian influenza. We only know the person's age and the year of hospitalization or death. To perform their analysis, the authors needed to calculate the probability that each case had a primary infection with each subtype, i.e., the probability that a person born in a given year was first infected with each subtype. Your challenge is to calculate these probabilities.
 
