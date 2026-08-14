@@ -1,0 +1,476 @@
+---
+title: "Data visualization tutorial: exploring data and telling stories using ggplot2"
+output:
+  pdf_document:
+    keep_tex: true
+    latex_engine: pdflatex
+    template: readable.tex
+author:
+  name: Peter Carbonetto
+  affiliation: University of Chicago
+date: August 14, 2026
+chapter: 3
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 11pt
+spacing: single
+graphics: yes
+endnote: no
+thanks: "This document is included as part of the Data Visualization tutorial packet for the BSD qBio Bootcamp, University of Chicago, 2026. **Current version**: `r format(Sys.time(), '%B %d, %Y')`; **Corresponding author**: pcarbo@uchicago.edu. Thanks to Stefano Allesina, John Novembre, Stephanie Palmer and Matthew Stephens for their support and guidance."
+abstract: "In this lesson, we will learn how to use ggplot2 to create simple
+yet effective data visualizations. The ggplot2 package is an incredibly
+powerful plotting interface that extends the base plotting functions in R."
+---
+
+```{r knitr-opts, include=FALSE}
+knitr::opts_chunk$set(comment = "#",collapse = TRUE,results = "hide",
+                      fig.align = "center",eval = FALSE)
+```
+
+Some motivation
+===============
+
+A good figure is an important part of an impactful research paper or
+presentation. A good figure is one that *tells an interesting story.*
+
+Almost inevitably, creating a good figure takes iteration and
+refinement. You will rarely get it right on the first try.
+
+For these reasons, taking the *programmatic approach* to creating
+plots is very powerful. It allows you to:
+
+a. Create an endless variety of plots.
+
+b. Reuse code to quickly create and revise plots.
+
+c. Join the [Frictionless Research Exchange][donoho-hdsr-2024].
+
+In this tutorial we will explore the programmatic approach to plotting
+using **ggplot2**.
+
+Setup
+=====
+
+*Do I have what I need?* Download the tutorial materials from GitHub,
+ and make sure you know where to find them.
+
+If you have not already done so, install these packages:
+
+```{r, eval=FALSE}
+install.packages("ggplot2")
+install.packages("cowplot")
+install.packages("ggrepel")
+```
+
+Do smaller dogs live longer?
+============================
+
+The study of dogs is a surprisingly fruitful area of research! In this
+tutorial, we will make use of some data that was made available by the
+authors of a 2008 *Genetics* article,
+*Single-nucleotide-polymorphism-based association mapping of dog
+stereotypes.* These data are stored in a CSV file.
+
+Our main analysis aim is to investigate the anecdotal claim that
+smaller breeds (such as Chihuahuas) live longer than larger breeds
+(such as Saint Bernards).
+
+Our first ggplot plot
+---------------------
+
+It will take us some time to understand *how* ggplot works, but let's
+start by quickly creating our first ggplot.
+
+```{r}
+library(ggplot2)
+dogs <- read.csv("dogs.csv",stringsAsFactors = FALSE)
+ggplot(dogs,aes(x = height,y = weight)) +
+  geom_point()
+```
+
+A first look at the data
+------------------------
+
+When you load data into R for the first time, it is important to get a
+basic understanding of the data frame and its contents.
+
+```{r}
+nrow(dogs)
+ncol(dogs)
+names(dogs)
+head(dogs)
+tail(dogs)
+summary(dogs)
+hist(dogs$aod,n = 32)
+hist(dogs$cfa7_46696633bp,n = 32)
+summary(dogs$shortcoat)
+unique(dogs$shortcoat)
+table(dogs$shortcoat,useNA = "always")
+```
+
+*What different types of data are in this table?*
+
+The often overlooked scatterplot
+--------------------------------
+
+In this tutorial, we will learn about ggplot2 through one of the most
+basic data visualizations: *the scatterplot.*
+
+The scatterplot is easily overlooked because it is so simple. But it
+can be one of the most effective ways to visualize relationships. And
+it has many uses.
+
+With embellishments (adding labels, varying color, shape, size,
+*etc*), scatterplots can produce stunning visualizations.
+
+Our first ggplot2 (with "ugly" code)
+------------------------------------
+
+Recall, our objective is to investigate the relationship between
+size and longevity in dogs. We'll use weight as a proxy for size.
+
+```{r}
+p <- ggplot(data = dogs,
+            mapping = aes(x = weight,y = aod))
+print(p)
+p <- ggplot_add(geom_point(),p)
+print(p)
+```
+
+Now for some more elegant code that can accomplish the same
+thing. (This more elegant code comes with a "for experts only"
+warning.)
+
+```{r}
+p <- ggplot(dogs,aes(x = weight,y = aod)) +
+  geom_point()
+print(p)
+```
+
+For the moment I want to focus on the less elegant ("uglier") code
+because it highlights better the key elements of a ggplot2 plot:
+
+1. The first input is the data (stored in a data frame).
+
+2. The second input is an "aesthetic mapping", created using
+   `aes` that defines how columns are mapped to features of the
+   plot (axes, shapes, colors, *etc*).
+
+3. A "geom", short for "geometric object", specifies the type of
+   plot. ggplot2 has an excellent on-line reference at
+   [ggplot2.tidyverse.org][ggplot2-reference] explaining all the
+   "geoms", from bar charts to contour plots, with code examples for
+   each.
+
+4. ggplot2 outputs a *ggplot object* `p`, which can be drawn to the screen
+   with `print(p)` or just `p` (then hit "enter" or "return").
+
+The distinguishing feature of ggplot2 is that plots are created by
+*adding layers*. This layering allows for infinite variety of plots to
+be created. The layering approach means that ggplot2 is easily
+extendible, and many R packages have been developed to enhance
+ggplot2. (We will use two of these packages, ggrepel and cowplot.)
+
+A few improvements
+------------------
+
+No plot is ever right the first time. *What are ways we can improve our
+plot?* Add code for your improved plot here:
+
+```{r}
+library(cowplot)
+p <- ggplot(dogs,aes(x = weight,y = aod)) +
+  geom_point(size = 2,shape = 21,color = "white",fill = "black") +
+  labs(x = "body weight (lbs)",y = "longevity (years)",
+       title = "smaller dogs tend to live longer") +
+  theme_cowplot()
+print(p)
+```
+
+In ggplot, plots can be improved either by modifying the inputs to the
+functions you are already using (for example, `geom_point` has many
+settings that can be fiddled with), or by *adding layers*. The ggplot
+online reference has many helpful examples that illustrate the variety
+of ways plots can be improved.
+
+Save your work
+--------------
+
+We've made some progress. This is a good point to save our work in an
+image file that can be shared with others. *What type of image file
+should we use?*
+
+```{r}
+ggsave("dogs.pdf",p,height = 4,width = 4.5)
+ggsave("dogs.png",p,height = 4,width = 4.5)
+```
+
+$$
+\fruitfly
+$$
+
+Plot the best-fit line
+----------------------
+
+It has been estimated that an increase of 28 lbs in a dog's body
+weight corresponds to about a 1-year drop in expected lifespan (with a
+maximum lifespan of about 13 years). How well does this estimate agree
+with our data? Let's investigate this question by plotting the line
+that *best fits* these data (specifically, this is the "least-squares"
+fit).
+
+```{r}
+fit <- lm(aod ~ weight,dogs)
+coef(fit)
+```
+
+Now let's add this "best fit" line to the plot. In case we make a
+mistake here, let's call our new plot "p2" to avoid writing over our
+previous plot:
+
+```{r}
+b <- coef(fit)
+p2 <- p +
+  geom_abline(color = "dodgerblue",linetype = "dashed",
+              intercept = b[1],slope = b[2])
+print(p2)
+```
+Now let's add another another "abline" layer to compare our estimate
+against the previous estimate (and name the new plot object "p3"):
+
+```{r}
+p3 <- p2 +
+  geom_abline(color = "darkorange",linetype = "dashed",
+              intercept = 13,slope = -1/28)
+print(p3)
+```
+
+Notice how easy it was to add layers to an existing plot!
+
+Which breeds fit the trend, and which don't?
+--------------------------------------------
+
+It would be helpful if we could tell which breeds are being
+plotted. Adding text labels to a ggplot is also done by adding a
+layer.
+
+There's one catch here—there simply isn't enough real estate on the
+plot to accommodate all the breed names. This is a great opportunity
+to play around with a clever package, **ggrepel**, that adds the
+labels in a way that makes them more readable, and only adds them to
+the plot when possible. Let's appreciate how simply this sophisticated
+plot is created.
+
+```{r}
+library(ggrepel)
+p4 <- p3 + geom_text_repel(mapping = aes(label = breed),
+                           size = 2.5,color = "gray")
+print(p4)
+```
+
+Notice that the labels are automatically redrawn as the plot is
+resized. Give it a try!
+
+A QTL for weight
+----------------
+
+In the *Genetics* paper, the strongest *quantitative trait locus*
+(QTL) for weight was a QTL on chromosome 7. Using your ggplot coding
+skills, create a scatterplot to visualize the relationship between
+weight and the allele frequency at this QTL.
+
+```{r}
+p <- ggplot(dogs,aes(x = cfa7_46696633bp,y = weight)) +
+  geom_point(shape = 21,color = "white",fill = "black") +
+  geom_text_repel(mapping = aes(label = breed),
+                  size = 2.5,color = "gray") +
+                  theme_cowplot()
+print(p)
+```
+
+$$
+\octopus
+$$
+
+Exploration: a surprising subtlety with color
+=============================================
+
+So far, we have focussed on using the co-ordinate plane to visualize
+relationships. But other "aesthetics"—color, size, shape, *etc*—can
+also be used to tell an evocative story. In the last chapter of this
+tutorial, we will explore the use of color to visualize relationships.
+In so doing, we will discover a complication.
+
+We learned that the "shortcoat" column had values of 0 or 1 (with a
+few NAs).
+
+Let's try varying the color of the points using the shortcoat column:
+
+```{r}
+p <- ggplot(dogs,aes(x = weight,y = aod,color = shortcoat)) +
+  geom_point() +
+  theme_cowplot()
+print(p)
+```
+
+*Are we happy with this plot? How could it be improved?* Write your
+code for an improved plot here:
+
+```{r}
+dogs$shortcoat
+summary(dogs$shortcoat)
+dogs$shortcoat <- factor(dogs$shortcoat)
+dogs$shortcoat
+summary(dogs$shortcoat)
+p <- ggplot(dogs,aes(x = weight,y = aod,color = shortcoat)) +
+  geom_point() +
+  theme_cowplot()
+print(p)
+```
+
+Try varying the shape of the points instead of color. If you have have
+written your ggplot code well, this should only involve a slight
+change to your code. You can use `scale_shape_manual` to select the
+shapes. Running `plot(0:23,pch = 0:23)` will give you the full list of
+shapes to choose from.
+
+```{r}
+p <- ggplot(dogs,aes(x = weight,y = aod,shape = shortcoat)) +
+  geom_point() +
+  scale_shape_manual(values = c(1,19),na.value = 4) +
+  theme_cowplot()
+print(p)
+```
+
+$$
+\zebrafish
+$$
+
+More on color
+=============
+
+Carefully chosen colors can often be the difference between an
+effective visualization and an ineffective one. One the few complaints
+I have with ggplot2 is that the default colors choices are quite
+bad. (And, perhaps unsurprisingly, these bad defaults frequently
+appear in published papers!)
+
+What are the ggplot2 defaults? Let's check (here I'm reusing some
+example code from the ggplot2 reference website that uses the
+"diamonds" data set):
+
+```{r}
+data(diamonds)
+n <- nrow(diamonds)
+diamonds <- diamonds[sample(n,1000),]
+p <- ggplot(diamonds,aes(x = carat,y = price,color = clarity)) +
+  geom_point() +
+  theme_cowplot()
+print(p)
+```
+
+If your labmates or co-authors are using these colors, please gently
+remind them to override the ggplot2 defaults!
+
+Let’s now override the ggplot2 default choices using the
+`scale_color_manual` layer:
+
+```{r}
+p <- ggplot(diamonds,aes(x = carat,y = price,color = clarity)) +
+  geom_point() +
+  scale_color_manual(values = c("orange","limegreen","darkblue",
+                                "magenta","cyan","forestgreen","gold",
+								"skyblue")) +
+  theme_cowplot()
+print(p)
+```
+
+The function that controls the color of a discrete variable has an odd
+name: `scale_color_manual`. This is because, in ggplot2, all methods
+that control the mapping of variables to colors, shapes, sizes, axes,
+*etc*, start with `scale_`.
+
+There are several different ways to specify colors. I prefer
+specifying colors by name; to get the full list of color names, run
+`colors()`.
+
+In short, when you use ggplot2, you will often need to make
+adjustments to the colors. One rule-of-thumb in color choice is that
+"warmer" colors such as red and orange tend to draw the reader's
+attention. Use this rule-of-thumb to highlight the diamonds with the
+best (IF) clarity:
+
+```{r}
+p <- ggplot(diamonds,aes(x = carat,y = price,color = clarity)) +
+  geom_point() +
+  scale_color_manual(values = c("lightblue","skyblue","gray",
+                                "lightgray","dodgerblue","royalblue",
+								"cornflowerblue","orangered")) +
+  theme_cowplot()
+print(p)
+```
+
+*What are other ways you could highlight the diamonds with the best
+clarity?*
+
+The "clarity" column is an example of an *ordered factor*, and it
+turns out that ggplot2 treats ordered and unordered factors
+differently. (Most factors in R are unordered.) What are the default
+colors for an *unordered* factor?
+
+```{r}
+diamonds$clarity <- factor(diamonds$clarity,ordered = FALSE)
+p <- ggplot(diamonds,aes(x = carat,y = price,color = clarity)) +
+  geom_point() +
+  theme_cowplot()
+print(p)
+```
+
+There are several good resources on use of color in data
+visualization, and I will mention a couple here: Color Brewer
+(https://colorbrewer2.org); and a short article, "Color blindness",
+written by Bang Wong (*Nature Methods*, 2011,
+[doi:10.1038/nmeth.1618][bang-wong-2011]). I also recommend the
+[Fundamentals of data visualization][wilke] book by Claus Wilke.
+
+How would you apply Color Brewer's recommendations to plot ordered or
+unordered factors? Write some code here to use one of Color Brewer
+recommended palettes:
+
+```{r}
+clarity_colors <- c("#7fc97f","#beaed4","#fdc086","#ffff99",
+                    "#386cb0","#f0027f","#bf5b17","#666666")
+p <- ggplot(diamonds,aes(x = carat,y = price,color = clarity)) +
+  geom_point() +
+  scale_color_manual(values = clarity_colors) +
+  theme_cowplot()
+print(p)
+clarity_colors <- c("#8c510a","#bf812d","#dfc27d","#f6e8c3","#c7eae5",
+                    "#80cdc1","#35978f","#01665e")
+p <- ggplot(diamonds,aes(x = carat,y = price,color = clarity)) +
+  geom_point() +
+  scale_color_manual(values = clarity_colors) +
+  theme_cowplot()
+print(p)
+```
+
+Also explore the different options on the Color Brewer website, and
+see what happens when you restrict to "colorblind safe" palettes.
+
+Obviously, there is so much more to ggplot2. But once you are
+comfortable with these basic elements, you will find that almost
+everything else in ggplot2 is a variation of what we covered in this
+lesson.
+
+$$
+\tetrahymena
+$$
+
+[donoho-hdsr-2024]: https://doi.org/10.1162/99608f92.b91339ef
+[ggplot2-reference]: https://ggplot2.tidyverse.org/reference
+[wilke]: https://clauswilke.com/dataviz
+[jones-2008]: https://doi.org/doi:10.1534/genetics.108.087866
+[bang-wong-2011]: https://doi.org/10.1038/nmeth.1618
+[elife]: https://elifesciences.org
+[zenodo]: https://zenodo.org
+[marino-2025-elife]: https://doi.org/10.7554/eLife.100574.3

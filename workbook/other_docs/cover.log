@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.8)  13 AUG 2026 17:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.8)  14 AUG 2026 08:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -287,12 +287,15 @@ Package epstopdf Info: Source file: <group_logos.eps>
 (epstopdf)                    date: 2024-08-07 13:30:36
 (epstopdf)                    size: 299930 bytes
 (epstopdf)             Output file: <group_logos-eps-converted-to.pdf>
-(epstopdf)                    date: 2026-08-13 17:30:44
-(epstopdf)                    size: 72013 bytes
 (epstopdf)             Command: <repstopdf --outfile=group_logos-eps-converted-
 to.pdf group_logos.eps>
 (epstopdf)             \includegraphics on input line 29.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(repstopdf --outfile=group_logos-eps-converted-to.pdf group_logos.eps)
+...executed safely (allowed).
+
+Package epstopdf Info: Result file: <group_logos-eps-converted-to.pdf>
+(epstopdf)                    date: 2026-08-14 08:25:40
+(epstopdf)                    size: 72013 bytes.
 <group_logos-eps-converted-to.pdf, id=2, 1327.96124pt x 1395.2125pt>
 File: group_logos-eps-converted-to.pdf Graphic file (type pdf)
 <use group_logos-eps-converted-to.pdf>
@@ -324,7 +327,7 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinLibertine
 T.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/libertine/LinLiber
 tineTB.pfb>
-Output written on cover.pdf (1 page, 1124429 bytes).
+Output written on cover.pdf (1 page, 1124430 bytes).
 PDF statistics:
  25 PDF objects out of 1000 (max. 8388607)
  14 compressed objects within 1 object stream
