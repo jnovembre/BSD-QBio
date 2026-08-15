@@ -26,12 +26,13 @@ echo Adding tutorials...
 
 # R-cheat-sheet.pdf
 ## Basic I 
-pdftk tmp.pdf ../other_docs/R-cheat-sheet.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
-
-pdftk tmp.pdf ../../tutorials/basic_computing/basic_computing.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+# pdftk tmp.pdf ../other_docs/R-cheat-sheet.pdf output tmp2.pdf; mv tmp2.pdf tm# p.pdf
+# 
+# pdftk tmp.pdf ../../tutorials/basic_computing/basic_computing.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+#
 
 ## insert blank page
-pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+# pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 ## Advanced I and II
 pdftk tmp.pdf ../../tutorials/advanced_computing/tutorial/advanced_computing.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
