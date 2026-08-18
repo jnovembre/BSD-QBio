@@ -40,8 +40,9 @@ output:
 **10:30-12:00**       Basic/Intermediate/Advanced comp. I                           
 **12:00-1:30**        Lunch - on your own                                           
 **1:30-2:00**         Welcome to UChicago Biosciences - Dean Kovar                  
-**2:00-2:30**         Coffee break                                                  
-**2:30-4:00**         Professional development with TAs                             
+**2:00-2:30**         Professional development with TAs                             
+**2:30-3:00**         Coffee break                                                  
+**3:00-4:00**         Professional development with TAs                             
 ------------------    --------------------------------------------------------------
 
 ### Friday, September 11 
@@ -50,13 +51,15 @@ output:
 **8:30-10:00**        Basic/Intermediate/Advanced comp. II                          
 **10:00-10:30**       Coffee break                                                  
 **10:30-12:00**       Basic/Intermediate/Advanced comp. II                          
-**12:00-1:30**        Graduate Student Research Talks with lunch provided           
+**12:00-1:30**        Lunch - on your own                                           
 **1:30-3:00**         Data visualization - Carbonetto                                (*C.jacchus D.rerio P.polytes T.thermophila*)
-                      Defensive programming - Novembre                               (*A.thaliana C.elegans T.roseae X.laevis*)
+                      Defensive programming - A - Novembre                           (*A.thaliana C.elegans T.roseae X.laevis*)
+                      Defensive programming - B - Basic Option - TAs                 (*A.thaliana C.elegans T.roseae X.laevis*)
                       Statistics for a data rich world - Liu                         (*D.melanogaster M.musculus O.bimaculoides S.aegyptiacus*)
 **3:00-3:30**         Coffee break                                                  
 **3:30-5:00**         Data visualization - Carbonetto                                (*C.jacchus D.rerio P.polytes T.thermophila*)
-                      Defensive programming - Novembre                               (*A.thaliana C.elegans T.roseae X.laevis*)
+                      Defensive programming - A - Novembre                           (*A.thaliana C.elegans T.roseae X.laevis*)
+                      Defensive programming - B - Basic Option - TAs                 (*A.thaliana C.elegans T.roseae X.laevis*)
                       Statistics for a data rich world - Liu                         (*D.melanogaster M.musculus O.bimaculoides S.aegyptiacus*)
 ------------------    --------------------------------------------------------------
 
@@ -64,19 +67,23 @@ output:
 
 ------------------    --------------------------------------------------------------
 **8:30-10:00**        Data visualization - Carbonetto                                (*C.elegans D.melanogaster S.aegyptiacus T.roseae*)
-                      Defensive programming - Novembre                               (*C.jacchus M.musculus O.bimaculoides P.polytes*)
+                      Defensive programming - A - Novembre                           (*C.jacchus M.musculus O.bimaculoides P.polytes*)
+                      Defensive programming - B - Basic Option - TAs                 (*C.jacchus M.musculus O.bimaculoides P.polytes*)
                       Statistics for a data rich world - Liu                         (*A.thaliana D.rerio T.thermophila X.laevis*)
 **10:00-10:30**       Coffee break                                                  
 **10:30-12:00**       Data visualization - Carbonetto                                (*C.elegans D.melanogaster S.aegyptiacus T.roseae*)
-                      Defensive programming - Novembre                               (*C.jacchus M.musculus O.bimaculoides P.polytes*)
+                      Defensive programming - A - Novembre                           (*C.jacchus M.musculus O.bimaculoides P.polytes*)
+                      Defensive programming - B - Basic Option - TAs                 (*C.jacchus M.musculus O.bimaculoides P.polytes*)
                       Statistics for a data rich world - Liu                         (*A.thaliana D.rerio T.thermophila X.laevis*)
 **12:00-1:30**        Lunch - on your own                                           
 **1:30-3:00**         Data visualization - Carbonetto                                (*A.thaliana M.musculus O.bimaculoides X.laevis*)
-                      Defensive programming - Novembre                               (*D.melanogaster D.rerio S.aegyptiacus T.thermophila*)
+                      Defensive programming - A - Novembre                           (*D.melanogaster D.rerio S.aegyptiacus T.thermophila*)
+                      Defensive programming - B - Basic Option - TAs                 (*D.melanogaster D.rerio S.aegyptiacus T.thermophila*)
                       Statistics for a data rich world - Liu                         (*C.elegans C.jacchus P.polytes T.roseae*)
 **3:00-3:30**         Coffee break                                                  
 **3:30-5:00**         Data visualization - Carbonetto                                (*A.thaliana M.musculus O.bimaculoides X.laevis*)
-                      Defensive programming - Novembre                               (*D.melanogaster D.rerio S.aegyptiacus T.thermophila*)
+                      Defensive programming - A - Novembre                           (*D.melanogaster D.rerio S.aegyptiacus T.thermophila*)
+                      Defensive programming - B - Basic Option - TAs                 (*D.melanogaster D.rerio S.aegyptiacus T.thermophila*)
                       Statistics for a data rich world - Liu                         (*C.elegans C.jacchus P.polytes T.roseae*)
 ------------------    --------------------------------------------------------------
 
@@ -90,9 +97,9 @@ output:
 **10:30-12:00**       Workshop - Immunology - Khan                                   (*A.thaliana C.elegans D.rerio X.laevis*)
                       Workshop - Motion tracking / image analysis - Nirody           (*C.jacchus O.bimaculoides P.polytes T.thermophila*)
                       Workshop - Population genetics - Berg                          (*D.melanogaster M.musculus S.aegyptiacus T.roseae*)
-**12:00-1:30**        Lunch - on your own                                           
-**1:30-3:30**          Group Museum tours - DuSable / Smart / ISAC                  
-**3:30-5:00**          Free time to work on team challenges                         
+**12:00-1:30**        Graduate Student Research Talks with lunch provided           
+**1:30-3:30**          Group Museum activities - DuSable / Smart / ISAC             
+**3:30-**              Free time to work on team challenges                         
 ------------------    --------------------------------------------------------------
 
 ### Wednesday, September 16 

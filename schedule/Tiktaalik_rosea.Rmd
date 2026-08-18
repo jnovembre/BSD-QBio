@@ -19,7 +19,7 @@ output:
 # BSD qBio$^{12}$ 
 
 ## Group Schedule: *Tiktaalik rosea*
- ![](https://github.com/StefanoAllesina/BSD-QBio5/raw/master/logo_group/Tiktaalik_roseae.png)     
+ ![](../../logo_group/Tiktaalik_roseae.png)     
 
 ### Wednesday, September 9 
 
@@ -41,8 +41,9 @@ output:
 **10:30-12:00**       Basic/Intermediate/Advanced comp. I                           
 **12:00-1:30**        Lunch - on your own                                           
 **1:30-2:00**         Welcome to UChicago Biosciences - Dean Kovar                  
-**2:00-2:30**         Coffee break                                                  
-**2:30-4:00**         Professional development with TAs                             
+**2:00-2:30**         Professional development with TAs                             
+**2:30-3:00**         Coffee break                                                  
+**3:00-4:00**         Professional development with TAs                             
 ------------------    --------------------------------------------------------------
 
 ### Friday, September 11 
@@ -51,10 +52,12 @@ output:
 **8:30-10:00**        Basic/Intermediate/Advanced comp. II                          
 **10:00-10:30**       Coffee break                                                  
 **10:30-12:00**       Basic/Intermediate/Advanced comp. II                          
-**12:00-1:30**        Graduate Student Research Talks with lunch provided           
-**1:30-3:00**         Defensive programming - Novembre                              
+**12:00-1:30**        Lunch - on your own                                           
+**1:30-3:00**         Defensive programming - A - Novembre                          
+**1:30-3:00**         Defensive programming - B - Basic Option - TAs                
 **3:00-3:30**         Coffee break                                                  
-**3:30-5:00**         Defensive programming - Novembre                              
+**3:30-5:00**         Defensive programming - A - Novembre                          
+**3:30-5:00**         Defensive programming - B - Basic Option - TAs                
 ------------------    --------------------------------------------------------------
 
 ### Monday, September 14 
@@ -75,9 +78,9 @@ output:
 **8:30-10:00**        Workshop - Population genetics - Berg                         
 **10:00-10:30**       Coffee break                                                  
 **10:30-12:00**       Workshop - Population genetics - Berg                         
-**12:00-1:30**        Lunch - on your own                                           
-**1:30-3:30**          Group Museum tours - DuSable / Smart / ISAC                  
-**3:30-5:00**          Free time to work on team challenges                         
+**12:00-1:30**        Graduate Student Research Talks with lunch provided           
+**1:30-3:30**          Group Museum activities - DuSable / Smart / ISAC             
+**3:30-**              Free time to work on team challenges                         
 ------------------    --------------------------------------------------------------
 
 ### Wednesday, September 16 
