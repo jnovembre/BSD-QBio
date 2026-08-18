@@ -25,11 +25,10 @@ pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 echo Adding tutorials...
 
 # R-cheat-sheet.pdf
+pdftk tmp.pdf ../other_docs/R-cheat-sheet.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+
 ## Basic I 
-# pdftk tmp.pdf ../other_docs/R-cheat-sheet.pdf output tmp2.pdf; mv tmp2.pdf tm# p.pdf
-# 
 # pdftk tmp.pdf ../../tutorials/basic_computing/basic_computing.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
-#
 
 ## insert blank page
 # pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
@@ -44,10 +43,13 @@ pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 pdftk tmp.pdf ../../tutorials/data_visualization/data_visualization.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 ## insert blank page
-pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+# pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 ## Defensive programming 
 pdftk tmp.pdf ../../tutorials/defensive_programming/code/defensive_programming.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+
+## insert blank page
+pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 ## Stats for data rich
 pdftk tmp.pdf ../../tutorials/stats_for_large_data/code/stats_for_large_data.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
@@ -65,6 +67,9 @@ pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 ## Aly Khan
 pdftk tmp.pdf ../../workshops/akhan/lecture/immuno_khan.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+
+## insert blank page
+pdftk tmp.pdf ../other_docs/blank.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 
 ## Berg
 pdftk tmp.pdf ../../workshops/jjberg/code/MBL_WorkshopJJB.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
