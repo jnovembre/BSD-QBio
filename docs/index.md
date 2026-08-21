@@ -274,9 +274,12 @@ PyCharm for the workshop. -->
 
 ## Programming Challenges
 
-Here are the links to the Google forms where the groups should post
+*Links for submitting solutions to Programming Challenges will
+be added here.*
+
+<!-- Here are the links to the Google forms where the groups should post
 their solutions to the Programming Challenges (one answer per group,
-please).
+please). -->
 
 <!-- + [Basic computing](https://forms.gle/ZsGumfXDEL5S3yym7)
 + [Advanced programming](https://forms.gle/hozH4hZxGFx3tRaq8)
