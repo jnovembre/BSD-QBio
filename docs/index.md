@@ -1,4 +1,4 @@
-## Welcome (NOTE: DRAFT VERSION) 
+## Welcome 
 
 This page contains important information about the
 [Twelth BSD-qBio Boot
@@ -70,19 +70,19 @@ You can also browse the schedule
 To accommodate the diverse backgrounds of our students, we have created
 three tracks for the computing tutorials.
 
-1. Basic Computing: dedicated to new users who are not familiar with R
-   or programming in general. It will guide students step-by-step,
+1. Basic Computing: dedicated for those who have had no exposure to programming in
+   general. It will guide students step-by-step,
    introducing R and fundamentals of algorithmic thinking.
 
-2. Intermediate Computing: dedicated to users with ~6 months or more
-   exposure to R or programming in general but who are not less than
-   experts. It will remind and reinforce fundamentals of key aspects
-   of R and showing how to write well-organized code for data analysis
-   and scientific research.
+3. Intermediate Computing: dedicated to those with ~6 months or more
+   exposure to R (or programming in general, e.g. with Python) but who are less than
+   experts. It will teach and reinforce fundamentals of R and show how to write
+   well-organized code for data analysis and scientific research.
 
-3. Advanced Computing: dedicated to experienced programmers (R or
+5. Advanced Computing: dedicated to experienced programmers (R or
    otherwise), these sessions will focus on challenges manipulating
-   large data sets and seeing advanced features of R.
+   large data sets and seeing advanced features of R, and allow students with
+   advanced exposure in other languages (e.g. python) to get experience with R.
 
 **You will need to decide which track's sessions to attend on Day 1-2
 of the Bootcamp**. After Days 1 and 2, you will move through the
@@ -275,7 +275,7 @@ PyCharm for the workshop. -->
 ## Programming Challenges
 
 *Links for submitting solutions to Programming Challenges will
-be added here.*
+be added here during the qBio week.*
 
 <!-- Here are the links to the Google forms where the groups should post
 their solutions to the Programming Challenges (one answer per group,
