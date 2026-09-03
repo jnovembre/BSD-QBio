@@ -163,9 +163,11 @@ software.
 	- ggplot2
     - ggrepel
     - ggridges
+	- ggseqlogo
     - ggthemes
     - reshape2
 	- rsvd
+	- Rtsne
     - tidyverse
 	- trajr
 	- uwot
