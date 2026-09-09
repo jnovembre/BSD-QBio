@@ -140,7 +140,7 @@ We will use [R](https://www.r-project.org) in most of the workshops
 and tutorials.
 
 + **Install R.** Go to
-[this page](https://posit.co/download/rstudio-desktop/) and follow
+[this page](https://cloud.r-project.org/) and follow
 instructions there to download and install R for your computing
 platform. Here is a [video](https://youtu.be/sD1NJ7_DLZk) explaining
 how to install R and RStudio in Windows; see
@@ -149,7 +149,7 @@ with a Mac that has one of the newer Apple chips (M1, M2, *etc*),
 make sure to download the "arm64" installer.
 
 + **Install RStudio Desktop.** Once you have installed R, go back to
-[this page](https://posit.co/download/rstudio-desktop/), download the
+[this page](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads), download the
 RStudio Desktop installer for your operating system, then install the
 software.
 
