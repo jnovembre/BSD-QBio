@@ -4,7 +4,7 @@ output:
   pdf_document:
     keep_tex: false
     latex_engine: pdflatex
-    #template: readable.tex
+    template: ../../latex_template/readable.tex
 author:
   - name: John Novembre
     affiliation: University of Chicago
@@ -15,7 +15,7 @@ fontsize: 11pt
 spacing: single
 graphics: yes
 endnote: no
-chapter: 4
+chapter: 1
 thanks: "This document is included as part of the 'Basic Programming in R' tutorial packet for the BSD qBio Bootcamp, University of Chicago, 2026. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
 abstract: "**Goal:** Introduce students to key concepts of programming in the context of the programming language `R`.   **Audience:** Incoming graduate students with no or minimal exposure to programming."
 ---
