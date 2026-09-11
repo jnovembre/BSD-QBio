@@ -277,7 +277,9 @@ PyCharm for the workshop. -->
 ## Programming Challenges
 
 *Links for submitting solutions to Programming Challenges will
-be added here during the qBio week.*
+be added progressively here during the qBio week.*
+
++ [Intermediate Computing](https://forms.gle/2BHyqszWZpsTKwqF6)
 
 <!-- Here are the links to the Google forms where the groups should post
 their solutions to the Programming Challenges (one answer per group,
