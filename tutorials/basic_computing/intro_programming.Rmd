@@ -1,0 +1,584 @@
+---
+title: "Basic Programming in R: Introduction to Programming "
+output:
+  pdf_document:
+    keep_tex: false
+    latex_engine: pdflatex
+    template: ../../latex_template/readable.tex
+author:
+  - name: John Novembre
+    affiliation: University of Chicago
+date: August 26, 2026
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 11pt
+spacing: single
+graphics: yes
+endnote: no
+chapter: 1
+thanks: "This document is included as part of the 'Basic Programming in R' tutorial packet for the BSD qBio Bootcamp, University of Chicago, 2026. **Current version**: `r format(Sys.time(), '%B %d, %Y')`."
+abstract: "**Goal:** Introduce students to key concepts of programming in the context of the programming language `R`.   **Audience:** Incoming graduate students with no or minimal exposure to programming."
+---
+
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.path='figs/',
+                      echo=TRUE, eval=FALSE, warning=FALSE, message=FALSE)
+
+library(dplyr)
+library(ggplot2)
+library(reshape2)
+library(tibble)
+```
+
+
+<!--
+Internal notes 
+
+We'll begin with an introductory section where we discuss the idea of an algorithms. We'll emphasize how to do reproducible science. We need to design algorithms that will reproduce our work.  We'll talk about key elements of algorithms, such as iterative loops that are implemented with FOR or WHILE statements. We'll discuss the idea of conditioning on variables using if-then statements (maybe introduce data types at this point too). We'll discuss the idea of modular pieces of code that can be wrapped up into functions. And we'll introduce the idea of code libraries, collections of functions that we can use.  
+
+Warm-up Need to introduce notion of variables and state of environment; introduce Rstudio; 
+
+As one key activity, we'll deal with a canonical situation that arises for researchers in which they receive a table of data and have to iterate over the rows, performing some analysis on each row. (Note data types while introducing table).  We'll use for loops and if-then statements as a basic beginning to do this. We'll then also show off some shortcut functions/data structures in R that allow one to do things compactly (ok to use tibbles perhaps). For the data table, I'm thinking of using a data table of perhaps RNA expression levels across genes.  Compute p-val of Xuanyao's multiple testing.   
+
+Then, as a second level, we will have the canonical situation of having multiple files where we need to iterate over files and perform an analysis. For the files, I'm thinking about using a collection of FastA or FastQ files from a sequencing experiment. 
+
+As a final exercise, we'll talk about the idea of simulation and simulate random walks in preparation for the defensive programming. 
+-->
+
+
+### Preliminaries
+
+Please use git/gitkraken to pull the latest version of the course materials from https://github.com/jnovembre/BSD-QBio 
+
+### Motivation 
+
+There are several key reasons that motivate us to learn programming in the context of doing research in modern biology. The first is that it allows us more precise control over what the computer is doing and allows us to build custom solutions to our data handling and analysis problems. The second is that it allows us to automate things so that we can do simple tasks over and over and over again very efficiently. The third is in terms of reproducible science. The more that we can automate and build software workflows with scripts that will execute our analysis, the easier it is for us to reproduce the analysis that we've done before and to share them with others. We also find it extremely convenient to change a setting on our analysis and re-run it from start to finish to test the robustness of our work, and that ultimately results in better science. 
+
+Two key concepts that are important to understand in programming are algorithms and data structures. Here I'm going to focus on introducing algorithms, and we'll pick up knowledge about data structures along the way. 
+
+### Algorithms
+
+An algorithm is a complex set of instructions that can be followed in an automatic way by an actor or agent, or in this case, our computer. Algorithms are everywhere in some sense. Consider the need to walk to work when there is a possibility of rain. Most of us execute a basic algorithm that looks something like the following: The first step involves checking the weather. If there's a forecast with potential rain, then grab the umbrella. If there's a forecast for clear skies, then do not grab the umbrella.  Then we head to work, and we repeat this every work-day.
+
+A key concept we'll use here and in other parts of the Boot Camp is the idea of pseudo-code, where we write out in human-readable language what our algorithm is. 
+
+At a high level here is pseudo-code for our walk-to-work algorithm:
+
+1) Check the weather
+2) If there is a forecast for rain, grab umbrella
+3) Otherwise, leave the umbrella. 
+4) Head out the door
+5) If it is raining, deploy umbrella
+6) else, leave it closed. 
+7) Repeat every weekday morning
+
+This simple example already brings up the idea of a key concept in programming: the conditional if/then statement. The general format for these looks like "if (boolean statement) then (action)".  A "boolean" statement is one that evaluates as true/false (e.g. "there is a forecast for rain" is true or false; "it is raining" is true or false.  The last line, about repeat every weekday morning, brings up the idea of what we call a loop. A loop is where our instructions repeat themselves a certain number of times or over a certain set of values.  
+
+Notice how, in writing out the pseudo code, I've added steps that weren't in my original description of the problem. That is an example of a key idea that I want to express about the importance of writing how programs and thinking programmatically. By taking the time to write out even the pseudocode of the algorithm, it improved our thinking and helped us catch details that we missed when we first thought about the problem.   
+
+Let's see these ideas in R.  First, let's do the simplest program possible, in which we print a message to the screen.  We will write our code in small code blocks, and execute them using the green arrow.   
+
+```{r}
+# First let's do the simplest program possible
+print("hello world")  # Print a custom message
+```
+
+Now I'll introduce the idea of abstract variables. Much like in math, we can assign values to abstract variables like x here, and then we can print a message that tells us what x equals.   
+```{r}
+
+x <- 5 # Declaring a simple variable x and assign it value 5 
+print(paste("x equals ",x))  # paste joins the variable x with a message
+```
+
+And here we demonstrate an if-then statement. Let's re-run this multiple times with multiple values. 
+```{r}
+
+x <- 5 # Declaring a simple variable x and assign it value 5 
+
+# example of an if-then statement
+if (x > 5) { 
+  print ("Wow  greater than 5!") 
+} else { 
+    print ("Number is less than or equal to 5")
+}
+```
+
+
+Now let's consider a short program that takes in an array of forecast values and prints out whether we should bring an umbrella or not for each day. 
+```{r}
+
+# A "vector"/array of forecast values.  Each is a "character string"
+forecasts <- c("rainy","clear","rainy","snow","clear")
+
+# We can access array values by "index".  Here are some examples...
+print("==Test prints==")
+print(forecasts[2])
+print(forecasts[1])
+
+# Now let's put this together, to loop over the forecast days, and print a recommendation...
+print("==Plan for the week==")
+for (i in 1:5){
+  if(forecasts[i]=="rainy"){
+    print(paste("Day",i,"bring umbrella!"))
+  } else {
+    print(paste("Day",i,"no forecast of rain."))
+  }
+}
+```
+
+### Consider Scratch as a programming language
+
+Visit: https://scratch.mit.edu/projects/editor/?tutorial=getStarted
+
+Use the browser on the left to explore the possible parts of a Scratch program.  Exercise: Make a short program using at least one motion, one conditional control feature (if/then), one loop control feature (e.g. wait/repeat) and one variable. For example, have a character speak out aloud 1 to 10 but it will stop and make a sound if the mouse is clicked.  
+
+
+### A typical challenge case in biological research
+
+A typical challenge case in biological research is that we have a large data table that we would like to process and work with. We oftentimes want to do some kind of processing on each row and then loop over rows. 
+
+In this case, we're going to work on data from a study of patients with inflamed versus non-inflamed biopsies. The investigators sought to understand gene regulatory differences between these two tissue states, so they conducted RNA-seq experiments to measure the gene expression levels. We start with their data table of gene expression results.
+
+To investigate the data, we're going to put our if-then conditionals and for loops to work. 
+
+But first, let's read in the file.  R has a convenient function `read.csv` for reading in comma-separated value text. It also has the `head` command that's useful for looking at the top of a file. We can also use the R studio interface to look at the data. 
+
+```{r}
+x<-read.csv("Table_DEGs_GSE193677.csv")
+head(x)
+```
+To introduce the fields (i.e. columns here), we have GeneSymbol, GeneName, logFC (which means log fold change, meaning how much did the gene expression change, but on a log scale), AveExpr (which is average expression level over both conditions), t.stat (which is a t-statistic for a test of difference in expression levels), p.value (which is the p-value for a statistical test of difference), adj.p.val (which is a p-value adjusted for mulitple testing), and "Regulation" (Up/Down).
+
+As a first pass, let's write a simple script that counts the number of up-regulated genes:
+
+```{r}
+dim(x) # gives us dimensions of the table
+ngenes <- dim(x)[1]
+
+ctr <- 0
+for(i in 1:ngenes){
+  if(x$Regulation[i] == "Up"){
+    ctr <- ctr + 1
+  }
+}
+print(paste("The number that appear up-regulated is ",ctr))
+```
+
+Notice how this second code block uses x, which was defined in the previous code block. That's because in our studio we have persistent memory over code blocks. That is to say that when we declare a variable in one block and assign it a value, the existence of that variable and its contents continue until we reset the memory manually.  The RStudio interface has the notion of an environment explorer on the upper right, where we can directly inspect variables that we've declared.   
+
+### Data types
+
+One thing we've glossed over so far, every value in R has a *type* that determines what operations make sense on it. The four you'll encounter most:
+
+- **numeric**: real numbers, like `3.14` or `-2.7`  
+- **character**: text in quotes, like `"TP53"` or `"rainy"`  
+- **logical**: exactly `TRUE` or `FALSE`  
+- **integer**: whole numbers stored precisely, written `42L`
+
+You can inspect the type of any variable with `class()`:
+
+```{r}
+gene_count    <- 487         # numeric
+gene_name     <- "TP53"      # character
+is_expressed  <- TRUE        # logical
+
+class(gene_count)
+class(gene_name)
+class(is_expressed)
+```
+Types matter because R enforces them. Try this:
+
+```{r}
+gene_count + 10       # fine: arithmetic on a numeric
+#gene_count + gene_name  # uncomment to see the error
+```
+
+Notice that x > 5 from our earlier example produces a logical value — that's what the if statement actually tests. Types are everywhere, even when invisible.
+
+```{r}
+x <- 7
+result <- x > 5      # result is TRUE or FALSE
+class(result)
+print(result)
+```
+
+You'll see types come back in the Defensive Programming tutorial, where you'll write code that explicitly checks its inputs are the right type before proceeding.
+
+
+### Activity 
+
+Now I want to think of another query that you can make on each row of the RNAseq data table and then implement it in your own code block mimick'ing the code block above. Be prepared to post your code to slack when you finish. 
+
+
+### Example of simplifications available in R 
+
+Well, almost every programming language has the notion of loops and conditional statements. There are a number of built-in simplifications available in R for working with data tables because data tables are so common in statistical analysis. This is an example of how a specialized language like R can be very useful. Uh. 
+
+Note also, rather than running this as a single program, let's run each of these commands in the console. We can highlight a line and then hit Command Enter to run just that line and inspect the output in the console. This is a more interactive way of doing data analysis than writing small programs. But ultimately, it's less reproducible, and thus less ideal, and it should be reserved for debugging and exploration. 
+
+```{r}
+
+x<-read.csv("Table_DEGs_GSE193677.csv")
+
+## Count all the cases where the gene is up-regulated
+sum(x$Regulation == "Up")
+
+# Examine max values and find the max logFC gene
+max(x$logFC)
+which.max(x$logFC)
+x$GeneSymbol[which.max(x$logFC)]
+
+# Compute a table of counts for all unique values of a "factor"/categorical variable 
+table(x$Regulation)
+
+# Plot a histogram of the p-values
+hist(x$p.value)
+
+# Make a simple plot
+plot(x$logFC,-log10(x$adj.p.val),col=(x$adj.p.val < 0.05)+1)
+plot(x$logFC,x$AveExpr,col=(x$adj.p.val < 0.05)+1)
+
+```
+
+
+### Functions
+The above are all examples of built-in `functions` in R. A function in a programming language is like a function in math in that we pass variables into a function and it maps them to some output values. So here, when I use the function `max(x$logFC)`, I'm pulling the `logFC` column and getting its maximum value. 
+
+It's useful to know that I can get help on any R function by using the question command in front of the function.  For example `?hist'. 
+
+Later, you'll learn how to define your own functions. For operations that you might want to do over and over again, you can define your own function that takes as an input a value and returns some output. Here's a basic version...
+
+```{r}
+
+bring_umbrella <- function(weather){
+  if(weather=="rainy"){
+    return(TRUE)
+  } else {
+    return(FALSE)
+  }
+}
+
+forecasts <- c("rainy","clear","rainy","snow","clear")
+
+for(i in 1:length(forecasts)){
+  if(bring_umbrella(forecasts[i])){
+    print(paste("Day",i,"Bring umbrella!"))
+  }
+}
+
+```
+
+Or consider this more mathematical example... 
+
+```{r}
+
+quadratic <- function(x,a,b,c){
+  return(c*(x-a)^2+b)
+}
+
+
+x<-seq(0,1,by=0.01)
+
+y1<-quadratic(x,a=0,b=0,c=1) # standard classic quadratic with intercept and offset of zero
+y2<-quadratic(x,a=0,b=1,c=-1) # shifted upside down up by 1
+
+plot(x,y1)
+plot(x,y2)
+
+```
+
+### Other versions of conditionals and loops
+
+We can have more complex for versions of if/else
+
+```{r}
+z <- 5
+if(z >= 5){
+  print("z greater than or equal to 5")
+}else if (z <= 2 ) {
+  print("z less than or equal to 2")
+} else {
+  print("z between 2 and 5")
+}
+```
+
+And `for` loops...
+```{r}
+
+# A "vector"/array of forecast values.  Each is a "character string"
+forecasts <- c("rainy","clear","rainy","snow","clear")
+
+for (i in forecasts)
+  print(i)
+
+i <-1
+while(forecasts[i] != "snow"){
+  print(paste("Day", i,"and still no snow."))
+  i <- i + 1
+}
+print(paste("Day", i,"finally has snow."))
+```
+
+
+### Exercise
+
+Write a program in R that uses a for loop to print the first 40 digits of a Fibonacci sequence.  Build it as a function `fibonacci(n)` that takes as it's input $n$, the length of the output sequence that you want to print. Share your program on slack when asked. 
+
+
+### Day 2 ###
+
+First, let's begin by reviewing the basic R cheat sheet in your workbooks (note it's two-sided).  We've nearly covered all the major parts of page 1.  Any questions on it?  
+
+This is also a good time to introduce the idea of the programming "environment".  Look in RStudio in the upper left at the "Enviroment" tab.  It shows variables that exist in memory.  I can access these from the console.  It might be empty right now, or hold values from previous sessions.  Declare a new variable in the console and see how the environment updates.  It can be helpful to clear your environment completely when you switch projects or start a fresh coding session so that you don't have mystery variables passed on with staring values from past sessions.   
+
+Now, let's warm up our coding skills.  One missing command in the cheat sheet is `order(x)` which gives you a vector of indices that would order your input vector in increasing order (or decreasing order as an option).  Use the `?order` command in the console to get help on it.  
+
+Exercise:  Read in the `Table_DEGs_GSE193677.csv` again.  Experiment with the order command.  You will need to write a function that will print a table of the top `n` genes in terms of the largest magnitude for mean log-fold change (i.e. the absolute value of `logFC`).  For each gene, print the GeneSymbol, GeneName, and the t.stat for.  Run the code for $n=5$ and adjust it until you think it looks nice for sharing.  (Then run the code again for $n=10$ because you've decided you'd like more rows in the table).
+
+Question: Are these the genes with highest magnitude of logFC the most statistically significant changes? To foreshadow the session on Statistics for a data rich world - why might the largest observed mean change between conditions not be the most statistically significant change?  
+
+Now's let learn more R... 
+
+### Why R's shortcuts work: vectorized operations
+
+In the code above, `sum(x$Regulation == "Up")` replaced an entire for loop. This works because R is built around *vectorized operations*: when you apply a function or operator to a vector, R applies it to every element at once.
+
+```{r}
+x<-read.csv("Table_DEGs_GSE193677.csv")
+
+logFC <- x$logFC
+
+#logFC * 2                  # multiply every value by 2 — no loop needed
+#logFC > 1                  # compare every value to 1 — returns a logical vector
+sum(logFC > 1)             # count how many are TRUE (TRUE = 1, FALSE = 0)
+mean(logFC > 1)            # proportion that are TRUE
+plot(logFC, logFC*2)
+```
+
+Compare the loop version we wrote earlier with the vectorized version:
+
+```{r}
+# Loop version
+ctr <- 0
+for(i in 1:nrow(x)){
+  if(x$logFC[i] > 1){ ctr <- ctr + 1 }
+}
+ctr
+
+# Vectorized version
+sum(x$logFC > 1)
+```
+
+Both give the same answer. The vectorized version is shorter, and on large datasets (millions of rows, common in genomics) it is also much faster.
+
+The key mental shift is that instead of telling R what to do to each element one at a time, describe what to do to the whole vector at once. This is favored approach in R's design philosophy, and it's what makes R especially well-suited to data analysis.
+
+
+### Data frames: R's central data structure
+
+The object `x` that `read.csv` created is called a **data frame** - this is R's data strucutre that maps closely to the familiar structure of data table that you've seen in a spreadsheet. Its rules are simple:
+
+- each **row** is one observation (here, one gene)
+- each **column** is one variable (gene symbol, logFC, p-value, …)
+- every column is a typed vector — all entries in a column share the same type
+
+```{r}
+x <- read.csv("Table_DEGs_GSE193677.csv")
+
+nrow(x)          # how many genes?
+ncol(x)          # how many columns?
+colnames(x)      # what are they called?
+str(x)           # compact summary: column name, type, and first few values
+```
+str() is one of the most useful functions in R for understanding a new dataset — run it on every table you encounter.
+
+We can pull out pieces of the data frame in several ways:
+```{r}
+x$logFC          # an entire column, by name — returns a vector
+x[1, ]           # the first row, all columns
+print(x[1, "GeneSymbol"])  # one cell: row 1, GeneSymbol column
+```
+And we can filter rows using a logical condition — this pattern is extremely common:
+```{r}
+up_genes <- x[x$Regulation == "Up", ]   # keep only rows where Regulation is "Up"
+nrow(up_genes)
+head(up_genes)
+```
+This gives the same result as the for-loop counter we wrote before — but it's one line. This is an example of how a specialized language like R simplifies our work.
+
+(Also note that the `tibble` is closely related to a `data.frame` and is an updated version of the `data.frame` data structure.)
+
+
+
+
+## Simulation and randomness
+
+Many biological processes are inherently *stochastic* — random: when does a molecule bind to a receptor? Which allele gets passed to an offspring? Does a cell divide or die? Programming lets us simulate these processes and study their behavior.
+
+To use random numbers reproducibly, we first introduce `set.seed()`. Because each call to a random function gives different results, we fix the random number generator with a seed so the same code always produces the same output — an essential habit for reproducible science.
+
+```{r}
+set.seed(42)    # any integer; your collaborator running this code will get identical results
+```
+
+Now let's simulate a random walk: a sequence of steps where each step is randomly +1 or -1, chosen with equal probability. Random walks are a model for Brownian motion (diffusion of a molecule in a cell), genetic drift (random fluctuation of allele frequencies), and many other biological phenomena.
+
+```{r}
+set.seed(42)
+n_steps <- 200
+
+# Build the trajectory as a data frame — one row per time step.
+# data.frame() creates a table from named vectors or scalars.
+# rbind() ("row bind") appends a new row to an existing data frame.
+walk <- data.frame(time = 1, position = 0)   # starting point
+
+for (i in 2:n_steps) {
+  one_step <- sample(c(-1, 1), size = 1)
+  new_pos  <- walk$position[i - 1] + one_step
+  walk     <- rbind(walk, data.frame(time = i, position = new_pos))
+}
+
+head(walk)   # inspect the first few rows
+
+plot(walk$time, walk$position, type = "l",
+     xlab = "Step", ylab = "Position",
+     main = "A random walk")
+abline(h = 0, col = "gray", lty = 2)
+```
+Even though each step is 50/50, the walk drifts away from zero. Change the seed and re-run to see how variable the outcome is. This variability is exactly what makes stochastic models interesting — and challenging to reason about without simulation.
+
+Exercise: Use a for loop to simulate 5 independent random walks and plot them all on the same axes using plot() for the first and lines() for the rest. What do you observe about how far the walks spread as the number of steps grows?
+
+In the Defensive Programming tutorial you'll write stochastic simulations of population dynamics. The habits to build now are: always set.seed() before a simulation, and always plot the output to sanity-check it before drawing conclusions.
+
+Other random number distributions... 
+```{r}
+# Flip two coins
+n_heads <- rbinom(100,size=2,prob=0.15)
+hist(n_heads)
+```
+
+```{r}
+# Wait an exponential amount of time
+wait_times <- rexp(10,rate=1)
+head(wait_times)
+x <- c(0,cumsum(wait_times))
+y <- rep(0,length(x))
+plot(x,y,xlim=c(0,10),pch="x")
+abline(h=0)
+```
+
+### Looping over multiple files
+
+A second canonical challenge in biological research is that data often arrives as a *collection of files* — one per sample, one per time point, or one per chromosome. Writing a program that loops over those files and applies the same analysis to each is one of the most common tasks in computational biology.
+
+The file format we'll use here is **FASTQ**, the standard format for raw sequencing reads produced by instruments like the Illumina platform. Each read is stored as exactly four lines:
+
+```
+@read_name
+ACGTACGT...        (the DNA sequence)
++
+IIIIIIII...        (quality scores — one character per base)
+```
+
+The number of characters in the sequence line is the *read length*. In real experiments read lengths can vary within and across libraries, and summarizing that distribution is often a first quality-control step.
+
+We have 10 FASTQ files in the `data/fastq/` folder — one per sequencing library — each containing 20 reads of varying lengths. Let's start by listing them:
+
+```{r}
+fastq_files <- list.files("data/fastq", pattern = "\\.fastq$", full.names = TRUE)
+print(fastq_files)
+```
+
+Now let's peek at the first file to confirm the format:
+
+```{r}
+readLines(fastq_files[1], n = 12)   # first 12 lines
+```
+
+Notice the structure: lines 1, 5, 9, … are read names; lines 2, 6, 10, … are sequences; lines 3, 7, 11, … are `+`; lines 4, 8, 12, … are quality strings. To extract just the sequence lines we want every 4th line starting from line 2.
+
+**Exercise:** Write a for loop that iterates over `fastq_files`, reads each file, extracts the sequence lines, computes the mean and variance of their lengths, and prints a summary for each file. Before writing the loop, write out the pseudo-code.
+
+Hint: `readLines(fname)` reads a file into a character vector (one vector element per line). `nchar(s)` returns the number of characters in a string. `seq(2, n, by = 4)` generates the indices 2, 6, 10, …
+
+We'll also use `paste0()` here, which works like `paste()` but with no separator between pieces — useful when you want full control over spacing and punctuation in a string.
+
+```{r}
+for (fq_file in fastq_files) {
+  # Read all the lines from the file into a variable all_lines
+  all_lines   <- readLines(fq_file)
+  # Extract every 4th line, starting from the 2nd line - returns a vector of strings
+  seq_lines   <- all_lines[seq(2, length(all_lines), by = 4)]
+  # Count the number of characters in each sequence string (a vectorized operation)
+  seq_lengths <- nchar(seq_lines)
+  # paste0() concatenates strings with no separator — we supply spacing ourselves
+  label <- paste0(basename(fq_file),
+                  "  mean=", round(mean(seq_lengths), 1),
+                  "  var=",  round(var(seq_lengths),  1))
+  print(label)
+}
+```
+
+Do the mean lengths differ across samples? This is exactly the kind of summary a bioinformatician would compute before any downstream analysis — to check whether different libraries were sequenced to comparable depths and quality.
+
+**Going further:** Modify the loop to also store the results in a data frame (one row per file) and then make a bar plot of mean read length per sample.
+
+
+**The dplyr package** provides a small set of verbs that cover most data-frame manipulations you'll need. You'll use them throughout the bootcamp, so here's a quick preview:
+
+```{r}
+library(dplyr)
+
+# filter() keeps rows that match a condition — cleaner than bracket syntax
+up_genes <- filter(x, Regulation == "Up")
+nrow(up_genes)
+
+# mutate() adds a new column computed from existing columns
+x <- mutate(x, abs_logFC = abs(logFC))
+head(select(x, GeneSymbol, logFC, abs_logFC))
+
+# group_by() + summarize() compute per-group summaries
+x %>%
+  group_by(Regulation) %>%
+  summarize(mean_logFC = mean(logFC), n = n())
+```
+
+The `%>%` symbol is the **pipe** — it passes the result of the left side as the first argument to the right side, so you can chain operations left-to-right instead of nesting them. The Data Visualization tutorial will go much deeper into dplyr.
+
+### Basic Programming Challenge
+
+Use real forecast data to make a predictor of whether to bring an umbrella tomorrow.
+
+To get you started - use the weathR function to get a weather forecast for tomorrow.  
+```{r}
+# Install from CRAN or GitHub
+install.packages("weathR")
+library(weathR)
+```
+Here's an example:
+```{r}
+# Fetch the forecast using latitude and longitude coordinates
+hyde_park_forecast <- weathR::point_tomorrow(lat = 41.7942, lon = -87.5939)
+
+# View data 
+head(hyde_park_forecast)
+```
+Inspect the output of the forecast.  
+
+For the challenge, first prepare pseudocode describing how your algorithm for processing this table and deciding on whether to bring an umbrella (you will need to make arbitrary choices - that's ok). 
+
+Second, write R code that implements your algorithm in R.  Your R code should be in the form of a function `bring_umbrella` that takes `hyde_park_forecast` as input and returns a `TRUE`\`FALSE decision. 
+
+Bonus: Use your function to produce a map over a grid of lat/long values spanning the United States that shows whether you should bring an umbrella or not tomorrow!
+
+
+
+
+
+
+
+
+
+
