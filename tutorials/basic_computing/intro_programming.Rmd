@@ -323,11 +323,22 @@ print(paste("Day", i,"finally has snow."))
 
 ### Exercise
 
-Write a program in R that uses a for loop to print the first 40 digits of a Fibonacci sequence.  Build it as a function `fibonacci(n)` that takes as it's input $n$, the lenght of the output sequence that you want to print. Share your program on slack when asked. 
+Write a program in R that uses a for loop to print the first 40 digits of a Fibonacci sequence.  Build it as a function `fibonacci(n)` that takes as it's input $n$, the length of the output sequence that you want to print. Share your program on slack when asked. 
 
 
+### Day 2 ###
 
+First, let's begin by reviewing the basic R cheat sheet in your workbooks (note it's two-sided).  We've nearly covered all the major parts of page 1.  Any questions on it?  
 
+This is also a good time to introduce the idea of the programming "environment".  Look in RStudio in the upper left at the "Enviroment" tab.  It shows variables that exist in memory.  I can access these from the console.  It might be empty right now, or hold values from previous sessions.  Declare a new variable in the console and see how the environment updates.  It can be helpful to clear your environment completely when you switch projects or start a fresh coding session so that you don't have mystery variables passed on with staring values from past sessions.   
+
+Now, let's warm up our coding skills.  One missing command in the cheat sheet is `order(x)` which gives you a vector of indices that would order your input vector in increasing order (or decreasing order as an option).  Use the `?order` command in the console to get help on it.  
+
+Exercise:  Read in the `Table_DEGs_GSE193677.csv` again.  Experiment with the order command.  You will need to write a function that will print a table of the top `n` genes in terms of the largest magnitude for mean log-fold change (i.e. the absolute value of `logFC`).  For each gene, print the GeneSymbol, GeneName, and the t.stat for.  Run the code for $n=5$ and adjust it until you think it looks nice for sharing.  (Then run the code again for $n=10$ because you've decided you'd like more rows in the table).
+
+Question: Are these the genes with highest magnitude of logFC the most statistically significant changes? To foreshadow the session on Statistics for a data rich world - why might the largest observed mean change between conditions not be the most statistically significant change?  
+
+Now's let learn more R... 
 
 ### Why R's shortcuts work: vectorized operations
 
@@ -344,9 +355,6 @@ sum(logFC > 1)             # count how many are TRUE (TRUE = 1, FALSE = 0)
 mean(logFC > 1)            # proportion that are TRUE
 plot(logFC, logFC*2)
 ```
-
-
-
 
 Compare the loop version we wrote earlier with the vectorized version:
 
@@ -365,44 +373,6 @@ sum(x$logFC > 1)
 Both give the same answer. The vectorized version is shorter, and on large datasets (millions of rows, common in genomics) it is also much faster.
 
 The key mental shift is that instead of telling R what to do to each element one at a time, describe what to do to the whole vector at once. This is favored approach in R's design philosophy, and it's what makes R especially well-suited to data analysis.
-
-## Simulation and randomness
-
-Many biological processes are inherently *stochastic* — random: when does a molecule bind to a receptor? Which allele gets passed to an offspring? Does a cell divide or die? Programming lets us simulate these processes and study their behavior.
-
-To use random numbers reproducibly, we first introduce `set.seed()`. Because each call to a random function gives different results, we fix the random number generator with a seed so the same code always produces the same output — an essential habit for reproducible science.
-
-```{r}
-set.seed(42)    # any integer; your collaborator running this code will get identical results
-```
-
-Now let's simulate a random walk: a sequence of steps where each step is randomly +1 or -1, chosen with equal probability. Random walks are a model for Brownian motion (diffusion of a molecule in a cell), genetic drift (random fluctuation of allele frequencies), and many other biological phenomena.
-
-```{r}
-# Initialize random number seed, number of steps, and position
-set.seed(42)
-n_steps <- 200
-position <- rep(0,n_steps) 
-
-# Loop through steps
-for( i in 2:n_steps){
-  # Sample a step up or down with equal probability
-  one_step <- sample(c(-1, 1), size = 1, replace = TRUE)
-  # Increment position
-  position[i] <- position[i-1] + one_step
-}
-
-# Plot
-plot(1:n_steps, position, type = "l",
-     xlab = "Step", ylab = "Position",
-     main = "A random walk")
-abline(h = 0, col = "gray", lty = 2)
-```
-Even though each step is 50/50, the walk drifts away from zero. Change the seed and re-run to see how variable the outcome is. This variability is exactly what makes stochastic models interesting — and challenging to reason about without simulation.
-
-Exercise: Use a for loop to simulate 5 independent random walks and plot them all on the same axes using plot() for the first and lines() for the rest. What do you observe about how far the walks spread as the number of steps grows?
-
-In the Defensive Programming tutorial you'll write stochastic simulations of population dynamics. The habits to build now are: always set.seed() before a simulation, and always plot the output to sanity-check it before drawing conclusions.
 
 
 ### Data frames: R's central data structure
@@ -435,27 +405,179 @@ up_genes <- x[x$Regulation == "Up", ]   # keep only rows where Regulation is "Up
 nrow(up_genes)
 head(up_genes)
 ```
-This gives the same result as the for-loop counter we wrote before — but it's one line. This is an example of how a specialized language like R simplifies our work.  The Data Visualization will show you even more powerful ways to filter and reshape data frames using the dplyr package.
+This gives the same result as the for-loop counter we wrote before — but it's one line. This is an example of how a specialized language like R simplifies our work.
 
-(Also note that the `tibble` is closely related to a `data.frame` and is an update version of the `data.frame` data struture)
+(Also note that the `tibble` is closely related to a `data.frame` and is an updated version of the `data.frame` data structure.)
 
-### Exercise
+
+
+
+## Simulation and randomness
+
+Many biological processes are inherently *stochastic* — random: when does a molecule bind to a receptor? Which allele gets passed to an offspring? Does a cell divide or die? Programming lets us simulate these processes and study their behavior.
+
+To use random numbers reproducibly, we first introduce `set.seed()`. Because each call to a random function gives different results, we fix the random number generator with a seed so the same code always produces the same output — an essential habit for reproducible science.
+
+```{r}
+set.seed(42)    # any integer; your collaborator running this code will get identical results
+```
+
+Now let's simulate a random walk: a sequence of steps where each step is randomly +1 or -1, chosen with equal probability. Random walks are a model for Brownian motion (diffusion of a molecule in a cell), genetic drift (random fluctuation of allele frequencies), and many other biological phenomena.
+
+```{r}
+set.seed(42)
+n_steps <- 200
+
+# Build the trajectory as a data frame — one row per time step.
+# data.frame() creates a table from named vectors or scalars.
+# rbind() ("row bind") appends a new row to an existing data frame.
+walk <- data.frame(time = 1, position = 0)   # starting point
+
+for (i in 2:n_steps) {
+  one_step <- sample(c(-1, 1), size = 1)
+  new_pos  <- walk$position[i - 1] + one_step
+  walk     <- rbind(walk, data.frame(time = i, position = new_pos))
+}
+
+head(walk)   # inspect the first few rows
+
+plot(walk$time, walk$position, type = "l",
+     xlab = "Step", ylab = "Position",
+     main = "A random walk")
+abline(h = 0, col = "gray", lty = 2)
+```
+Even though each step is 50/50, the walk drifts away from zero. Change the seed and re-run to see how variable the outcome is. This variability is exactly what makes stochastic models interesting — and challenging to reason about without simulation.
+
+Exercise: Use a for loop to simulate 5 independent random walks and plot them all on the same axes using plot() for the first and lines() for the rest. What do you observe about how far the walks spread as the number of steps grows?
+
+In the Defensive Programming tutorial you'll write stochastic simulations of population dynamics. The habits to build now are: always set.seed() before a simulation, and always plot the output to sanity-check it before drawing conclusions.
+
+Other random number distributions... 
+```{r}
+# Flip two coins
+n_heads <- rbinom(100,size=2,prob=0.15)
+hist(n_heads)
+```
+
+```{r}
+# Wait an exponential amount of time
+wait_times <- rexp(10,rate=1)
+head(wait_times)
+x <- c(0,cumsum(wait_times))
+y <- rep(0,length(x))
+plot(x,y,xlim=c(0,10),pch="x")
+abline(h=0)
+```
+
+### Looping over multiple files
+
+A second canonical challenge in biological research is that data often arrives as a *collection of files* — one per sample, one per time point, or one per chromosome. Writing a program that loops over those files and applies the same analysis to each is one of the most common tasks in computational biology.
+
+The file format we'll use here is **FASTQ**, the standard format for raw sequencing reads produced by instruments like the Illumina platform. Each read is stored as exactly four lines:
+
+```
+@read_name
+ACGTACGT...        (the DNA sequence)
++
+IIIIIIII...        (quality scores — one character per base)
+```
+
+The number of characters in the sequence line is the *read length*. In real experiments read lengths can vary within and across libraries, and summarizing that distribution is often a first quality-control step.
+
+We have 10 FASTQ files in the `data/fastq/` folder — one per sequencing library — each containing 20 reads of varying lengths. Let's start by listing them:
+
+```{r}
+fastq_files <- list.files("data/fastq", pattern = "\\.fastq$", full.names = TRUE)
+print(fastq_files)
+```
+
+Now let's peek at the first file to confirm the format:
+
+```{r}
+readLines(fastq_files[1], n = 12)   # first 12 lines
+```
+
+Notice the structure: lines 1, 5, 9, … are read names; lines 2, 6, 10, … are sequences; lines 3, 7, 11, … are `+`; lines 4, 8, 12, … are quality strings. To extract just the sequence lines we want every 4th line starting from line 2.
+
+**Exercise:** Write a for loop that iterates over `fastq_files`, reads each file, extracts the sequence lines, computes the mean and variance of their lengths, and prints a summary for each file. Before writing the loop, write out the pseudo-code.
+
+Hint: `readLines(fname)` reads a file into a character vector (one vector element per line). `nchar(s)` returns the number of characters in a string. `seq(2, n, by = 4)` generates the indices 2, 6, 10, …
+
+We'll also use `paste0()` here, which works like `paste()` but with no separator between pieces — useful when you want full control over spacing and punctuation in a string.
+
+```{r}
+for (fq_file in fastq_files) {
+  # Read all the lines from the file into a variable all_lines
+  all_lines   <- readLines(fq_file)
+  # Extract every 4th line, starting from the 2nd line - returns a vector of strings
+  seq_lines   <- all_lines[seq(2, length(all_lines), by = 4)]
+  # Count the number of characters in each sequence string (a vectorized operation)
+  seq_lengths <- nchar(seq_lines)
+  # paste0() concatenates strings with no separator — we supply spacing ourselves
+  label <- paste0(basename(fq_file),
+                  "  mean=", round(mean(seq_lengths), 1),
+                  "  var=",  round(var(seq_lengths),  1))
+  print(label)
+}
+```
+
+Do the mean lengths differ across samples? This is exactly the kind of summary a bioinformatician would compute before any downstream analysis — to check whether different libraries were sequenced to comparable depths and quality.
+
+**Going further:** Modify the loop to also store the results in a data frame (one row per file) and then make a bar plot of mean read length per sample.
+
+
+**The dplyr package** provides a small set of verbs that cover most data-frame manipulations you'll need. You'll use them throughout the bootcamp, so here's a quick preview:
+
+```{r}
+library(dplyr)
+
+# filter() keeps rows that match a condition — cleaner than bracket syntax
+up_genes <- filter(x, Regulation == "Up")
+nrow(up_genes)
+
+# mutate() adds a new column computed from existing columns
+x <- mutate(x, abs_logFC = abs(logFC))
+head(select(x, GeneSymbol, logFC, abs_logFC))
+
+# group_by() + summarize() compute per-group summaries
+x %>%
+  group_by(Regulation) %>%
+  summarize(mean_logFC = mean(logFC), n = n())
+```
+
+The `%>%` symbol is the **pipe** — it passes the result of the left side as the first argument to the right side, so you can chain operations left-to-right instead of nesting them. The Data Visualization tutorial will go much deeper into dplyr.
+
+### Basic Programming Challenge
 
 Use real forecast data to make a predictor of whether to bring an umbrella tomorrow.
 
+To get you started - use the weathR function to get a weather forecast for tomorrow.  
 ```{r}
 # Install from CRAN or GitHub
 install.packages("weathR")
 library(weathR)
 ```
-
+Here's an example:
 ```{r}
 # Fetch the forecast using latitude and longitude coordinates
-us_forecast <- weathR::point_tomorrow(lat = 44.5994, lon = -72.6352)
+hyde_park_forecast <- weathR::point_tomorrow(lat = 41.7942, lon = -87.5939)
 
-# View data (returns a tidy simple features object where possible)
-head(us_forecast)
+# View data 
+head(hyde_park_forecast)
 ```
+Inspect the output of the forecast.  
+
+For the challenge, first prepare pseudocode describing how your algorithm for processing this table and deciding on whether to bring an umbrella (you will need to make arbitrary choices - that's ok). 
+
+Second, write R code that implements your algorithm in R.  Your R code should be in the form of a function `bring_umbrella` that takes `hyde_park_forecast` as input and returns a `TRUE`\`FALSE decision. 
+
+Bonus: Use your function to produce a map over a grid of lat/long values spanning the United States that shows whether you should bring an umbrella or not tomorrow!
+
+
+
+
+
+
 
 
 
