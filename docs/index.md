@@ -283,6 +283,7 @@ be added progressively here during the qBio week.*
 + [Intermediate Computing](https://forms.gle/2BHyqszWZpsTKwqF6)
 + [Advanced Computing](https://forms.gle/QbzDbhran1hZsLhK7)
 + [Defensive Programming - A](https://forms.gle/mXfdU78vCv2FcUhh7)
++ [Defensive Programming - B](https://forms.gle/iqZS2nb9Rhe18ERP7)
 + [Data Visualization](https://forms.gle/1x7xsde5jsAsPzzH7)
 
 <!-- Here are the links to the Google forms where the groups should post
