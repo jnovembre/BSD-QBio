@@ -281,13 +281,14 @@ be added progressively here during the qBio week.*
 
 + [Intermediate Computing](https://forms.gle/2BHyqszWZpsTKwqF6)
 
++ [Data Visualization](https://forms.gle/1x7xsde5jsAsPzzH7)
+
 <!-- Here are the links to the Google forms where the groups should post
 their solutions to the Programming Challenges (one answer per group,
 please). -->
 
 <!-- + [Basic computing](https://forms.gle/ZsGumfXDEL5S3yym7)
 + [Advanced programming](https://forms.gle/hozH4hZxGFx3tRaq8)
-+ [Data visualization](https://forms.gle/c3fsRg9yjhqJKDbY7)
 + [Defensive programming](https://forms.gle/fa7Et2uVYcokEu2c7)
 + [Statistics for a data-rich world](https://forms.gle/UJ3uubCoChAFh3aC6)
   
