@@ -301,7 +301,7 @@ please). -->
 -->
 
 **Note:** All Programming Challenges will be due on Wednesday,
-September 16th at 1:30 PM.
+September 16th at 1 PM.
 
 ## Notes
 
