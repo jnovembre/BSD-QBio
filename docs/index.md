@@ -279,8 +279,10 @@ PyCharm for the workshop. -->
 *Links for submitting solutions to Programming Challenges will
 be added progressively here during the qBio week.*
 
++ [Basic Computing](https://forms.gle/wWiQD7ouBjF6wpg56)
 + [Intermediate Computing](https://forms.gle/2BHyqszWZpsTKwqF6)
-
++ [Advanced Computing](https://forms.gle/QbzDbhran1hZsLhK7)
++ [Defensive Programming - A](https://forms.gle/mXfdU78vCv2FcUhh7)
 + [Data Visualization](https://forms.gle/1x7xsde5jsAsPzzH7)
 
 <!-- Here are the links to the Google forms where the groups should post
