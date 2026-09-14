@@ -285,6 +285,7 @@ be added progressively here during the qBio week.*
 + [Defensive Programming - A](https://forms.gle/mXfdU78vCv2FcUhh7)
 + [Defensive Programming - B](https://forms.gle/iqZS2nb9Rhe18ERP7)
 + [Data Visualization](https://forms.gle/1x7xsde5jsAsPzzH7)
++ [Statistics for a Data Rich World](https://forms.gle/wcZoSv4UYRCMwVj97)
 
 <!-- Here are the links to the Google forms where the groups should post
 their solutions to the Programming Challenges (one answer per group,
